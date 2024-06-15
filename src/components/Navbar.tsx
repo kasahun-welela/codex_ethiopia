@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { cn } from "@/lib/utils";
 import {
   Sheet,
   SheetTrigger,
@@ -18,7 +17,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { FaChevronRight } from "react-icons/fa";
-
+import { cn } from "@/lib/utils"
 interface SubMenuItem {
   href: string;
   title: string;
@@ -59,9 +58,7 @@ const technologySubMenu = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSubMenu, setActiveSubMenu] = useState<SubMenuItem[] | null>(
-    null
-  );
+  const [activeSubMenu, setActiveSubMenu] = useState<SubMenuItem[] | null>(null);
 
   const handleBackClick = () => {
     setActiveSubMenu(null);
@@ -161,10 +158,7 @@ export default function Navbar() {
           </div>
         </SheetContent>
       </Sheet>
-      <Link
-        to="#"
-        className="mr-6 hidden lg:flex items-center gap-2 font-semibold"
-      >
+      <Link to="#" className="mr-6 hidden lg:flex items-center gap-2 font-semibold">
         <MountainIcon className="h-6 w-6" />
         <span className="sr-only">Acme Inc</span>
       </Link>
@@ -175,11 +169,7 @@ export default function Navbar() {
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 {developWebsiteSubMenu.map((item) => (
-                  <ListItem
-                    key={item.title}
-                    title={item.title}
-                    href={item.href}
-                  >
+                  <ListItem key={item.title} title={item.title} href={item.href}>
                     {item.title}
                   </ListItem>
                 ))}
@@ -191,11 +181,7 @@ export default function Navbar() {
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 {automationSubMenu.map((item) => (
-                  <ListItem
-                    key={item.title}
-                    title={item.title}
-                    href={item.href}
-                  >
+                  <ListItem key={item.title} title={item.title} href={item.href}>
                     {item.title}
                   </ListItem>
                 ))}
@@ -207,11 +193,7 @@ export default function Navbar() {
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 {technologySubMenu.map((item) => (
-                  <ListItem
-                    key={item.title}
-                    title={item.title}
-                    href={item.href}
-                  >
+                  <ListItem key={item.title} title={item.title} href={item.href}>
                     {item.title}
                   </ListItem>
                 ))}
