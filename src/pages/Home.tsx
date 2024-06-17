@@ -171,7 +171,7 @@ function Home() {
         <p className="text-primary text-2xl font-bold mb-6">
           Specialized Staff We Provide
         </p>
-        <div className="grid  grid-cols-1 md:grid-cols-4 gap-2  my-5 ">
+        <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5  my-5">
           {specialized.map((item, index) => (
             <div
               key={index}
