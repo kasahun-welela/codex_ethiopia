@@ -175,7 +175,7 @@ function Home() {
           {specialized.map((item, index) => (
             <div
               key={index}
-              className="flex items-center gap-3 max-w-xs py-3 rounded-sm border-l-8 border-l-yellow-600 shadow"
+              className="flex items-center gap-3 max-w-xs py-3 rounded-sm border-l-8 border-l-yellow-300 shadow transition ease-in-out delay-150  hover:-translate-y-1 hover:shadow-md hover:scale-105 duration-300"
             >
               <img src={item.img} alt={item.title} className="ml-2" />
               <p>{item.title}</p>
