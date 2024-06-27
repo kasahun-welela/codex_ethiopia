@@ -14,6 +14,7 @@ import Login from "./pages/login.tsx";
 import ForgotPassword from "./pages/ForgotPassword.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogList from "./components/BlogList.tsx";
+import Contact from "./pages/contact.tsx";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -27,6 +28,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="/forgot_password" element ={< ForgotPassword/>}/>
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blogs/:id" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
