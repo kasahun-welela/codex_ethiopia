@@ -46,14 +46,6 @@ const automationSubMenu: SubMenuItem[] = [
   { href: "/ranorex", title: "Ranorex" },
 ];
 
-const technologySubMenu: SubMenuItem[] = [
-  { href: "/backend", title: "Backend" },
-  { href: "/blockchain", title: "Blockchain" },
-  { href: "/cloud-computing", title: "Cloud Computing" },
-  { href: "/cyber-security", title: "Cyber Security" },
-  { href: "/iot", title: "Internet of Things" },
-  { href: "/machine-learning", title: "Machine Learning" },
-];
 
 export default function Navbar() {
   const location = useLocation();
@@ -189,25 +181,7 @@ export default function Navbar() {
                     Automation
                     <FaChevronRight className="ml-auto h-5 w-5 text-gray-500 dark:text-gray-400" />
                   </button>
-                  <button
-                    className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
-                      location.pathname.startsWith("/backend") ||
-                      location.pathname.startsWith("/blockchain") ||
-                      location.pathname.startsWith("/cloud-computing") ||
-                      location.pathname.startsWith("/cyber-security") ||
-                      location.pathname.startsWith("/iot") ||
-                      location.pathname.startsWith("/machine-learning")
-                        ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
-                        : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50"
-                    }`}
-                    onClick={() => {
-                      setActiveSubMenu(technologySubMenu);
-                    }}
-                  >
-                    <PackageIcon className="h-5 w-5" />
-                    Service
-                    <FaChevronRight className="ml-auto h-5 w-5 text-gray-500 dark:text-gray-400" />
-                  </button>
+                 
                   <button
                     className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
                       location.pathname === "/technology"
@@ -240,6 +214,17 @@ export default function Navbar() {
                   >
                     <AboutIcon className="h-5 w-5" />
                     About Us
+                  </button>
+                  <button
+                    className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
+                      location.pathname === "/contact"
+                        ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
+                        : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50"
+                    }`}
+                    onClick={() => handleLinkClick("/contact")}
+                  >
+                    <AboutIcon className="h-5 w-5" />
+                    Contact Us
                   </button>
                   <button
                     className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
@@ -299,18 +284,6 @@ export default function Navbar() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Service</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                {technologySubMenu.map((item) => (
-                  <ListItem key={item.title} title={item.title} href={item.href}>
-                    {item.title}
-                  </ListItem>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
             <Link to="/technology">
               <NavigationMenuLink
                 className={cn(
@@ -349,6 +322,20 @@ export default function Navbar() {
                 )}
               >
                 About Us
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link to="/contact">
+              <NavigationMenuLink
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  location.pathname === "/contact"
+                    ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
+                    : ""
+                )}
+              >
+                Contact Us
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
@@ -551,27 +538,6 @@ function MenuIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function PackageIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m7.5 4.27 9 5.15" />
-      <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
-      <path d="m3.3 7 8.7 5 8.7-5" />
-      <path d="M12 22V12" />
-    </svg>
-  );
-}
 
 function UserIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
