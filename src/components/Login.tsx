@@ -3,9 +3,9 @@ import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useGoogleLogin } from "@react-oauth/google";
-import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { LoginSocialFacebook } from "reactjs-social-login";
 
 export default function Component() {
   const loginWithGoogle = useGoogleLogin({
@@ -82,13 +82,25 @@ export default function Component() {
             <Button
               variant="outline"
               className="w-full"
-              onClick={loginWithGoogle}
+              onClick={() => loginWithGoogle()}
             >
               Login with Google
             </Button>
-            <Button variant="outline" className="w-full">
-              Login with Facebook
-            </Button>
+            <LoginSocialFacebook
+              appId={process.env.FACEBOOK_APP_ID}
+              onResolve={(response: any) => {
+                console.log(response);
+                toast.success(`${response.data.name}`);
+              }}
+              onReject={(error: any) => {
+                console.log(error);
+              }}
+            >
+              <Button variant="outline" className="w-full">
+                Login with Facebook
+              </Button>
+            </LoginSocialFacebook>
+
             <Button variant="outline" className="w-full">
               Login with Google Plus
             </Button>
