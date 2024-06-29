@@ -3,14 +3,11 @@ import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useGoogleLogin } from "@react-oauth/google";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
 export default function Component() {
-  const [user, setUser] = useState<any>([]);
-  const [profile, setProfile] = useState<any>([]);
-
   const loginWithGoogle = useGoogleLogin({
     onSuccess: (response: any) => {
       axios
