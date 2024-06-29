@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { toast } from "react-toastify";
+// @ts-ignore
 import { LoginSocialFacebook } from "reactjs-social-login";
 
 export default function Component() {
