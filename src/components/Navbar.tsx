@@ -156,7 +156,7 @@ export default function Navbar() {
                     }}
                   >
                     <HomeIcon className="h-5 w-5" />
-                    Develop Website
+                   Website Service
                     <FaChevronRight className="ml-auto h-5 w-5 text-gray-500 dark:text-gray-400" />
                   </button>
                   <button
