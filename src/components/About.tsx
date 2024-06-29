@@ -6,7 +6,7 @@ export default function About() {
       name: "Abenezer Kifle",
       title: "Co-Founder, Fullstack Developer",
       description:
-        "Abenezer has over 3 years of experience in the tech industry, with a strong background in computer science.",
+        "Abenezer has over 3 years of experience in the tech industry, with a background in computer science.",
       skills: [
         "HTML",
         "React",
@@ -53,9 +53,12 @@ export default function About() {
       name: "Mulisa Tadesse",
       title: "Developer & Marketing manager",
       description:
-      "Mulisa is Software Developer with a lot of skills and developing high quality software that meet customer requirements and market demand.",
+      "Mulisa Tadesse is Software Developer committed to delivering high-quality software that meets customer needs and market demands.",
        
       skills: [
+        "Marketing Strategy",
+        "Promotion",
+        "Marketing Management",
         "HTML",
         "ReactJs",
         "CSS",
