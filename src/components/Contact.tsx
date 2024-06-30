@@ -21,6 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { LuMapPin, LuPhone, LuMail, LuAlarmClock } from "react-icons/lu";
+import MapComponent from "./LeafletMap";
 
 // Define the validation schema using Zod
 const FormSchema = z.object({
@@ -332,6 +333,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      <MapComponent />
     </section>
   );
 }
