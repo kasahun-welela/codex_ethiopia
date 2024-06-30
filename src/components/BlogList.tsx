@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-
+import Hero from "@/components/Hero";
 interface Image {
   id: string;
   author: string;
@@ -36,7 +36,12 @@ const Blog: FC = () => {
   }, []);
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br dark:from-gray-800 dark:to-gray-700">
+    <>
+    <Hero
+        title="Blog site we Make"
+        description="We specialize in helping you build a team of expert developers."
+      />
+    <section className="w-full bg-gradient-to-br dark:from-gray-800 dark:to-gray-700">
       <div className="container px-4 md:px-6">
         <h2 className="text-4xl font-bold text-white text-center mb-2 animate-fade-in">
           Explore Our Site
@@ -72,7 +77,7 @@ const Blog: FC = () => {
                   to={blog.link}
                   className="mt-4 inline-flex h-9 items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                 >
-                  Start Learning
+                  Explore More
                 </Link>
               </div>
             </div>
@@ -80,6 +85,7 @@ const Blog: FC = () => {
         </div>
       </div>
     </section>
+    </>
   );
 }
 
