@@ -41,7 +41,7 @@ const Blog: FC = () => {
         title="Blog site we Make"
         description="We specialize in helping you build a team of expert developers."
       />
-    <section className="w-full bg-gradient-to-br dark:from-gray-800 dark:to-gray-700">
+    <section className="w-full py-5 bg-gradient-to-br dark:from-gray-800 dark:to-gray-700">
       <div className="container px-4 md:px-6">
         <h2 className="text-4xl font-bold text-white text-center mb-2 animate-fade-in">
           Explore Our Site
