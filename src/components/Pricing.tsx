@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 function CheckIcon(props:any) {
   return (
@@ -36,8 +37,6 @@ export default function Component() {
             <div className="px-6 py-8 sm:px-10 sm:py-10">
               <div className="text-center mb-4">
                 <h3 className="text-3xl font-bold">BASIC</h3>
-                <p className="text-2xl font-bold mt-2">56,000 birr</p>
-                <p className="text-gray-500 dark:text-gray-400">Exc. VAT</p>
               </div>
               <ul className="mt-8 space-y-3 text-gray-500 dark:text-gray-400">
                 <li className="flex items-start">
@@ -126,15 +125,15 @@ export default function Component() {
               </ul>
             </div>
             <div className="px-6 py-4 bg-gray-50 dark:bg-gray-900">
-              <Button className="w-full">Get started</Button>
+            <Button className="w-full">
+                <Link to="/contact">Get started</Link>
+                </Button>
             </div>
           </div>
           <div className="bg-white border border-gray-200 rounded-lg overflow-hidden dark:bg-gray-950 dark:border-gray-800">
             <div className="px-6 py-8 sm:px-10 sm:py-10">
               <div className="text-center mb-4">
                 <h3 className="text-3xl font-bold">CORPORATE</h3>
-                <p className="text-2xl font-bold mt-2">80,000 birr</p>
-                <p className="text-gray-500 dark:text-gray-400">Exc. VAT</p>
               </div>
               <ul className="mt-8 space-y-3 text-gray-500 dark:text-gray-400">
                 <li className="flex items-start">
@@ -235,15 +234,15 @@ export default function Component() {
               </ul>
             </div>
             <div className="px-6 py-4 bg-gray-50 dark:bg-gray-900">
-              <Button className="w-full">Get started</Button>
+            <Button className="w-full">
+                <Link to="/contact">Get started</Link>
+                </Button>
             </div>
           </div>
           <div className="bg-white border border-gray-200 rounded-lg overflow-hidden dark:bg-gray-950 dark:border-gray-800">
             <div className="px-6 py-8 sm:px-10 sm:py-10">
               <div className="text-center mb-4">
                 <h3 className="text-3xl font-bold">ENTERPRISE</h3>
-                <p className="text-2xl font-bold mt-2">98,000 birr</p>
-                <p className="text-gray-500 dark:text-gray-400">Exc. VAT</p>
               </div>
               <ul className="mt-8 space-y-3 text-gray-500 dark:text-gray-400">
                 <li className="flex items-start">
@@ -364,7 +363,9 @@ export default function Component() {
               </ul>
             </div>
             <div className="px-6 py-4 bg-gray-50 dark:bg-gray-900">
-              <Button className="w-full">Get started</Button>
+              <Button className="w-full">
+                <Link to="/contact">Get started</Link>
+                </Button>
             </div>
           </div>
         </div>
