@@ -27,8 +27,14 @@ import MapComponent from "./LeafletMap";
 const FormSchema = z.object({
   firstName: z.string().nonempty("First name is required"),
   lastName: z.string().nonempty("Last name is required"),
-  email: z.string().email("Invalid email address").nonempty("Email is required"),
-  phone: z.string().regex(/^\+?\d{10,15}$/, "Invalid phone number").optional(),
+  email: z
+    .string()
+    .email("Invalid email address")
+    .nonempty("Email is required"),
+  phone: z
+    .string()
+    .regex(/^\+?\d{10,15}$/, "Invalid phone number")
+    .optional(),
   subject: z.string().nonempty("Subject is required"),
   enquiryType: z.string().nonempty("Type of enquiry is required"),
   address: z.string().nonempty("Address is required"),
@@ -156,7 +162,10 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel>Phone</FormLabel>
                       <FormControl>
-                        <Input placeholder="Enter your phone number" {...field} />
+                        <Input
+                          placeholder="Enter your phone number"
+                          {...field}
+                        />
                       </FormControl>
                       {form.formState.errors.phone && (
                         <p className="text-red-500 text-sm">
@@ -175,13 +184,19 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel>Type of Enquiry</FormLabel>
                       <FormControl>
-                        <Select onValueChange={field.onChange} value={field.value}>
+                        <Select
+                          onValueChange={field.onChange}
+                          value={field.value}
+                        >
                           <SelectTrigger>
                             <SelectValue placeholder="Select enquiry type" />
                           </SelectTrigger>
                           <SelectContent>
                             {enquiryOptions.map((option) => (
-                              <SelectItem key={option.value} value={option.value}>
+                              <SelectItem
+                                key={option.value}
+                                value={option.value}
+                              >
                                 {option.label}
                               </SelectItem>
                             ))}
@@ -262,12 +277,13 @@ export default function Contact() {
         <div>
           <h3 className="text-xl font-semibold">How can you find us?</h3>
           <p>
-            Come visit our friendly team of software developers! We're here to
-            provide top-notch software solutions tailored to your needs. Whether
-            you need advice, guidance, or a detailed consultation, we're ready
-            to help. Our office is easy to find, located in Addis Ababa on Ras
-            Desta Damtew Road, inside the OBS Tv Building, 3rd Floor, Office
-            #305. Stop by and see how we can help with your software projects!
+            Come visit our innovative team of software developers! We specialize
+            in delivering cutting-edge software solutions tailored to your
+            unique needs. Whether you require advice, guidance, or an in-depth
+            consultation, we're here to assist you. Our office is conveniently
+            located in Addis Ababa on Ras Desta Damtew Road, inside the OBS Tv
+            Building, 3rd Floor, Office #305. Drop by and see how we can help
+            you bring your software projects to life!
           </p>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
