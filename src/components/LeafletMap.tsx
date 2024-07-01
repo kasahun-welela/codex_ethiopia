@@ -18,15 +18,15 @@ const position: [number, number] = [9.014135, 38.753145]; // Updated coordinates
 
 const MapComponent = () => {
   return (
-    <div style={{ position: 'relative' }}>
-      <MapContainer center={position} zoom={13} scrollWheelZoom={false} style={{ height: '600px', width: '100%' }}>
+    <div className="relative w-full h-64 sm:h-96 md:h-128 lg:h-[600px]">
+      <MapContainer center={position} zoom={13} scrollWheelZoom={false} className="w-full h-full">
         <TileLayer
           attribution=""
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Marker position={position} icon={customIcon}>
           <Popup>
-            Our Office . <br /> Located Here.
+           Our office  <br />located here.
           </Popup>
         </Marker>
       </MapContainer>
