@@ -111,7 +111,7 @@ export default function Navbar() {
       <Link to="/" className="flex items-center gap-2 font-semibold">
         <span className="lg:hidden">Codex Ethiopia</span>
         <img src={imageSrc} alt="Image Description" width={32} height={32} />
-        <span className="hidden lg:flex">Codex Ethiopia</span>
+        <span className="hidden lg:flex">CodeX Ethiopia</span>
       </Link>
       <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
         <SheetTrigger asChild>
@@ -121,17 +121,21 @@ export default function Navbar() {
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="bg-white dark:bg-gray-950">
-          <div className="flex h-full max-h-screen flex-col">
-            <div className="flex items-center justify-between px-4 py-2 border-b border-gray-200 dark:border-gray-800">
-              <span>Codex Ethiopia</span>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setMenuOpen(false)}
-              >
-                <MenuIcon className="h-6 w-6" />
-              </Button>
-            </div>
+  <div className="flex h-full max-h-screen flex-col">
+    <div className="flex items-center justify-between py-2 border-b border-gray-200 dark:border-gray-800">
+      <div className="flex items-center">
+        <img src={imageSrc} alt="Image Description" width={32} height={32} />
+        <span className="ml-2">Codex Ethiopia</span>
+      </div>
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={() => setMenuOpen(false)}
+      >
+        <ExitIcon className="h-6 w-6" />
+      </Button>
+    </div>
+
             {activeSubMenu ? (
               renderSubMenu(activeSubMenu)
             ) : (
@@ -223,7 +227,7 @@ export default function Navbar() {
                     }`}
                     onClick={() => handleLinkClick("/contact")}
                   >
-                    <AboutIcon className="h-5 w-5" />
+                    <ContactUsIcon className="h-5 w-5" />
                     Contact Us
                   </button>
                   <button
@@ -516,6 +520,26 @@ function SignInIcon(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+function ContactUsIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M21 8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8z" /> {/* Envelope outline */}
+      <line x1="22" y1="6" x2="12" y2="13" /> {/* Envelope top */}
+      <line x1="2" y1="6" x2="12" y2="13" /> {/* Envelope bottom */}
+    </svg>
+  );
+}
 
 function MenuIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -534,6 +558,25 @@ function MenuIcon(props: React.SVGProps<SVGSVGElement>) {
       <line x1="4" x2="20" y1="12" y2="12" />
       <line x1="4" x2="20" y1="6" y2="6" />
       <line x1="4" x2="20" y1="18" y2="18" />
+    </svg>
+  );
+}
+function ExitIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
     </svg>
   );
 }
