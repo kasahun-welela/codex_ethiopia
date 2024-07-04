@@ -98,26 +98,26 @@ export default function Landing() {
     },
   ];
 
-  const specialities = [
-    {
-      title: "We are open source",
-    },
-    {
-      title: "Problem Solvers",
-    },
-    {
-      title: "Highly-Rated Support",
-    },
-    {
-      title: "Feature-Rich Free & Pro Plugins",
-    },
-    {
-      title: "Regular Updates & Bug Fixes",
-    },
-    {
-      title: "Extension to step-up your game",
-    },
-  ];
+  // const specialities = [
+  //   {
+  //     title: "We are open source",
+  //   },
+  //   {
+  //     title: "Problem Solvers",
+  //   },
+  //   {
+  //     title: "Highly-Rated Support",
+  //   },
+  //   {
+  //     title: "Feature-Rich Free & Pro Plugins",
+  //   },
+  //   {
+  //     title: "Regular Updates & Bug Fixes",
+  //   },
+  //   {
+  //     title: "Extension to step-up your game",
+  //   },
+  // ];
 
   const glance = [
     {
