@@ -97,28 +97,6 @@ export default function Landing() {
       skills: ["AWS", "Azure", "Cloud Storage", "DevOps", "Docker"],
     },
   ];
-
-  // const specialities = [
-  //   {
-  //     title: "We are open source",
-  //   },
-  //   {
-  //     title: "Problem Solvers",
-  //   },
-  //   {
-  //     title: "Highly-Rated Support",
-  //   },
-  //   {
-  //     title: "Feature-Rich Free & Pro Plugins",
-  //   },
-  //   {
-  //     title: "Regular Updates & Bug Fixes",
-  //   },
-  //   {
-  //     title: "Extension to step-up your game",
-  //   },
-  // ];
-
   const glance = [
     {
       title: "Team Members",
