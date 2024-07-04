@@ -1,5 +1,5 @@
 import Skills from "@/components/Skills";
-
+import mulisa from "../assets/Teams/Mulisa.png"
 export default function About() {
   const teamMembers = [
     {
@@ -51,6 +51,7 @@ export default function About() {
     },
     {
       name: "Mulisa Tadesse",
+      img:{mulisa},
       title: "Developer & Marketing manager",
       description:
       "Mulisa Tadesse is Software Developer committed to delivering high-quality software that meets customer needs and market demands.",
@@ -131,6 +132,7 @@ export default function About() {
               >
                 <div className="w-24 h-24 rounded-full overflow-hidden">
                   {/* Placeholder for team member image */}
+                  <img src={mulisa} />
                   <div className="w-full h-full bg-gray-200 dark:bg-gray-700"></div>
                 </div>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-white">

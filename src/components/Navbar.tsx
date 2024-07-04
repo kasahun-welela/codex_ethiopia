@@ -13,7 +13,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { FaChevronRight } from "react-icons/fa";
-import imageSrc from "../assets/image.png";
+import imageSrc from "../assets/image1.png";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "./DarkTheme";
 
@@ -110,8 +110,10 @@ export default function Navbar() {
     <header className="flex h-20 w-full shrink-0 items-center justify-between px-4 md:px-6 container">
       <Link to="/" className="flex items-center gap-2 font-semibold">
         <span className="lg:hidden">Codex Ethiopia</span>
-        <img src={imageSrc} alt="Image Description" width={32} height={32} />
-        <span className="hidden lg:flex">CodeX Ethiopia</span>
+        <div className="mt-8">
+        <img src={imageSrc} alt="Image Description" width={200} height={200} />
+        </div>
+        {/* <span className="hidden lg:flex">CodeX Ethiopia</span> */}
       </Link>
       <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
         <SheetTrigger asChild>
