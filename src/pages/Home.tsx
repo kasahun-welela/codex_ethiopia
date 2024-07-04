@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Hero from "@/components/Hero";
 import CustomWebsiteDesignProcess from "@/components/CustomWebsiteDesignProcess";
 import specialized from "@/data/specialized";
-
+import Landing from "../components/LandingPage";
 function Home() {
   const settings = {
     dots: false,
@@ -41,7 +41,8 @@ function Home() {
 
   return (
     <>
-      <Hero
+    <Landing />
+      {/* <Hero
         title="How to Start"
         description="We specialize in helping you build a team of expert developers."
       />
@@ -201,7 +202,7 @@ function Home() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
