@@ -13,7 +13,8 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { FaChevronRight } from "react-icons/fa";
-import imageSrc from "../assets/image1.png";
+import lightMode from "../assets/lightMode.png";
+import darkMode from "../assets/darkMode.png"
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "./DarkTheme";
 
@@ -110,7 +111,7 @@ export default function Navbar() {
       <Link to="/" className="flex items-center gap-2 font-semibold">
         <span className="lg:hidden">Codex Ethiopia</span>
         <div className="mt-8">
-        <img src={imageSrc} alt="Image Description" width={200} height={200} />
+        <img src={theme === "light" ? lightMode : darkMode} alt="Image Description" width={200} height={200} />
         </div>
         {/* <span className="hidden lg:flex">CodeX Ethiopia</span> */}
       </Link>
@@ -125,7 +126,7 @@ export default function Navbar() {
   <div className="flex h-full max-h-screen flex-col">
     <div className="flex items-center justify-between py-2 border-b border-gray-200 dark:border-gray-800">
       <div className="flex items-center">
-        <img src={imageSrc} alt="Image Description" width={32} height={32} />
+      <img src={theme === "light" ? lightMode : darkMode} alt="Image Description" width={200} height={200} />
         <span className="ml-2">Codex Ethiopia</span>
       </div>
       <Button
