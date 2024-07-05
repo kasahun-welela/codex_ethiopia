@@ -109,9 +109,9 @@ export default function Navbar() {
   return (
     <header className="flex h-20 w-full shrink-0 items-center justify-between px-4 md:px-6 container">
       <Link to="/" className="flex items-center gap-2 font-semibold">
-        <span className="lg:hidden">Codex Ethiopia</span>
-        <div className="mt-8">
-        <img src={theme === "light" ? lightMode : darkMode} alt="Image Description" width={200} height={200} />
+        {/* <span className="lg:hidden">Codex Ethiopia</span> */}
+        <div className="mt-4">
+        <img src={theme === "light" ? lightMode : darkMode} alt="Image Description" width={150} height={150} />
         </div>
         {/* <span className="hidden lg:flex">CodeX Ethiopia</span> */}
       </Link>
@@ -124,10 +124,10 @@ export default function Navbar() {
         </SheetTrigger>
         <SheetContent side="left" className="bg-white dark:bg-gray-950">
   <div className="flex h-full max-h-screen flex-col">
-    <div className="flex items-center justify-between py-2 border-b border-gray-200 dark:border-gray-800">
+    <div className="flex items-center justify-between  border-b border-gray-200 dark:border-gray-800">
       <div className="flex items-center">
-      <img src={theme === "light" ? lightMode : darkMode} alt="Image Description" width={200} height={200} />
-        <span className="ml-2">Codex Ethiopia</span>
+      <img src={theme === "light" ? lightMode : darkMode} alt="Image Description" width={110} height={110} />
+        {/* <span className="ml-2">Codex Ethiopia</span> */}
       </div>
       <Button
         variant="ghost"
