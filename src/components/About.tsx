@@ -75,7 +75,7 @@ export default function About() {
         "Flutter",
         "Data science",
         "Data Analytics",
-        "Android Development",
+        "Android ",
         "PHP",
         "Laravel",
         "PowerBI"
@@ -99,7 +99,7 @@ export default function About() {
       ],
     },
     {
-      name: "David Lee",
+      name: "Kenna Taddese",
       img: kena,
       title: "Software Engineer",
       description:
