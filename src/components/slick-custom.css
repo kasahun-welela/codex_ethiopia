@@ -1,0 +1,20 @@
+/* Inactive dots in light mode */
+.slick-dots li button:before {
+    color: #575252; /* Light gray for inactive dots in light mode */
+  }
+  
+  /* Active dots in light mode */
+  .slick-dots li.slick-active button:before {
+    color: #000000; /* Black for active dots in light mode */
+  }
+  
+  /* Inactive dots in dark mode */
+  body.dark .slick-dots li button:before {
+    color: #f3f6f4; /* Dark gray for inactive dots in dark mode */
+  }
+  
+  /* Active dots in dark mode */
+  body.dark .slick-dots li.slick-active button:before {
+    color: #ffffff; /* White for active dots in dark mode */
+  }
+  
