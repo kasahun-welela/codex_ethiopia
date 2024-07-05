@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Services from "./Service";
+import CoreValue from "./CoreValue";
 
 const Teams: FC = () => {
 
@@ -8,7 +8,7 @@ const Teams: FC = () => {
   return (
     <section className="w-full py-12 bg-white dark:bg-gray-950">
       <div className="container px-4 md:px-6">
-      <Services />
+      <CoreValue />
       </div>
     </section>
   );
