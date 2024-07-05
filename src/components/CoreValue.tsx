@@ -1,9 +1,10 @@
+
 export default function CoreValue() {
   const coreValues = [
     {
-      title: "Quality",
+      title: "Innovation",
       description:
-        "We are committed to delivering high-quality software solutions that meet the highest standards of excellence.",
+        "Continuously seeking and applying new ideas and technologies to deliver cutting-edge solutions.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -27,9 +28,9 @@ export default function CoreValue() {
       textClass: "text-primary-foreground",
     },
     {
-      title: "Integrity",
+      title: "Reliability",
       description:
-        "We conduct our business with the highest ethical standards and transparency.",
+        "Committing to consistently high standards of performance and service delivery.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -50,9 +51,9 @@ export default function CoreValue() {
       textClass: "text-primary-foreground",
     },
     {
-      title: "Collaboration",
+      title: "Client-Centric Approach",
       description:
-        "We believe in the power of teamwork and collaboration to achieve exceptional results.",
+        "Prioritizing understanding and addressing the specific needs and goals of each client.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -78,9 +79,9 @@ export default function CoreValue() {
       textClass: "text-primary-foreground",
     },
     {
-      title: "Innovation",
+      title: "Excellence",
       description:
-        "We embrace innovation and continuously seek new ways to improve our products and services.",
+        "Striving for excellence in all aspects of our work, from product development to customer support.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -103,9 +104,9 @@ export default function CoreValue() {
       textClass: "text-primary-foreground",
     },
     {
-      title: "Customer Focus",
+      title: "Integrity",
       description:
-        "Our customers are at the heart of everything we do, and we strive to exceed their expectations.",
+        "Upholding honesty, transparency, and ethical practices in every interaction and decision.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -130,29 +131,6 @@ export default function CoreValue() {
       bgClass: "bg-primary",
       textClass: "text-primary-foreground",
     },
-    {
-      title: "Accountability",
-      description:
-        "We take responsibility for our actions and deliver on our promises to our clients and partners.",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="h-8 w-8 text-primary-foreground"
-        >
-          <path d="M20 6 9 17l-5-5"></path>
-        </svg>
-      ),
-      bgClass: "bg-primary",
-      textClass: "text-primary-foreground",
-    },
   ];
 
   return (
@@ -171,7 +149,7 @@ export default function CoreValue() {
             {coreValues.map((value, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center space-y-4 border border-gray-200 dark:border-gray-800 p-4 rounded-lg dark:shadow-md dark:shadow-gray-700 transition-transform hover:scale-105"
+                className="flex flex-col items-center space-y-4 border border-gray-200 dark:border-gray-800 p-4 rounded-lg dark:shadow-md dark:shadow-gray-700 transition-transform hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
               >
                 <div className={`rounded-full p-4 ${value.bgClass}`}>
                   {value.icon}
