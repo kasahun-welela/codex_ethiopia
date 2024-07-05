@@ -1,9 +1,11 @@
+import React from 'react';
+
 export default function CoreValue() {
   const coreValues = [
     {
-      title: "Compassion",
+      title: "Quality",
       description:
-        "We approach our work with empathy and a deep commitment to improving the lives of those we serve.",
+        "We are committed to delivering high-quality software solutions that meet the highest standards of excellence.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +31,7 @@ export default function CoreValue() {
     {
       title: "Integrity",
       description:
-        "We are guided by a strong moral compass, ensuring our actions align with our principles.",
+        "We conduct our business with the highest ethical standards and transparency.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +54,7 @@ export default function CoreValue() {
     {
       title: "Collaboration",
       description:
-        "We believe in the power of working together to achieve greater impact and drive positive change.",
+        "We believe in the power of teamwork and collaboration to achieve exceptional results.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +82,7 @@ export default function CoreValue() {
     {
       title: "Innovation",
       description:
-        "We constantly seek new and creative ways to address complex challenges and drive progress.",
+        "We embrace innovation and continuously seek new ways to improve our products and services.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -103,9 +105,9 @@ export default function CoreValue() {
       textClass: "text-primary-foreground",
     },
     {
-      title: "Sustainability",
+      title: "Customer Focus",
       description:
-        "We are committed to creating lasting, positive change that continues to benefit communities for years to come.",
+        "Our customers are at the heart of everything we do, and we strive to exceed their expectations.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +135,7 @@ export default function CoreValue() {
     {
       title: "Accountability",
       description:
-        "We hold ourselves and our partners responsible for the impact of our work and the stewardship of our resources.",
+        "We take responsibility for our actions and deliver on our promises to our clients and partners.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -163,7 +165,7 @@ export default function CoreValue() {
             Our Core Values
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400 md:text-xl">
-            At the heart of our NGO are the principles that guide our work and shape our impact.
+            At the heart of Codex Ethiopia are the principles that guide our work and shape our impact.
           </p>
         </div>
         <div className="w-full max-w-full space-y-4 mx-auto">
