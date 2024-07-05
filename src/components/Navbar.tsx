@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Link, useLocation, useHistory } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import {
@@ -46,10 +46,9 @@ const automationSubMenu: SubMenuItem[] = [
   { href: "/ranorex", title: "Ranorex" },
 ];
 
-
 export default function Navbar() {
   const location = useLocation();
-  const navigate = useHistory();
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState<SubMenuItem[] | null>(null);
   const { setTheme } = useTheme();
