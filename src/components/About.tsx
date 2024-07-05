@@ -104,7 +104,7 @@ export default function About() {
       img: kena,
       title: "Software Engineer",
       description:
-        "Kenna is a skilled full-stack developer with a strong understanding of modern web technologies.",
+        "Kenna is a proficient full-stack developer with expertise in JavaScript, React, Node.js, and backend systems.",
       skills: [
         "JavaScript",
         "React",
@@ -122,8 +122,7 @@ export default function About() {
       name: "Shimelis Techane",
       img: Shimelis,
       title: "Software Engineer",
-      description:
-        "Shimelis is a skilled full-stack developer with a strong understanding of modern web technologies.",
+      description:"Shimelis is a full-stack developer with a strong grasp of modern web technologies, backend systems, mobile development, and API integration.",
       skills: [
         "HTML",
         "ReactJs",
