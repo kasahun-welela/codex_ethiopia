@@ -1,9 +1,15 @@
+import mulisa from "../assets/Teams/Mulisa.png";
+import abenezer from "../assets/Teams/Abenezer.png";
+import kasahun from "../assets/Teams/Kasahun.png";
+import Marshalom from "../assets/Teams/Marshalom.png";
+import kena from "../assets/Teams/Kena.png";
 import Skills from "@/components/Skills";
-import mulisa from "../assets/Teams/Mulisa.png"
+
 export default function About() {
   const teamMembers = [
     {
       name: "Abenezer Kifle",
+      img: abenezer,
       title: "Co-Founder, Fullstack Developer",
       description:
         "Abenezer has over 3 years of experience in the tech industry, with a background in computer science.",
@@ -27,10 +33,11 @@ export default function About() {
       ],
     },
     {
-      name: "kasahun Welela ",
+      name: "Kasahun Welela",
+      img: kasahun,
       title: "Frontend Developer",
       description:
-      "kasahun is a creative and user-focused designer with a strong background in UI/UX design.",
+        "Kasahun is a creative and user-focused designer with a strong background in UI/UX design.",
       skills: [
         "HTML",
         "React",
@@ -51,11 +58,10 @@ export default function About() {
     },
     {
       name: "Mulisa Tadesse",
-      img:{mulisa},
+      img: mulisa,
       title: "Developer & Marketing manager",
       description:
-      "Mulisa Tadesse is Software Developer committed to delivering high-quality software that meets customer needs and market demands.",
-       
+        "Mulisa Tadesse is a Software Developer committed to delivering high-quality software that meets customer needs and market demands.",
       skills: [
         "Marketing Strategy",
         "Promotion",
@@ -77,6 +83,7 @@ export default function About() {
     },
     {
       name: "Emily Davis",
+      img: Marshalom,
       title: "Marketing Manager",
       description:
         "Emily has a strong background in digital marketing and is passionate about driving growth for the company.",
@@ -93,6 +100,7 @@ export default function About() {
     },
     {
       name: "David Lee",
+      img: kena,
       title: "Software Engineer",
       description:
         "David is a skilled full-stack developer with a strong understanding of modern web technologies.",
@@ -131,9 +139,7 @@ export default function About() {
                 className="flex flex-col items-center space-y-2 border border-gray-200 dark:border-gray-800 p-4 rounded-lg dark:shadow-md dark:shadow-gray-700 transition-transform hover:scale-105"
               >
                 <div className="w-24 h-24 rounded-full overflow-hidden">
-                  {/* Placeholder for team member image */}
-                  <img src={mulisa} />
-                  <div className="w-full h-full bg-gray-200 dark:bg-gray-700"></div>
+                  <img src={member.img} alt={member.name} />
                 </div>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-white">
                   {member.name}
