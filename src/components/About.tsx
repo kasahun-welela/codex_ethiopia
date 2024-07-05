@@ -3,6 +3,7 @@ import abenezer from "../assets/Teams/Abenezer.png";
 import kasahun from "../assets/Teams/Kasahun.png";
 import Marshalom from "../assets/Teams/Marshalom.png";
 import kena from "../assets/Teams/Kena.png";
+import Shimelis from "../assets/Teams/Shimelis.png"
 import Skills from "@/components/Skills";
 
 export default function About() {
@@ -82,11 +83,11 @@ export default function About() {
       ],
     },
     {
-      name: "Emily Davis",
+      name: "Marshalom ",
       img: Marshalom,
       title: "Marketing Manager",
       description:
-        "Emily has a strong background in digital marketing and is passionate about driving growth for the company.",
+        "Marshalom has a strong background in digital marketing and is passionate about driving growth for the company.",
       skills: [
         "Digital Marketing",
         "SEO",
@@ -115,6 +116,28 @@ export default function About() {
         "Docker",
         "CI/CD",
         "Cloud Services",
+      ],
+    },
+    {
+      name: "Shimelis Techane",
+      img: Shimelis,
+      title: "Software Engineer",
+      description:
+        "David is a skilled full-stack developer with a strong understanding of modern web technologies.",
+      skills: [
+        "HTML",
+        "ReactJs",
+        "CSS",
+        "JavaScript",
+        "Java",
+        "Flutter",
+        "Android Development",
+        "PHP",
+        "Laravel",
+        "C#",
+       " Mule soft API development",
+        "Anypoint platform",
+        "Wordpress web development"
       ],
     },
   ];
