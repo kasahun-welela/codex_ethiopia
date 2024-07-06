@@ -5,15 +5,46 @@ import imgsrc2 from "../assets/Process/image4.png";
 import imgsrc3 from "../assets/Process/image5.png";
 import imgsrc5 from "../assets/Process/image4.png";
 import imgsrc6 from "../assets/Process/image5.png";
+// import home images
+import Automation from "../assets/Home/Automation.png";
+import Business from "../assets/Home/Business_Website.png";
+import Custom from "../assets/Home/Custome_Website.png";
+import Ecommerce from "../assets/Home/Ecommerce.png";
+import Job from "../assets/Home/Job_Portal.png";
+import Mobile from "../assets/Home/Mobile_App.png";
+import Payment from "../assets/Home/Payment_Integration.png";
+import Personal from "../assets/Home/Personal_Website.png";
+import Project from "../assets/Home/Project_Management.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./slick-custom.css"; // Import custom slick styles
+import {
+  FaLinkedin,
+  FaTelegram,
+  FaGlobe,
+  FaTwitter,
+  FaFacebook,
+} from "react-icons/fa";
+import { Badge } from "@/components/ui/badge";
 
 export default function Landing() {
+  // Mapping of titles to images
+  const images = {
+    "Business Website": Business,
+    "Personal Website": Personal,
+    "E-Commerce": Ecommerce,
+    Automation: Automation,
+    "Payment Integration": Payment,
+    "Bot Development": imgsrc, // Placeholder image, replace with actual image if available
+    "UI/UX": imgsrc2,
+    "Cloud Solutions": imgsrc3,
+  };
+
   const solutions = [
     {
-      title: "Wordpress Plugin",
-      description: "Wordpress custom plugin development",
+      title: "Business Website",
+      description:
+        "Custom WordPress plugin development for unique business needs.",
       skills: [
         "PHP",
         "WordPress",
@@ -22,23 +53,26 @@ export default function Landing() {
         "JavaScript",
         "CSS",
       ],
+      image: images["Business Website"],
     },
     {
-      title: "Custom Software",
+      title: "Personal Website",
       description:
-        "We build custom software as client business need for business",
+        "Tailored software solutions to meet specific business requirements.",
       skills: [
-        "JavaScript",
         "React",
+        "Next.js",
         "Node.js",
         "Express",
         "MongoDB",
         "API Integration",
       ],
+      image: images["Personal Website"],
     },
     {
       title: "E-Commerce",
-      description: "Support for fully e-commerce based business and website",
+      description:
+        "Comprehensive support for e-commerce platforms and businesses.",
       skills: [
         "Shopify",
         "WooCommerce",
@@ -46,83 +80,54 @@ export default function Landing() {
         "Payment Gateway",
         "API Integration",
       ],
+      image: images["E-Commerce"],
     },
     {
-      title: "Data Analytics",
-      description: "Complex data analytics support for business",
+      title: "Automation",
+      description:
+        "Automation solutions using Zapier, Make, and Google Sheets.",
+      skills: ["Zapier", "Make", "Google Sheets", "Automation", "Integration"],
+      image: images["Automation"],
+    },
+    {
+      title: "Payment Integration",
+      description:
+        "Seamless payment integration with Telebirr, Chapa, PayPal, and Stripe.",
       skills: [
-        "Python",
-        "Data Analysis",
-        "Pandas",
-        "NumPy",
-        "Data Visualization",
-        "PowerBI",
-      ],
-    },
-    {
-      title: "Happy Addons",
-      description: "Elementor widgets to create beautiful websites",
-      skills: ["Elementor", "WordPress", "JavaScript", "CSS", "HTML"],
-    },
-    {
-      title: "Google Ads",
-      description: "Increase Business sales with google ads marketing",
-      skills: [
-        "Google Ads",
-        "PPC Campaigns",
-        "Analytics",
-        "SEO",
-        "Marketing Strategy",
-      ],
-    },
-    {
-      title: "WooCommerce",
-      description: "We provide complete woocommerce support",
-      skills: [
-        "WooCommerce",
-        "WordPress",
-        "PHP",
-        "JavaScript",
+        "Telebirr",
+        "Chapa",
+        "PayPal",
+        "Stripe",
         "Payment Gateway",
+        "API Integration",
       ],
+      image: images["Payment Integration"],
+    },
+    {
+      title: "Bot Development",
+      description: "Custom bots for Telegram and other platforms.",
+      skills: [
+        "Telegram Bot",
+        "JavaScript",
+        "Node.js",
+        "API Integration",
+        "Automation",
+      ],
+      image: images["Bot Development"],
     },
     {
       title: "UI/UX",
-      description: "Complete user interface design & user experience research",
-      skills: ["Figma", "Sketch", "Adobe XD", "User Research", "Prototyping"],
-    },
-    {
-      title: "Ecloud",
       description:
-        "Unlimited cloud storage provide and support for your business",
+        "End-to-end UI design and UX research for optimal user experiences.",
+      skills: ["Figma", "Sketch", "Adobe XD", "User Research", "Prototyping"],
+      image: images["UI/UX"],
+    },
+    {
+      title: "Cloud Solutions",
+      description:
+        "Integration cloud storage and support for seamless business operations.",
       skills: ["AWS", "Azure", "Cloud Storage", "DevOps", "Docker"],
-    },
-  ];
-
-  const glance = [
-    {
-      title: "Team Members",
-      value: "60+",
-    },
-    {
-      title: "Amazing Products",
-      value: "15+",
-    },
-    {
-      title: "Free Downloads",
-      value: "5.5 M+",
-    },
-    {
-      title: "Happy Customers",
-      value: "350k+",
-    },
-    {
-      title: "Happy Customers",
-      value: "350k+",
-    },
-    {
-      title: "Happy Customers",
-      value: "350k+",
+      image: images["Cloud Solutions"],
     },
   ];
 
@@ -190,11 +195,11 @@ export default function Landing() {
   const heroImageSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 1500,
     arrows: false,
   };
 
@@ -208,16 +213,21 @@ export default function Landing() {
               Tailored Technology Solutions
             </h1>
             <p className="text-lg">
-              We provide full software support, Ecommerce support, UI/UX design,
-              and custom plug in for your business.
+              We provide full software support, E-commerce support, UI/UX
+              design, and custom plugin development for your business.
             </p>
             <p className="text-sm">
-              Empowering 5,000+ Businesses With Innovation
+              Join our community of forward-thinking businesses leveraging
+              innovation to drive growth and success. Connect with us on
+              LinkedIn, Telegram, Facebook, Twitter and our website to stay
+              updated with the latest trends and insights.
             </p>
             <div className="flex space-x-4">
-              <img src={imgsrc} alt="Samsung" className="h-8" />
-              <img src={imgsrc} alt="IBM" className="h-8" />
-              <img src={imgsrc} alt="Microsoft" className="h-8" />
+              <FaLinkedin className="h-6 w-6 text-primary" href="#" />
+              <FaTelegram className="h-6 w-6 text-primary " href="#" />
+              <FaTwitter className="h-6 w-6 text-primary " href="#" />
+              <FaFacebook className="h-6 w-6 text-primary " href="#" />
+              <FaGlobe className="h-6 w-6 text-primary " href="#" />
             </div>
           </div>
           <div className="w-full md:w-1/2">
@@ -249,13 +259,18 @@ export default function Landing() {
           </p>
           <div className="grid gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
             {solutions.map((solution, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="flex flex-col items-center space-y-2 border border-gray-200 dark:border-gray-800 p-4 rounded-lg dark:shadow-md dark:shadow-gray-700 transition-transform hover:scale-105"
+                variants={variants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="w-24 h-24 rounded-full overflow-hidden">
                   <img
-                    src={imgsrc}
+                    src={solution.image}
                     alt={solution.title}
                     className="w-full h-full object-cover"
                   />
@@ -266,10 +281,23 @@ export default function Landing() {
                 <p className="text-gray-600 dark:text-gray-400 text-center">
                   {solution.description}
                 </p>
+                <div className="w-full mt-4">
+                  <div className="flex flex-wrap gap-2">
+                    {solution.skills.map((skill) => (
+                      <Badge
+                        key={skill}
+                        variant="outline"
+                        className="bg-muted text-foreground whitespace-nowrap"
+                      >
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
                 <a href="#" className="mt-4 text-[var(--primary)]">
                   Learn More →
                 </a>
-              </div>
+              </motion.div>
             ))}
           </div>
           <button className="px-6 py-2 mt-8 text-white bg-[var(--primary)] rounded-md">
@@ -278,7 +306,7 @@ export default function Landing() {
         </section>
 
         <section className="py-16 text-center">
-          <h2 className="text-3xl font-bold">We are at a CodeX</h2>
+          <h2 className="text-3xl font-bold">We are CodeX Ethiopia</h2>
           <div className="flex flex-wrap my-10">
             <div className="w-full md:w-2/5">
               <div className="bg-white dark:bg-[var(--card)] shadow-md">
@@ -286,52 +314,213 @@ export default function Landing() {
                   <p className="font-sans text-4xl md:text-5xl lg:text-6xl text-center py-3">
                     What we do?
                   </p>
-                  <p className="font-sans text-xs text-left px-4 text-gray-900 dark:text-[var(--card-foreground)]">
-                    SMA Lawyers is a new breed of law firm. We don't stand on
-                    tradition or outdated ways of doing business.
+                  <p className="font-sans text-sm text-left px-4 text-gray-900 dark:text-[var(--card-foreground)]">
+                    At CodeX Ethiopia, our mission is to empower businesses by
+                    providing innovative and reliable web solutions that
+                    significantly enhance their online presence and drive
+                    sustainable growth. We are dedicated to understanding the
+                    unique challenges and opportunities faced by our clients in
+                    a rapidly evolving digital landscape. By leveraging
+                    cutting-edge technologies and industry best practices, we
+                    deliver tailored solutions that not only meet but exceed our
+                    clients' expectations.
                   </p>
-                  <p className="font-sans text-xs text-left px-4 text-gray-900 dark:text-[var(--card-foreground)] my-4">
-                    We take a team approach to dealing with the more complex
-                    legal problems that cross our desks, working on the very
-                    reasonable assumption that two or more heads are better than
-                    one. We take the time to understand the whole picture, and
-                    our lawyers think outside the box to find solutions in even
-                    the most complex legal situations.
-                  </p>
-                  <p className="font-sans text-xs text-left px-4 text-gray-900 dark:text-[var(--card-foreground)] my-4">
-                    We don't hide behind legalese or arcane legal procedures,
-                    clearly communicating our process every step of the way. The
-                    focus is on getting results for our clients, not on how our
-                    foyer looks.
+                  <p className="font-sans text-sm text-left px-4 text-gray-900 dark:text-[var(--card-foreground)] my-4">
+                    To be the leading technology partner for businesses across
+                    Ethiopia and beyond, renowned for our excellence in web
+                    services and products by 2030.
                   </p>
                 </div>
               </div>
             </div>
             <div className="w-full md:w-3/5 p-2">
               <div className="flex flex-wrap -mx-2 mt-8">
-                {glance.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-10"
-                    variants={variants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <div className="relative mb-9 rounded-xl py-8 px-7 bg-[var(--card)] text-[var(--card-foreground)] shadow-lg transition-all hover:shadow-md sm:p-9 lg:px-6 xl:px-9">
-                      <div className="absolute top-10 left-1/2 transform -translate-x-1/2 -translate-y-full w-24 h-24 bg-white border-4 border-white rounded-full overflow-hidden">
-                        <img src={imgsrc} alt={item.title} />
-                      </div>
-                      <h3 className="pt-2 font-sans text-xs text-center md:text-xss sm:text-xss">
-                        {item.value}
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400 text-center">
-                        {item.title}
-                      </p>
+                <motion.div
+                  className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-10"
+                  variants={variants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  <div className="relative mb-9 rounded-xl py-8 px-7 bg-[var(--card)] text-[var(--card-foreground)] shadow-lg transition-all hover:shadow-md sm:p-9 lg:px-6 xl:px-9">
+                    <div className="absolute top-10 left-1/2 transform -translate-x-1/2 -translate-y-full w-24 h-24 bg-[var(--card)] dark:bg-white border-4 border-white rounded-full overflow-hidden">
+                      <img src={Custom} alt="Custome Website" />
                     </div>
-                  </motion.div>
-                ))}
+                    <h3 className="pt-2  font-semibold font-sans text-xs text-center md:text-xss sm:text-xss">
+                      Custom Website
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-center text-sm">
+                      Delivering unique and innovative website solutions
+                      tailored to your needs.
+                    </p>
+                  </div>
+                </motion.div>
+                <motion.div
+                  className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-10"
+                  variants={variants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <div className="relative mb-9 rounded-xl py-8 px-7 bg-[var(--card)] text-[var(--card-foreground)] shadow-lg transition-all hover:shadow-md sm:p-9 lg:px-6 xl:px-9">
+                    <div className="absolute top-10 left-1/2 transform -translate-x-1/2 -translate-y-full w-24 h-24 bg-[var(--card)] dark:bg-white border-4 border-white rounded-full overflow-hidden">
+                      <img src={Business} alt="Business Website" />
+                    </div>
+                    <h3 className="pt-2  font-semibold font-sans text-xs text-center md:text-xss sm:text-xss">
+                      Business Website
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-center text-sm">
+                      High-performance websites to boost your business presence
+                      online.
+                    </p>
+                  </div>
+                </motion.div>
+                <motion.div
+                  className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-10"
+                  variants={variants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <div className="relative mb-9 rounded-xl py-8 px-7 bg-[var(--card)] text-[var(--card-foreground)] shadow-lg transition-all hover:shadow-md sm:p-9 lg:px-6 xl:px-9">
+                    <div className="absolute top-10 left-1/2 transform -translate-x-1/2 -translate-y-full w-24 h-24 bg-[var(--card)] dark:bg-white border-4 border-white rounded-full overflow-hidden">
+                      <img src={Personal} alt="Personal Website" />
+                    </div>
+                    <h3 className="pt-2  font-semibold font-sans text-xs text-center md:text-xss sm:text-xss">
+                      Personal Website
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-center text-sm">
+                      Personal websites that reflect your individuality and
+                      creativity.
+                    </p>
+                  </div>
+                </motion.div>
+                <motion.div
+                  className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-10"
+                  variants={variants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                  <div className="relative mb-9 rounded-xl py-8 px-7 bg-[var(--card)] text-[var(--card-foreground)] shadow-lg transition-all hover:shadow-md sm:p-9 lg:px-6 xl:px-9">
+                    <div className="absolute top-10 left-1/2 transform -translate-x-1/2 -translate-y-full w-24 h-24 bg-[var(--card)] dark:bg-white border-4 border-white rounded-full overflow-hidden">
+                      <img src={Ecommerce} alt="Ecommerce Website" />
+                    </div>
+                    <h3 className="pt-2 font-sans  font-semibold text-xs text-center md:text-xss sm:text-xss">
+                      Ecommerce Website
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-center text-sm">
+                      Comprehensive e-commerce solutions to drive online sales.
+                    </p>
+                  </div>
+                </motion.div>
+                <motion.div
+                  className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-10"
+                  variants={variants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  <div className="relative mb-9 rounded-xl py-8 px-7 bg-[var(--card)] text-[var(--card-foreground)] shadow-lg transition-all hover:shadow-md sm:p-9 lg:px-6 xl:px-9">
+                    <div className="absolute top-10 left-1/2 transform -translate-x-1/2 -translate-y-full w-24 h-24 bg-[var(--card)] dark:bg-white border-4 border-white rounded-full overflow-hidden">
+                      <img src={Job} alt="Job Portal Website" />
+                    </div>
+                    <h3 className="pt-2 font-sans  font-semibold text-xs text-center md:text-xss sm:text-xss">
+                      Job Portal Website
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-center text-sm">
+                      Job portals connecting employers with top talent
+                      efficiently.
+                    </p>
+                  </div>
+                </motion.div>
+                <motion.div
+                  className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-10"
+                  variants={variants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                >
+                  <div className="relative mb-9 rounded-xl py-8 px-7 bg-[var(--card)] text-[var(--card-foreground)] shadow-lg transition-all hover:shadow-md sm:p-9 lg:px-6 xl:px-9">
+                    <div className="absolute top-10 left-1/2 transform -translate-x-1/2 -translate-y-full w-24 h-24 bg-[var(--card)] dark:bg-white border-4 border-white rounded-full overflow-hidden">
+                      <img src={Mobile} alt="Custom Product" />
+                    </div>
+                    <h3 className="pt-2 font-sans text-xs  font-semibold text-center md:text-xss sm:text-xss">
+                      Mobile App Development
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-center text-sm">
+                      Creating user-friendly mobile applications to expand your
+                      business reach.
+                    </p>
+                  </div>
+                </motion.div>
+                <motion.div
+                  className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-10"
+                  variants={variants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                >
+                  <div className="relative mb-9 rounded-xl py-8 px-7 bg-[var(--card)] text-[var(--card-foreground)] shadow-lg transition-all hover:shadow-md sm:p-9 lg:px-6 xl:px-9">
+                    <div className="absolute top-10 left-1/2 transform -translate-x-1/2 -translate-y-full w-24 h-24 bg-[var(--card)] dark:bg-white border-4 border-white rounded-full overflow-hidden">
+                      <img src={Project} alt="Project Management Tools" />
+                    </div>
+                    <h3 className="pt-2 font-sans text-xs text-center md:text-xss  font-semibold sm:text-xss">
+                      Project Management Tools
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-center text-sm">
+                      Tools to streamline project management and enhance
+                      productivity.
+                    </p>
+                  </div>
+                </motion.div>
+                <motion.div
+                  className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-10"
+                  variants={variants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                >
+                  <div className="relative mb-9 rounded-xl py-8 px-7 bg-[var(--card)] text-[var(--card-foreground)] shadow-lg transition-all hover:shadow-md sm:p-9 lg:px-6 xl:px-9">
+                    <div className="absolute top-10 left-1/2 transform -translate-x-1/2 -translate-y-full w-24 h-24 bg-[var(--card)] dark:bg-white border-4 border-white rounded-full overflow-hidden">
+                      <img src={Payment} alt="Payment Integration" />
+                    </div>
+                    <h3 className="pt-2 font-sans text-xs text-center  font-semibold md:text-xss sm:text-xss">
+                      Payment Integration
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-center text-sm">
+                      Secure and efficient payment gateway integrations.
+                    </p>
+                  </div>
+                </motion.div>
+                <motion.div
+                  className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-10"
+                  variants={variants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.9 }}
+                >
+                  <div className="relative mb-9 rounded-xl py-8 px-7 bg-[var(--card)] text-[var(--card-foreground)] shadow-lg transition-all hover:shadow-md sm:p-9 lg:px-6 xl:px-9">
+                    <div className="absolute top-10 left-1/2 transform -translate-x-1/2 -translate-y-full w-24 h-24 bg-[var(--card)] dark:bg-white border-4 border-white rounded-full overflow-hidden">
+                      <img src={Automation} alt="Automation" />
+                    </div>
+                    <h3 className="pt-2 font-sans text-xs text-center font-semibold md:text-xss sm:text-xss">
+                      Automation
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-center text-sm">
+                      Automation solutions to boost productivity and efficiency.
+                    </p>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </div>
