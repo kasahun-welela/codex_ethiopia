@@ -11,7 +11,7 @@ export default function About() {
     {
       name: "Abenezer Kifle",
       img: abenezer,
-      title: "Co-Founder, Fullstack Developer",
+      title: "Founder, Fullstack Developer, Scrum master",
       description:
         "Abenezer has over 3 years of experience in the tech industry, with a background in computer science.",
       skills: [
@@ -60,7 +60,7 @@ export default function About() {
     {
       name: "Mulisa Tadesse",
       img: mulisa,
-      title: "Developer & Marketing manager",
+      title: "Co-Founder, Developer & Marketing Manager",
       description:
         "Mulisa Tadesse is a Software Developer committed to delivering high-quality software that meets customer needs and market demands.",
       skills: [
@@ -85,14 +85,14 @@ export default function About() {
     {
       name: "Marshalom ",
       img: Marshalom,
-      title: "Marketing Manager",
+      title: "Co-Founder, Developer & Marketing Lead",
       description:
         "Marshalom has a strong background in digital marketing and is passionate about driving growth for the company.",
       skills: [
         "Digital Marketing",
         "SEO",
         "Content Marketing",
-        "Social Media Strategy",
+        "Social Media Strategy", 
         "Email Marketing",
         "Analytics",
         "PPC Campaigns",
@@ -102,7 +102,7 @@ export default function About() {
     {
       name: "Kenna Taddese",
       img: kena,
-      title: "Software Engineer",
+      title: "Backend Developer",
       description:
         "Kenna is a proficient full-stack developer with expertise in JavaScript, React, Node.js, and backend systems.",
       skills: [
