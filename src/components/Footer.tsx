@@ -23,8 +23,9 @@ function Footer() {
               <i className="ri-phone-fill text-xl text-primary"></i>
               <div>
                 <p className="font-semibold">Phone Number</p>
-                <p>+251-917469849</p>
                 <p>+251-910979060</p>
+                <p>+251-917469849</p>
+                <p>+251-946642299</p>
               </div>
             </div>
             <div className="flex items-center gap-3 my-3">
@@ -32,7 +33,7 @@ function Footer() {
 
               <div>
                 <p className=" font-semibold">Email</p>
-                <p>support@gmail.com</p>
+                <p>codexethiopia@gmail.com</p>
               </div>
             </div>
           </div>
