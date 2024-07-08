@@ -1,6 +1,6 @@
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
@@ -12,6 +12,7 @@ import { userInfo } from "./features/UserSlice";
 
 export default function Component() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const loginWithGoogle = useGoogleLogin({
     onSuccess: (response: any) => {
       axios
@@ -34,6 +35,7 @@ export default function Component() {
               picture: res.data.picture,
             })
           );
+          navigate("/");
         })
         .catch((err) => console.log(err));
     },
@@ -102,7 +104,14 @@ export default function Component() {
               onResolve={(response: any) => {
                 console.log(response);
                 toast.success(`${response.data.name}`);
-                dispatch(userInfo({ userName: response.data.name }));
+                dispatch(
+                  userInfo({
+                    userName: response.data.name,
+                    picture: response.data.picture.data.url,
+                    email: response.data.email,
+                  })
+                );
+                navigate("/");
               }}
               onReject={(error: any) => {
                 console.log(error);
