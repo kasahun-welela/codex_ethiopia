@@ -259,21 +259,42 @@ export default function Navbar() {
                     <ContactUsIcon className="h-5 w-5" />
                     Contact Us
                   </button>
-                  <button
-                    className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
-                      location.pathname === "/login"
-                        ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
-                        : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50"
-                    }`}
-                    onClick={() => handleLinkClick("/login")}
-                  >
-                    <SignInIcon className="h-5 w-5" />
-                    Signin
-                  </button>
-                  <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" />
-                    <AvatarFallback>CN</AvatarFallback>
-                  </Avatar>
+                  {picture ? (
+                    <NavigationMenuItem>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger>
+                          <div className="flex items-center gap-1">
+                            <Avatar>
+                              <AvatarImage src={picture} />
+                              <AvatarFallback>Profile</AvatarFallback>
+                            </Avatar>
+                            <p>{userName}</p>
+                          </div>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent>
+                          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                          <DropdownMenuSeparator />
+                          <DropdownMenuItem onClick={() => dispatch(logout())}>
+                            Logout
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </NavigationMenuItem>
+                  ) : (
+                    <NavigationMenuItem>
+                      <button
+                        className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
+                          location.pathname === "/login"
+                            ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
+                            : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50"
+                        }`}
+                        onClick={() => handleLinkClick("/login")}
+                      >
+                        <SignInIcon className="h-5 w-5" />
+                        Signin
+                      </button>
+                    </NavigationMenuItem>
+                  )}
 
                   <Button
                     variant="outline"
