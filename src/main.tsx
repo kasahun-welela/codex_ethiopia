@@ -18,28 +18,32 @@ import Contact from "./pages/contact.tsx";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Provider } from "react-redux";
+import { store } from "./app/store.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <GoogleOAuthProvider clientId="370357882485-ruiednd7plrsmn91kjp4vdcp53ivmuvc.apps.googleusercontent.com">
-    <React.StrictMode>
-      <ToastContainer />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />}>
-            <Route index element={<Home />} />
-            <Route path="/technology" element={<Technology />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/forgot_password" element={<ForgotPassword />} />
-            <Route path="/blog" element={<BlogList />} />
-            <Route path="/blogs/:id" element={<Blog />} />
-            <Route path="/contact" element={<Contact />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Chatbot />
-      </BrowserRouter>
-    </React.StrictMode>
-  </GoogleOAuthProvider>
+  <Provider store={store}>
+    <GoogleOAuthProvider clientId="370357882485-ruiednd7plrsmn91kjp4vdcp53ivmuvc.apps.googleusercontent.com">
+      <React.StrictMode>
+        <ToastContainer />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App />}>
+              <Route index element={<Home />} />
+              <Route path="/technology" element={<Technology />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/forgot_password" element={<ForgotPassword />} />
+              <Route path="/blog" element={<BlogList />} />
+              <Route path="/blogs/:id" element={<Blog />} />
+              <Route path="/contact" element={<Contact />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Chatbot />
+        </BrowserRouter>
+      </React.StrictMode>
+    </GoogleOAuthProvider>
+  </Provider>
 );
