@@ -18,7 +18,16 @@ import darkMode from "../assets/darkMode.png";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "./DarkTheme";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { logout } from "./features/UserSlice";
 
 interface SubMenuItem {
   href: string;
@@ -56,6 +65,7 @@ export default function Navbar() {
   const [activeSubMenu, setActiveSubMenu] = useState<SubMenuItem[] | null>(
     null
   );
+  const dispatch = useDispatch();
   const { email, picture, userName } = useSelector((state: any) => state.user);
   console.log("user details", picture, email);
 
@@ -376,13 +386,24 @@ export default function Navbar() {
           </NavigationMenuItem>
           {picture ? (
             <NavigationMenuItem>
-              <div className="flex items-center gap-1">
-                <Avatar>
-                  <AvatarImage src={picture} />
-                  <AvatarFallback>Profile</AvatarFallback>
-                </Avatar>
-                <p>{userName}</p>
-              </div>
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <div className="flex items-center gap-1">
+                    <Avatar>
+                      <AvatarImage src={picture} />
+                      <AvatarFallback>Profile</AvatarFallback>
+                    </Avatar>
+                    <p>{userName}</p>
+                  </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={() => dispatch(logout())}>
+                    Logout
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </NavigationMenuItem>
           ) : (
             <NavigationMenuItem>
