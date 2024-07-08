@@ -7,8 +7,11 @@ import axios from "axios";
 import { toast } from "react-toastify";
 // @ts-ignore
 import { LoginSocialFacebook } from "reactjs-social-login";
+import { useDispatch } from "react-redux";
+import { userInfo } from "./features/UserSlice";
 
 export default function Component() {
+  const dispatch = useDispatch();
   const loginWithGoogle = useGoogleLogin({
     onSuccess: (response: any) => {
       axios
@@ -24,6 +27,13 @@ export default function Component() {
         .then((res) => {
           console.log(res.data);
           toast.success(`${res.data.name}`);
+          dispatch(
+            userInfo({
+              userName: res.data.name,
+              email: res.data.email,
+              picture: res.data.picture,
+            })
+          );
         })
         .catch((err) => console.log(err));
     },
@@ -92,6 +102,7 @@ export default function Component() {
               onResolve={(response: any) => {
                 console.log(response);
                 toast.success(`${response.data.name}`);
+                dispatch(userInfo({ userName: response.data.name }));
               }}
               onReject={(error: any) => {
                 console.log(error);
