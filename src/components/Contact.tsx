@@ -290,7 +290,7 @@ export default function Contact() {
               <h3 className="text-xl font-semibold">Email</h3>
               <div className="space-y-1 text-muted-foreground flex items-center gap-2">
                 <LuMail className="w-5 h-5" />
-                <p>codex@gmail.com</p>
+                <p>codexethiopia@gmail.com</p>
               </div>
               <div className="space-y-1 text-muted-foreground flex items-center gap-2">
                 <LuMail className="w-5 h-5" />
@@ -312,11 +312,15 @@ export default function Contact() {
               <h3 className="text-xl font-semibold">Phone Number</h3>
               <div className="space-y-1 text-muted-foreground flex items-center gap-2">
                 <LuPhone className="w-5 h-5" />
+                <p>+251-910979060</p>
+              </div>
+              <div className="space-y-1 text-muted-foreground flex items-center gap-2">
+                <LuPhone className="w-5 h-5" />
                 <p>+251-946642299</p>
               </div>
               <div className="space-y-1 text-muted-foreground flex items-center gap-2">
                 <LuPhone className="w-5 h-5" />
-                <p>+251-910979060</p>
+                <p>+251-931556590</p>
               </div>
               <h3 className="text-xl font-semibold">Timing</h3>
               <div className="grid grid-cols-1 gap-4">
