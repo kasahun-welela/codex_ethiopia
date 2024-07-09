@@ -270,17 +270,6 @@ export default function Navbar() {
                     <ContactUsIcon className="h-5 w-5" />
                     Blog
                   </button>
-                  <button
-                    className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
-                      location.pathname === "/login"
-                        ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
-                        : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50"
-                    }`}
-                    onClick={() => handleLinkClick("/login")}
-                  >
-                    <SignInIcon className="h-5 w-5" />
-                    Signin
-                  </button>
                   {picture ? (
                     <NavigationMenuItem>
                       <DropdownMenu>
@@ -442,11 +431,6 @@ export default function Navbar() {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Button className="ml-10 text-center w-full">
-              <Link to="/login">
-                <NavigationMenuLink>Login</NavigationMenuLink>
-              </Link>
-            </Button>
           </NavigationMenuItem>
           {picture ? (
             <NavigationMenuItem>
