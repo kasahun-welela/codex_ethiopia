@@ -234,6 +234,17 @@ export default function Navbar() {
                   </button>
                   <button
                     className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
+                      location.pathname === "/blog"
+                        ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
+                        : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50"
+                    }`}
+                    onClick={() => handleLinkClick("/blog")}
+                  >
+                    <ContactUsIcon className="h-5 w-5" />
+                    Blog
+                  </button>
+                  <button
+                    className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
                       location.pathname === "/login"
                         ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
                         : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50"
@@ -342,6 +353,20 @@ export default function Navbar() {
                 )}
               >
                 Contact Us
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link to="/blog">
+              <NavigationMenuLink
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  location.pathname === "/blog"
+                    ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
+                    : ""
+                )}
+              >
+                Blog
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
