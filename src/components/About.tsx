@@ -60,7 +60,7 @@ export default function About() {
     {
       name: "Mulisa Tadesse",
       img: mulisa,
-      title: "Co-Founder, Developer & Marketing Manager",
+      title: "Developer & Marketing Manager",
       description:
         "Mulisa Tadesse is a Software Developer committed to delivering high-quality software that meets customer needs and market demands.",
       skills: [
