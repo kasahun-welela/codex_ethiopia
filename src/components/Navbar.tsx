@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,9 +14,20 @@ import {
 } from "@/components/ui/navigation-menu";
 import { FaChevronRight } from "react-icons/fa";
 import lightMode from "../assets/lightMode.png";
-import darkMode from "../assets/darkMode.png"
+import darkMode from "../assets/darkMode.png";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "./DarkTheme";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { logout } from "./features/UserSlice";
 
 interface SubMenuItem {
   href: string;
@@ -51,7 +62,13 @@ export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSubMenu, setActiveSubMenu] = useState<SubMenuItem[] | null>(null);
+  const [activeSubMenu, setActiveSubMenu] = useState<SubMenuItem[] | null>(
+    null
+  );
+  const dispatch = useDispatch();
+  const { email, picture, userName } = useSelector((state: any) => state.user);
+  console.log("user details", picture, email);
+
   const { setTheme } = useTheme();
   const theme = localStorage.getItem("vite-ui-theme");
 
@@ -111,7 +128,12 @@ export default function Navbar() {
       <Link to="/" className="flex items-center gap-2 font-semibold">
         {/* <span className="lg:hidden">Codex Ethiopia</span> */}
         <div className="mt-4">
-        <img src={theme === "light" ? lightMode : darkMode} alt="Image Description" width={150} height={150} />
+          <img
+            src={theme === "light" ? lightMode : darkMode}
+            alt="Image Description"
+            width={150}
+            height={150}
+          />
         </div>
         {/* <span className="hidden lg:flex">CodeX Ethiopia</span> */}
       </Link>
@@ -123,20 +145,25 @@ export default function Navbar() {
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="bg-white dark:bg-gray-950">
-  <div className="flex h-full max-h-screen flex-col">
-    <div className="flex items-center justify-between  border-b border-gray-200 dark:border-gray-800">
-      <div className="flex items-center">
-      <img src={theme === "light" ? lightMode : darkMode} alt="Image Description" width={110} height={110} />
-        {/* <span className="ml-2">Codex Ethiopia</span> */}
-      </div>
-      <Button
-        variant="ghost"
-        size="icon"
-        onClick={() => setMenuOpen(false)}
-      >
-        <ExitIcon className="h-6 w-6" />
-      </Button>
-    </div>
+          <div className="flex h-full max-h-screen flex-col">
+            <div className="flex items-center justify-between  border-b border-gray-200 dark:border-gray-800">
+              <div className="flex items-center">
+                <img
+                  src={theme === "light" ? lightMode : darkMode}
+                  alt="Image Description"
+                  width={110}
+                  height={110}
+                />
+                {/* <span className="ml-2">Codex Ethiopia</span> */}
+              </div>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setMenuOpen(false)}
+              >
+                <ExitIcon className="h-6 w-6" />
+              </Button>
+            </div>
 
             {activeSubMenu ? (
               renderSubMenu(activeSubMenu)
@@ -162,7 +189,7 @@ export default function Navbar() {
                     }}
                   >
                     <HomeIcon className="h-5 w-5" />
-                   Website Service
+                    Website Service
                     <FaChevronRight className="ml-auto h-5 w-5 text-gray-500 dark:text-gray-400" />
                   </button>
                   <button
@@ -187,7 +214,7 @@ export default function Navbar() {
                     Automation
                     <FaChevronRight className="ml-auto h-5 w-5 text-gray-500 dark:text-gray-400" />
                   </button>
-                 
+
                   <button
                     className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
                       location.pathname === "/technology"
@@ -254,6 +281,42 @@ export default function Navbar() {
                     <SignInIcon className="h-5 w-5" />
                     Signin
                   </button>
+                  {picture ? (
+                    <NavigationMenuItem>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger>
+                          <div className="flex items-center gap-1">
+                            <Avatar>
+                              <AvatarImage src={picture} />
+                              <AvatarFallback>Profile</AvatarFallback>
+                            </Avatar>
+                            <p>{userName}</p>
+                          </div>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent>
+                          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                          <DropdownMenuSeparator />
+                          <DropdownMenuItem onClick={() => dispatch(logout())}>
+                            Logout
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </NavigationMenuItem>
+                  ) : (
+                    <NavigationMenuItem>
+                      <button
+                        className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
+                          location.pathname === "/login"
+                            ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
+                            : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50"
+                        }`}
+                        onClick={() => handleLinkClick("/login")}
+                      >
+                        <SignInIcon className="h-5 w-5" />
+                        Signin
+                      </button>
+                    </NavigationMenuItem>
+                  )}
 
                   <Button
                     variant="outline"
@@ -281,7 +344,11 @@ export default function Navbar() {
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 {developWebsiteSubMenu.map((item) => (
-                  <ListItem key={item.title} title={item.title} href={item.href}>
+                  <ListItem
+                    key={item.title}
+                    title={item.title}
+                    href={item.href}
+                  >
                     {item.title}
                   </ListItem>
                 ))}
@@ -293,7 +360,11 @@ export default function Navbar() {
             <NavigationMenuContent>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 {automationSubMenu.map((item) => (
-                  <ListItem key={item.title} title={item.title} href={item.href}>
+                  <ListItem
+                    key={item.title}
+                    title={item.title}
+                    href={item.href}
+                  >
                     {item.title}
                   </ListItem>
                 ))}
@@ -377,6 +448,36 @@ export default function Navbar() {
               </Link>
             </Button>
           </NavigationMenuItem>
+          {picture ? (
+            <NavigationMenuItem>
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <div className="flex items-center gap-1">
+                    <Avatar>
+                      <AvatarImage src={picture} />
+                      <AvatarFallback>Profile</AvatarFallback>
+                    </Avatar>
+                    <p>{userName}</p>
+                  </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={() => dispatch(logout())}>
+                    Logout
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </NavigationMenuItem>
+          ) : (
+            <NavigationMenuItem>
+              <Button className="ml-10 text-center w-full">
+                <Link to="/login">
+                  <NavigationMenuLink>Login</NavigationMenuLink>
+                </Link>
+              </Button>
+            </NavigationMenuItem>
+          )}
           <NavigationMenuItem>
             <Button
               variant="outline"
@@ -423,7 +524,9 @@ const ListItem = React.forwardRef<
           </div>
           <span
             className={`ml-2 ${
-              location.pathname === href ? "text-white" : "text-gray-500 dark:text-gray-400"
+              location.pathname === href
+                ? "text-white"
+                : "text-gray-500 dark:text-gray-400"
             }`}
           >
             <svg
@@ -445,7 +548,6 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem";
-
 
 function HomeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -561,7 +663,8 @@ function ContactUsIcon(props: React.SVGProps<SVGSVGElement>) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M21 8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8z" /> {/* Envelope outline */}
+      <path d="M21 8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8z" />{" "}
+      {/* Envelope outline */}
       <line x1="22" y1="6" x2="12" y2="13" /> {/* Envelope top */}
       <line x1="2" y1="6" x2="12" y2="13" /> {/* Envelope bottom */}
     </svg>
@@ -607,7 +710,6 @@ function ExitIcon(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-
 
 function UserIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
