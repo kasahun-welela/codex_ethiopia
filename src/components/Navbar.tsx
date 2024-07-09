@@ -35,28 +35,22 @@ interface SubMenuItem {
 }
 
 const developWebsiteSubMenu: SubMenuItem[] = [
-  { href: "/ecommerce", title: "Ecommerce" },
   { href: "/business-website", title: "Business website" },
-  { href: "/blog", title: "Blog" },
-  { href: "/entertainment", title: "Entertainment" },
   { href: "/personal-website", title: "Personal website" },
+  { href: "/payment-integration", title: "Payment Integration" },
+  { href: "/project-management", title: "Project Management" },
+  { href: "/ecommerce", title: "Ecommerce" },
+  { href: "/blog", title: "Blog" },
   { href: "/portfolio", title: "Portfolio" },
-  { href: "/education", title: "Education" },
-  { href: "/nonprofit-website", title: "Nonprofit website" },
-  { href: "/membership-website", title: "Membership website" },
 ];
 
 const automationSubMenu: SubMenuItem[] = [
-  { href: "/appium", title: "Appium" },
-  { href: "/katalon-studio", title: "Katalon Studio" },
-  { href: "/selenium", title: "Selenium" },
-  { href: "/cucumber", title: "Cucumber" },
-  { href: "/tricentis-tosca", title: "Tricentis Tosca" },
-  { href: "/lambdatest", title: "LambdaTest" },
-  { href: "/robot-framework", title: "Robot Framework" },
-  { href: "/testrigor", title: "TestRigor, Inc." },
-  { href: "/ranorex", title: "Ranorex" },
-];
+  { href: "/appium", title: "Telegram Bot" },
+  { href: "/katalon-studio", title: "Zapier" },
+  { href: "/cucumber", title: "Google App Script" },
+  { href: "/selenium", title: "Make.com" },
+  { href: "/tricentis-tosca", title: "Katalon" },
+]
 
 export default function Navbar() {
   const location = useLocation();
