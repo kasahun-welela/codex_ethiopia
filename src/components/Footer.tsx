@@ -24,8 +24,8 @@ function Footer() {
               <div>
                 <p className="font-semibold">Phone Number</p>
                 <p>+251-910979060</p>
-                <p>+251-917469849</p>
                 <p>+251-946642299</p>
+                <p>+251-931556590</p>
               </div>
             </div>
             <div className="flex items-center gap-3 my-3">
@@ -180,44 +180,81 @@ function Footer() {
               </Link>
             </li>
           </ul>
-        </div>
-        <div className=" leading-9">
-          <h1 className="text-xl font-semibold text-gray-300">How to start</h1>
-          <ul>
-            <li>
-              <Link
-                to="/you_asked"
-                className="hover:text-primary hover:font-semibold"
-              >
-                You Asked
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/we_proceed"
-                className="hover:text-primary hover:font-semibold"
-              >
-                We proceed
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/negotiate"
-                className="hover:text-primary hover:font-semibold"
-              >
-                Negotiate
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/you_get"
-                className="hover:text-primary hover:font-semibold"
-              >
-                You get
-              </Link>
-            </li>
-          </ul>
-        </div>
+        </div><div className="leading-9">
+  <h1 className="text-xl font-semibold text-gray-300">How to start</h1>
+  <ul>
+    <li>
+      <Link
+        to="/you_asked"
+        className="hover:text-primary hover:font-semibold"
+      >
+        You Asked
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/we_proceed"
+        className="hover:text-primary hover:font-semibold"
+      >
+        We proceed
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/negotiate"
+        className="hover:text-primary hover:font-semibold"
+      >
+        Negotiate
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/you_get"
+        className="hover:text-primary hover:font-semibold"
+      >
+        You get
+      </Link>
+    </li>
+    <li>
+      <hr className="my-4 border-gray-300 w-[30%]" />
+    </li>
+    <h1 className="text-xl font-semibold text-gray-300">About Us</h1>
+    <li>
+      <Link
+        to="/faq"
+        className="hover:text-primary hover:font-semibold"
+      >
+        FAQ
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/vision"
+        className="hover:text-primary hover:font-semibold"
+      >
+        Vision
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/mission"
+        className="hover:text-primary hover:font-semibold"
+      >
+        Mission
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/vision"
+        className="hover:text-primary hover:font-semibold"
+      >
+        Core Values
+      </Link>
+    </li>
+  </ul>
+</div>
+
+        
       </div>
       <div className="flex justify-center items-center gap-3 py-6">
         <Link to="/">
