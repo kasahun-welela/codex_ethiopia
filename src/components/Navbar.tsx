@@ -39,6 +39,7 @@ const developWebsiteSubMenu: SubMenuItem[] = [
   { href: "/personal-website", title: "Personal website" },
   { href: "/payment-integration", title: "Payment Integration" },
   { href: "/project-management", title: "Project Management" },
+  { href: "/admin-dashboard", title: "Admin Dashboard" },
   { href: "/ecommerce", title: "Ecommerce" },
   { href: "/blog", title: "Blog" },
   { href: "/portfolio", title: "Portfolio" },
