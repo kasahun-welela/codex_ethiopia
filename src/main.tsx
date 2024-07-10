@@ -20,6 +20,13 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Provider } from "react-redux";
 import { store } from "./app/store.tsx";
+import Ecommerce from "./pages/Ecommerce.tsx";
+import PersonalWebsite from "./pages/personal-website.tsx";
+import BusinessWebsite from "./pages/BusinessWebsite.tsx";
+import ProjectManagment from "./pages/ProjectManagment.tsx";
+import PaymetnIntegration from "./pages/PaymetnIntegration.tsx";
+import Portfolio from "./pages/Portfolio.tsx";
+import AdminDashboard from "./pages/AdminDashboard.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
@@ -37,6 +44,13 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
               <Route path="/forgot_password" element={<ForgotPassword />} />
               <Route path="/blog" element={<BlogList />} />
               <Route path="/blogs/:id" element={<Blog />} />
+              <Route path="/ecommerce" element={<Ecommerce />} />
+              <Route path="/personal-website" element={<PersonalWebsite />} />
+              <Route path="/business-website" element={<BusinessWebsite />} />
+              <Route path="/project-management" element={<ProjectManagment />} />
+              <Route path="/payment-integration" element={<PaymetnIntegration />} />
+              <Route path="/admin-dashboard" element={<AdminDashboard/>} />
+              <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/contact" element={<Contact />} />
             </Route>
             <Route path="*" element={<NotFound />} />
