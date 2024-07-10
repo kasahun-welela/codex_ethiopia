@@ -20,7 +20,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Provider } from "react-redux";
 import { store } from "./app/store.tsx";
-import Ecommerce from "./pages/Ecommerce.tsx";
 import PersonalWebsite from "./pages/personal-website.tsx";
 import BusinessWebsite from "./pages/BusinessWebsite.tsx";
 import ProjectManagment from "./pages/ProjectManagment.tsx";
@@ -44,7 +43,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
               <Route path="/forgot_password" element={<ForgotPassword />} />
               <Route path="/blog" element={<BlogList />} />
               <Route path="/blogs/:id" element={<Blog />} />
-              <Route path="/ecommerce" element={<Ecommerce />} />
               <Route path="/personal-website" element={<PersonalWebsite />} />
               <Route path="/business-website" element={<BusinessWebsite />} />
               <Route path="/project-management" element={<ProjectManagment />} />
