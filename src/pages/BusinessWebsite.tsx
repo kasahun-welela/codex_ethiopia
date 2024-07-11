@@ -1,7 +1,8 @@
+import BusinessWebsiteComponet from "@/components/BusinessWebsiteComponet"
 
 const BusinessWebsite = () => {
   return (
-    <div>BusinessWebsite</div>
+    <div><BusinessWebsiteComponet /> </div>
   )
 }
 
