@@ -6,7 +6,7 @@ import imgFour from "../assets/Business/imgFour.png";
 import imgFive from "../assets/Business/imgFive.png";
 import imgSix from "../assets/Business/imgSix.png";
 import { Badge } from "@/components/ui/badge";
-
+import videoFile from "../assets/Business/video.mov";
 export default function BusinessWebsiteComponet() {
   const [currentImg, setCurrentImg] = useState(imgOne);
   const handleImageClick = (imgSrc: any) => {
@@ -18,7 +18,7 @@ export default function BusinessWebsiteComponet() {
       <header className="bg-[url('/placeholder.svg')] bg-cover bg-center py-12 md:py-16 lg:py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-          WaliaJobs
+            WaliaJobs
           </h1>
           <p className="mx-auto mt-4 max-w-3xl text-muted-foreground sm:text-lg md:text-xl">
             WaliaJobs is changing the way we look for jobs.
@@ -51,12 +51,13 @@ export default function BusinessWebsiteComponet() {
           <div>
             <label className="text-sm font-medium">Description</label>
             <p>
-            WaliaJobs is changing the way we look for jobs. We don’t stick to
-            old rules or slow methods. We keep things simple and avoid confusing
-            steps. Our main goal is to get real results for people looking for
-            jobs and for companies looking for workers. We focus on what truly
-            matters—not on adding too many features, but on making it easier and
-            faster to find the right job or the right person for a job.
+              WaliaJobs is changing the way we look for jobs. We don’t stick to
+              old rules or slow methods. We keep things simple and avoid
+              confusing steps. Our main goal is to get real results for people
+              looking for jobs and for companies looking for workers. We focus
+              on what truly matters—not on adding too many features, but on
+              making it easier and faster to find the right job or the right
+              person for a job.
             </p>
           </div>
           <div>
@@ -64,12 +65,12 @@ export default function BusinessWebsiteComponet() {
             <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
               <li className="bg-muted rounded-md px-3 py-1 text-sm font-medium mt-2">
                 <Badge variant="secondary" className="rounded-md">
-                MongoDB
+                  MongoDB
                 </Badge>
               </li>
               <li className="bg-muted rounded-md px-3 py-1 text-sm font-medium mt-2">
                 <Badge variant="secondary" className="rounded-md">
-                Node.js
+                  Node.js
                 </Badge>
               </li>
               <li className="bg-muted rounded-md px-3 py-1 text-sm font-medium mt-2">
@@ -115,6 +116,17 @@ export default function BusinessWebsiteComponet() {
           className="aspect-video w-full rounded-lg object-cover"
           onClick={() => handleImageClick(imgOne)}
         />
+        <video
+          width="1200"
+          height="675"
+          onClick={() => handleImageClick(videoFile)}
+          controls
+          className="aspect-video w-full rounded-lg object-cover"
+        >
+          <source src={videoFile} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
         <img
           src={imgTwo}
           alt="Thumbnail 2"
