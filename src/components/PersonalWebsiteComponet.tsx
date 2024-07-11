@@ -47,7 +47,7 @@ export default function BusinessWebsiteComponet() {
               controls
               className="aspect-video w-full rounded-lg object-cover"
             >
-              <source src={videoFile} type="video/mp4" />
+              <source src={videoFile} type="video/mov" />
               Your browser does not support the video tag.
             </video>
           ) : (
