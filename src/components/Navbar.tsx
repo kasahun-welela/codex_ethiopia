@@ -50,7 +50,6 @@ const automationSubMenu: SubMenuItem[] = [
   { href: "/katalon-studio", title: "Zapier" },
   { href: "/cucumber", title: "Google App Script" },
   { href: "/selenium", title: "Make.com" },
-  { href: "/tricentis-tosca", title: "Katalon" },
 ]
 
 export default function Navbar() {
