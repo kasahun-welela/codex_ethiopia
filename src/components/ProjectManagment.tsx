@@ -14,12 +14,13 @@ export default function ProjectManagmentComponet() {
 
   return (
     <div className="w-full">
-      <header className="bg-[url('/placeholder.svg')] bg-cover bg-center py-12 md:py-16 lg:py-20">
+    
+    <header className="bg-gradient-to-r from-red-500 to-orange-400  py-12 md:py-16 lg:py-20 text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Kanban Project Management Tools
           </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-muted-foreground sm:text-lg md:text-xl">
+          <p className="mx-auto mt-4 max-w-3xl text-muted-foreground sm:text-lg md:text-xl text-white">
             Kanban Flow Board is a robust project management tool designed to
             optimize workflow and enhance team collaboration across various
             industries.
@@ -33,7 +34,7 @@ export default function ProjectManagmentComponet() {
             alt="Featured Image"
             width={1200}
             height={675}
-            className="aspect-video w-full rounded-lg object-cover"
+            className="aspect-video w-full rounded-lg "
           />
         </div>
         <div className="space-y-4">
@@ -119,7 +120,7 @@ export default function ProjectManagmentComponet() {
           alt="Thumbnail 1"
           width={300}
           height={200}
-          className="aspect-video w-full rounded-lg object-cover"
+          className="aspect-video w-full rounded-lg "
           onClick={() => handleImageClick(imgOne)}
         />
         <img
@@ -127,7 +128,7 @@ export default function ProjectManagmentComponet() {
           alt="Thumbnail 2"
           width={300}
           height={200}
-          className="aspect-video w-full rounded-lg object-cover"
+          className="aspect-video w-full rounded-lg "
           onClick={() => handleImageClick(imgTwo)}
         />
         <img
@@ -135,7 +136,7 @@ export default function ProjectManagmentComponet() {
           alt="Thumbnail 3"
           width={300}
           height={200}
-          className="aspect-video w-full rounded-lg object-cover"
+          className="aspect-video w-full rounded-lg "
           onClick={() => handleImageClick(imgThree)}
         />
         <img
@@ -143,7 +144,7 @@ export default function ProjectManagmentComponet() {
           alt="Thumbnail 4"
           width={300}
           height={200}
-          className="aspect-video w-full rounded-lg object-cover"
+          className="aspect-video w-full rounded-lg "
           onClick={() => handleImageClick(imgFour)}
         />
         <img
@@ -151,7 +152,7 @@ export default function ProjectManagmentComponet() {
           alt="Thumbnail 5"
           width={300}
           height={200}
-          className="aspect-video w-full rounded-lg object-cover"
+          className="aspect-video w-full rounded-lg "
           onClick={() => handleImageClick(imgFive)}
         />
       </div>
