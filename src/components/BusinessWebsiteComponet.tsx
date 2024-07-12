@@ -44,7 +44,7 @@ export default function BusinessWebsiteComponet() {
             <div>
               <label className="text-sm font-medium">Url</label>
               <p className="text-muted-foreground">
-                https://solomonmoalawoffice.com/
+              https://walia-jobs.vercel.app/
               </p>
             </div>
           </div>
