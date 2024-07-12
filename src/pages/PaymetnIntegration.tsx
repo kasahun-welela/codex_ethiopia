@@ -1,7 +1,8 @@
+import PaymetnIntegrationComponet from "@/components/PaymetnIntegration"
 
 const PaymetnIntegration = () => {
   return (
-    <div>PaymetnIntegration</div>
+    <div><PaymetnIntegrationComponet /></div>
   )
 }
 

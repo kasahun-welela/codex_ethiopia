@@ -1,7 +1,7 @@
-
+import ProjectManagmentComponet from "@/components/ProjectManagment";
 const ProjectManagment = () => {
   return (
-    <div>ProjectManagment</div>
+    <div>< ProjectManagmentComponet /></div>
   )
 }
 

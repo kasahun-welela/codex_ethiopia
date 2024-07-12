@@ -1,7 +1,8 @@
+import PersonalWebsiteComponet from "@/components/PersonalWebsiteComponet"
 
 const PersonalWebsite = () => {
   return (
-    <div>personal-website</div>
+    <div><PersonalWebsiteComponet /></div>
   )
 }
 

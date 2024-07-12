@@ -1,7 +1,9 @@
-
+import AdminDashboardComponet from "../components/AdminDashboard"
 const AdminDashboard = () => {
   return (
-    <div>AdminDashboard</div>
+    <div>
+      <AdminDashboardComponet />
+    </div>
   )
 }
 
