@@ -1,9 +1,9 @@
 import { useState } from "react";
-import imgOne from "../assets/Personal/img1.png";
-import imgTwo from "../assets/Personal/img2.png";
-import imgThree from "../assets/Personal/img3.png";
-import imgFour from "../assets/Personal/img4.png";
-import imgFive from "../assets/Personal/img5.png";
+import imgOne from "../assets/Project/imgOne.png";
+import imgTwo from "../assets/Project/imgTwo.png";
+import imgThree from "../assets/Project/imgThree.png";
+import imgFour from "../assets/Project/imgFour.png";
+import imgFive from "../assets/Project/imgFive.png";
 import { Badge } from "@/components/ui/badge";
 
 export default function ProjectManagmentComponet() {
@@ -17,13 +17,12 @@ export default function ProjectManagmentComponet() {
       <header className="bg-[url('/placeholder.svg')] bg-cover bg-center py-12 md:py-16 lg:py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            SML Lawyers
+            Kanban Project Management Tools
           </h1>
           <p className="mx-auto mt-4 max-w-3xl text-muted-foreground sm:text-lg md:text-xl">
-            SML Lawyers is a new breed of law firm. We don’t stand on tradition
-            or outdated ways of doing business. We don’t hide behind legalese or
-            arcane legal procedures. The focus is on getting results for our
-            clients, not on how our foyer looks.
+            Kanban Flow Board is a robust project management tool designed to
+            optimize workflow and enhance team collaboration across various
+            industries.
           </p>
         </div>
       </header>
@@ -41,27 +40,30 @@ export default function ProjectManagmentComponet() {
           <div className="grid grid-cols-1 gap-4">
             <div>
               <label className="text-sm font-medium">Title</label>
-              <h2 className="text-2xl font-bold">SML Lawyers Website</h2>
+              <h2 className="text-2xl font-bold">
+                Kanban Project Management Tools
+              </h2>
             </div>
             <div>
               <label className="text-sm font-medium">Url</label>
               <p className="text-muted-foreground">
-                https://solomonmoalawoffice.com/
+                https://kanban-project-management-tools.vercel.app/
               </p>
             </div>
           </div>
           <div>
             <label className="text-sm font-medium">Description</label>
             <p>
-              SMA Lawyers is a multidisciplinary team of respected legal
-              professionals with offices in Addis Ababa, Bahir Dar, Hawassa,
-              Mekelle and the Adama. Combining years of legal experience with
-              our commercially minded approach to matters, we achieve favourable
-              outcomes for all our clients, no matter how complex the situation.
-              With core values of attention to detail, thorough preparation,
-              intelligent strategy and efficient service delivery, we provide
-              comprehensive legal service to individuals, small and large
-              business, and major multinational companies alike.
+              Kanban Flow Board is a dynamic project management tool designed to
+              enhance team collaboration and streamline workflows across
+              industries. This platform enables visual task management,
+              efficient project tracking, and seamless communication within a
+              centralized interface. Featuring drag-and-drop tasks, customizable
+              workflows, and deadline settings, it caters to diverse team sizes
+              and project demands. Emphasizing precision and strategic planning,
+              Kanban Flow Board is perfect for businesses of all sizes, offering
+              a scalable approach to boost productivity and achieve excellent
+              results with real-time updates and intelligent task management.
             </p>
           </div>
           <div>
