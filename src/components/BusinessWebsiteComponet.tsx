@@ -6,7 +6,7 @@ import imgFour from "../assets/Business/imgFour.png";
 import imgFive from "../assets/Business/imgFive.png";
 import imgSix from "../assets/Business/imgSix.png";
 import { Badge } from "@/components/ui/badge";
-import videoFile from "../assets/Business/video.mov";
+// import videoFile from "../assets/Business/video.mov";
 export default function BusinessWebsiteComponet() {
   const [currentImg, setCurrentImg] = useState(imgOne);
   const handleImageClick = (imgSrc: any) => {
@@ -116,7 +116,7 @@ export default function BusinessWebsiteComponet() {
           className="aspect-video w-full rounded-lg object-cover"
           onClick={() => handleImageClick(imgOne)}
         />
-        <video
+        {/* <video
           width="1200"
           height="675"
           onClick={() => handleImageClick(videoFile)}
@@ -125,7 +125,7 @@ export default function BusinessWebsiteComponet() {
         >
           <source src={videoFile} type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
 
         <img
           src={imgTwo}
