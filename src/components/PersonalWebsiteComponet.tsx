@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import imgOne from "../assets/Personal/img1.png";
 import imgTwo from "../assets/Personal/img2.png";
 import imgThree from "../assets/Personal/img3.png";
@@ -12,7 +12,7 @@ export default function BusinessWebsiteComponet() {
   const [currentImage, setCurrentImage] = useState(imgOne);
   const [isVideo, setIsVideo] = useState(false);
 
-  const handleImageClick = (imgSrc:any) => {
+  const handleImageClick = (imgSrc: any) => {
     setIsVideo(false);
     setCurrentImage(imgSrc);
   };
@@ -21,16 +21,17 @@ export default function BusinessWebsiteComponet() {
     setIsVideo(true);
   };
 
-  console.log('Current Image:', currentImage);
+  console.log("Current Image:", currentImage);
 
   return (
     <div className="w-full">
-      <header className="bg-[url('/placeholder.svg')] bg-cover bg-center py-12 md:py-16 lg:py-20">
+      {/* <header className="bg-[url('/placeholder.svg')] bg-cover bg-center py-12 md:py-16 lg:py-20"> */}
+      <header className="bg-gradient-to-r from-red-500 to-orange-400  py-12 md:py-16 lg:py-20 text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             SML Lawyers
           </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-muted-foreground sm:text-lg md:text-xl">
+          <p className="mx-auto mt-4 max-w-3xl text-muted-foreground sm:text-lg md:text-xl text-white">
             SML Lawyers is a new breed of law firm. We don’t stand on tradition
             or outdated ways of doing business. We don’t hide behind legalese or
             arcane legal procedures. The focus is on getting results for our
@@ -78,10 +79,15 @@ export default function BusinessWebsiteComponet() {
           <div>
             <label className="text-sm font-medium">Description</label>
             <p>
-              In this blog post, we'll explore the principles of minimalist
-              design and how you can apply them to create stunning, impactful
-              designs. From color palettes to layout and typography, we'll cover
-              the essential elements that make minimalist design so powerful.
+              SMA Lawyers is a multidisciplinary team of respected legal
+              professionals with offices in Addis Ababa, Bahir Dar, Hawassa,
+              Mekelle and the Adama. Combining years of legal experience with
+              our commercially minded approach to matters, we achieve favourable
+              outcomes for all our clients, no matter how complex the situation.
+              With core values of attention to detail, thorough preparation,
+              intelligent strategy and efficient service delivery, we provide
+              comprehensive legal service to individuals, small and large
+              business, and major multinational companies alike.
             </p>
           </div>
           <div>
@@ -164,7 +170,7 @@ export default function BusinessWebsiteComponet() {
           className="aspect-video w-full rounded-lg object-cover cursor-pointer"
           onClick={() => handleImageClick(imgFour)}
         />
-         <img
+        <img
           src={imgFive}
           alt="Thumbnail 4"
           width={300}
@@ -172,7 +178,7 @@ export default function BusinessWebsiteComponet() {
           className="aspect-video w-full rounded-lg object-cover cursor-pointer"
           onClick={() => handleImageClick(imgFour)}
         />
-         <img
+        <img
           src={imgSix}
           alt="Thumbnail 4"
           width={300}
