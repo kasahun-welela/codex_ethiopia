@@ -15,13 +15,19 @@ export default function BusinessWebsiteComponet() {
 
   return (
     <div className="w-full">
-      <header className="bg-[url('/placeholder.svg')] bg-cover bg-center py-12 md:py-16 lg:py-20">
+      {/* <header className="bg-[url('/placeholder.svg')] bg-cover bg-center py-12 md:py-16 lg:py-20"> */}
+      <header className="bg-gradient-to-r from-red-500 to-orange-400  py-12 md:py-16 lg:py-20 text-white">
+
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             WaliaJobs
           </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-muted-foreground sm:text-lg md:text-xl">
-            WaliaJobs is changing the way we look for jobs.
+          <p className="mx-auto mt-4 max-w-3xl text-muted-foreground sm:text-lg md:text-xl text-white">
+            Revolutionizing the job search experience, WaliaJobs introduces
+            innovative methods that transform how candidates find their ideal
+            roles. By leveraging cutting-edge technology and a user-focused
+            approach, WaliaJobs ensures a smoother, more effective job hunting
+            process for everyone.
           </p>
         </div>
       </header>
@@ -39,12 +45,12 @@ export default function BusinessWebsiteComponet() {
           <div className="grid grid-cols-1 gap-4">
             <div>
               <label className="text-sm font-medium">Title</label>
-              <h2 className="text-2xl font-bold">SML Lawyers Website</h2>
+              <h2 className="text-2xl font-bold">WaliaJobs</h2>
             </div>
             <div>
               <label className="text-sm font-medium">Url</label>
               <p className="text-muted-foreground">
-              https://walia-jobs.vercel.app/
+                https://walia-jobs.vercel.app/
               </p>
             </div>
           </div>
