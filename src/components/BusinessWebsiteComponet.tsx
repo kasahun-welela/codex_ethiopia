@@ -171,7 +171,7 @@ export default function BusinessWebsiteComponet() {
           width={300}
           height={200}
           className="aspect-video w-full rounded-lg object-cover"
-          onClick={() => handleImageClick(imgFive)}
+          onClick={() => handleImageClick(imgSix)}
         />
       </div>
     </div>
