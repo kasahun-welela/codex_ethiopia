@@ -53,7 +53,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy_policy" element={<PrivacyPolicy />} />
-              <Route path="/termsandconditions" element={<TermsConditions />} />
+              <Route path="/terms_conditions" element={<TermsConditions />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
