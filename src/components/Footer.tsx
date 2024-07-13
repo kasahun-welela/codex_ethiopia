@@ -8,7 +8,7 @@ function Footer() {
         <div className="">
           <h1 className="text-xl font-semibold text-gray-300">Location</h1>
           <p className="max-w-xs">
-            Expertly trained, battle-tested, elite software developers on demand
+          Addis Ababa, Ethiopia, Ras Desta Damtew Road , OBS Tv Building 3rd Floor, Office #305
           </p>
           <div className="my-1">
             <div className="flex items-center gap-3 my-3">
@@ -48,7 +48,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/about_us"
+                to="/about"
                 className="hover:text-primary hover:font-semibold"
               >
                 About Us
@@ -56,15 +56,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/success_stories"
-                className="hover:text-primary hover:font-semibold"
-              >
-                Success Stories
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/privacy_policy"
+                to="/termsandconditions"
                 className="hover:text-primary hover:font-semibold"
               >
                 Privacy Policy

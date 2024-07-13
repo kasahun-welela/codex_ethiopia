@@ -15,6 +15,8 @@ import ForgotPassword from "./pages/ForgotPassword.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogList from "./components/BlogList.tsx";
 import Contact from "./pages/contact.tsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
+import TermsConditions from "./pages/TermsConditions.tsx";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -50,6 +52,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
               <Route path="/admin-dashboard" element={<AdminDashboard/>} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy_policy" element={<PrivacyPolicy />} />
+              <Route path="/termsandconditions" element={<TermsConditions />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
