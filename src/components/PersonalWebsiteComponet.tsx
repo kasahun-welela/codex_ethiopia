@@ -5,22 +5,14 @@ import imgThree from "../assets/Personal/img3.png";
 import imgFour from "../assets/Personal/img4.png";
 import imgFive from "../assets/Personal/img5.png";
 import imgSix from "../assets/Personal/img6.png";
-import videoFile from "../assets/Personal/img6.png";
 import { Badge } from "@/components/ui/badge";
 
 export default function BusinessWebsiteComponet() {
   const [currentImage, setCurrentImage] = useState(imgOne);
-  const [isVideo, setIsVideo] = useState(false);
 
   const handleImageClick = (imgSrc: any) => {
-    setIsVideo(false);
     setCurrentImage(imgSrc);
   };
-
-  const handleVideoClick = () => {
-    setIsVideo(true);
-  };
-
   console.log("Current Image:", currentImage);
 
   return (
@@ -41,25 +33,13 @@ export default function BusinessWebsiteComponet() {
       </header>
       <div className="container mx-auto grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3 md:gap-12 lg:py-16">
         <div className="col-span-2">
-          {isVideo ? (
-            <video
-              width={1200}
-              height={675}
-              controls
-              className="aspect-video w-full rounded-lg object-cover"
-            >
-              <source src={videoFile} type="video/mov" />
-              Your browser does not support the video tag.
-            </video>
-          ) : (
-            <img
-              src={currentImage}
-              alt="Featured Image"
-              width={1200}
-              height={675}
-              className="aspect-video w-full rounded-lg object-cover"
-            />
-          )}
+          <img
+            src={currentImage}
+            alt="Featured Image"
+            width={1200}
+            height={675}
+            className="aspect-video w-full rounded-lg object-cover"
+          />
         </div>
         <div className="space-y-4">
           <div className="grid grid-cols-1 gap-4">
@@ -176,7 +156,7 @@ export default function BusinessWebsiteComponet() {
           width={300}
           height={200}
           className="aspect-video w-full rounded-lg object-cover cursor-pointer"
-          onClick={() => handleImageClick(imgFour)}
+          onClick={() => handleImageClick(imgFive)}
         />
         <img
           src={imgSix}
@@ -184,17 +164,8 @@ export default function BusinessWebsiteComponet() {
           width={300}
           height={200}
           className="aspect-video w-full rounded-lg object-cover cursor-pointer"
-          onClick={() => handleImageClick(imgFour)}
+          onClick={() => handleImageClick(imgSix)}
         />
-        <video
-          width={300}
-          height={200}
-          className="aspect-video w-full rounded-lg object-cover cursor-pointer"
-          onClick={handleVideoClick}
-        >
-          <source src={videoFile} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
       </div>
     </div>
   );
