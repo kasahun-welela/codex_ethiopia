@@ -75,6 +75,15 @@ function Footer() {
         <div className="  leading-9">
           <h1 className="text-xl font-semibold text-gray-300">Services</h1>
           <ul>
+          
+          <li>
+              <Link
+                to="https://real-estate-main-ten.vercel.app/"
+                className="hover:text-primary hover:font-semibold"
+              >
+                Real Estate
+              </Link>
+            </li>
             <li>
               <Link
                 to="/automation"
