@@ -27,27 +27,11 @@ jobs:
       with:
         node-version: '18'
 
-    - name: 🔨 Install dependencies (Root)
-      run: |
-        npm install --legacy-peer-deps
+    - name: 🔨 Install dependencies
+      run: npm install --legacy-peer-deps
 
     - name: 🔨 Build frontend
-      run: |
-        npm run build
-
-    - name: 🔨 Install dependencies (Backend)
-      working-directory: ./Backend
-      run: |
-        npm install --legacy-peer-deps
-
-    - name: 🔨 Start backend
-      working-directory: ./Backend
-      run: |
-        node server.js &
-
-    - name: 🔨 Start frontend
-      run: |
-        NODE_ENV=production node server.js &
+      run: npm run build
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
@@ -55,5 +39,5 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./
-        server-dir: myapp/
+        local-dir: ./build/
+        server-dir: /home/solomonm/public_html/codex/  # Updated path to your specific folder
