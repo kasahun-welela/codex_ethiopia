@@ -9,6 +9,7 @@ jobs:
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
+    environment: production  # Specify the environment name
 
     steps:
     - name: 🚚 Get latest code
