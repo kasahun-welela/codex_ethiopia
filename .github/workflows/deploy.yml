@@ -16,7 +16,7 @@ jobs:
       run: npm install
 
     - name: Build
-      run: npm run build  # Adjust this if your build command differs
+      run: npm run build  # This builds your project and outputs to the ./build/ directory
 
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
@@ -25,4 +25,4 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./build/
-        server-dir: /path/on/your/server/
+        server-dir: /home/solomonm/public_html/codex/  # Updated path to the actual server directory
