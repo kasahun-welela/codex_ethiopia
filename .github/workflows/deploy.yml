@@ -3,26 +3,26 @@ name: Deploy to FTP
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main  # This will trigger the workflow on pushes to the main branch
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Specifies the runner environment
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v2  # This step checks out your repository under $GITHUB_WORKSPACE, so your workflow can access it
 
     - name: Install dependencies
-      run: npm install
+      run: npm install  # Installs npm dependencies
 
     - name: Build
-      run: npm run build  # This builds your project and outputs to the ./build/ directory
+      run: npm run build  # Builds your project and outputs to the ./build/ directory
 
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./build/
-        server-dir: /home/solomonm/public_html/codex/  # Updated path to the actual server directory
+        server: ${{ secrets.FTP_SERVER }}  # Your FTP server URL
+        username: ${{ secrets.FTP_USERNAME }}  # Your FTP username
+        password: ${{ secrets.FTP_PASSWORD }}  # Your FTP password
+        local-dir: ./build/  # Local directory to upload
+        server-dir: /home/solomonm/public_html/codex/  # Target directory on your server
