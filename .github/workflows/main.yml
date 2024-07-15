@@ -1,34 +1,59 @@
-name: Deploy to cPanel
+name: 🚀 Deploy website on push
 
 on:
   push:
     branches:
-      - main  # Set this to your default branch
+      - main
 
 jobs:
-  build_and_deploy:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: 🚚 Get latest code
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
+    - name: Cache Node modules
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Use Node.js 18
       uses: actions/setup-node@v2
       with:
-        node-version: '18'  # Set this to your Node.js version
+        node-version: '18'
 
-    - name: Install Dependencies
-      run: npm install
+    - name: 🔨 Install dependencies (Root)
+      run: |
+        npm install --legacy-peer-deps
 
-    - name: Build
-      run: npm run build
+    - name: 🔨 Build frontend
+      run: |
+        npm run build
 
-    - name: Deploy to cPanel
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+    - name: 🔨 Install dependencies (Backend)
+      working-directory: ./Backend
+      run: |
+        npm install --legacy-peer-deps
+
+    - name: 🔨 Start backend
+      working-directory: ./Backend
+      run: |
+        node server.js &
+
+    - name: 🔨 Start frontend
+      run: |
+        NODE_ENV=production node server.js &
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.2
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./build/
-        server-dir: /path/to/public_html/yourproject/  # Adjust the path
+        local-dir: ./
+        server-dir: myapp/
