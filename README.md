@@ -1,2 +1,2 @@
-CodeX_Ethiopia
+CodeX_Africa
 Software company based in Ethiopia, Africa
