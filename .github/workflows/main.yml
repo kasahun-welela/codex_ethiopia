@@ -3,32 +3,41 @@ name: Deploy React App via FTP
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main  # Ensures deployment on push to the main branch
 
 jobs:
   ftp-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
+    runs-on: ubuntu-latest  # Specifies the runner
 
-    - name: Use Node.js
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2  # Checks out your repository under $GITHUB_WORKSPACE
+
+    - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18'  # Use the Node.js version that matches your project requirements
+        node-version: '18'  # Matches the Node.js version used in development
 
-    - name: Install dependencies
-      run: npm install
+    - name: Cache Node Modules
+      uses: actions/cache@v2  # Caches dependencies to speed up subsequent runs
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
 
-    - name: Build
-      run: npm run build
+    - name: Install Dependencies
+      run: npm install  # Installs project dependencies
+
+    - name: Build Application
+      run: npm run build  # Builds your React application
 
     - name: Upload to FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0  # Deploys the entire project via FTP
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
-        local-dir: dist/ 
-        server-dir: "/home/codexacy/public_html/myapp/" 
-
+        local-dir: ./  # Specifies the root directory of the project
+        server-dir: "myapp/"  # Specifies the relative path on the server
