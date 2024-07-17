@@ -3,24 +3,45 @@ name: Deploy React App via FTP
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main
 
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
 
-    - name: Use Node.js
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18'  # Use the Node.js version that matches your project requirements
+        node-version: '18'
 
-    - name: Install dependencies
+    - name: Install Dependencies
       run: npm install
 
-    - name: Build
+    - name: Build Application
       run: npm run build
+
+    - name: Prepare Files for Deployment
+      run: |
+        mkdir -p deploy_folder/dist
+        cp -r dist/* deploy_folder/dist/
+        cp -r public deploy_folder/
+        cp src/* deploy_folder/src/ # Adjust this if src is a directory
+        cp .eslintrc.cjs deploy_folder/
+        cp .gitignore deploy_folder/
+        cp components.json deploy_folder/
+        cp index.html deploy_folder/
+        cp package-lock.json deploy_folder/
+        cp package.json deploy_folder/
+        cp postcss.config.js deploy_folder/
+        cp README.md deploy_folder/
+        cp tailwind.config.js deploy_folder/
+        cp tsconfig.json deploy_folder/
+        cp tsconfig.node.json deploy_folder/
+        cp vite.config.ts deploy_folder/
 
     - name: Upload to FTP
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
@@ -29,5 +50,5 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
-        local-dir: ./ 
-        server-dir: myapp/
+        local-dir: deploy_folder/  # Change this to your prepared directory
+        server-dir: "public_html/myappp/"
