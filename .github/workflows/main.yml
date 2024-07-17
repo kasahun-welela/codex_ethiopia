@@ -1,8 +1,10 @@
 name: Deploy React App via FTP
+
 on:
   push:
     branches:
       - main
+
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
@@ -31,4 +33,4 @@ jobs:
         local-dir: ./dist/
         server-dir: public_html/myapp/
         log-level: verbose
-        delete: false  # Ensure it does not delete any files
+        delete: false  # Prevents deletion of any files
