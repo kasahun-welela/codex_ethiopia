@@ -1,0 +1,33 @@
+name: Deploy React App via FTP
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'  # Use the Node.js version that matches your project requirements
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build
+
+    - name: Upload to FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        port: 21
+        local-dir: build/
+        server-dir: "/home/codexacy/codexafrica.com/codex"  # Corrected path to your deployment directory
