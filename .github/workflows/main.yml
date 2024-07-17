@@ -26,5 +26,5 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /home/codexacy/public_html/myapp
+        server-dir: /home/codexacy/public_html/myapp/
         local-dir: ./dist/
