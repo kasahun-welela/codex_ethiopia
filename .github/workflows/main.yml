@@ -3,23 +3,25 @@ name: Deploy React App via FTP
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main
 
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
 
-    - name: Use Node.js
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18'  # Use the Node.js version that matches your project requirements
+        node-version: '18'
 
-    - name: Install dependencies
+    - name: Install Dependencies
       run: npm install
 
-    - name: Build
+    - name: Build Application
       run: npm run build
 
     - name: Upload to FTP
@@ -29,5 +31,5 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
-        local-dir: / 
-        server-dir: "/home/codexacy/public_html/myapp/" 
+        local-dir: ./  # Points to the root of your repository, adjust as necessary
+        server-dir: "/home/codexacy/public_html/myapp/"  # Ensure this is the correct path on your server
