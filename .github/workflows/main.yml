@@ -31,9 +31,10 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
+        protocol: ${{ secrets.FTP_PROTOCOL }}
         local-dir: ./dist/
-        server-dir: /public_html/myapp/  # Correct input name
-        log-level: verbose  # Enable detailed logging for debugging
+        server-dir: /public_html/myapp/
+        log-level: verbose  
 
     - name: Verify Deployment
       run: echo "Deployment complete. Verify at: ${{ secrets.DEPLOY_URL }}"
