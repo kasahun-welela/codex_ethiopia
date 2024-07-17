@@ -14,5 +14,16 @@ export default defineConfig(({ mode }) => {
         "@": path.resolve(__dirname, "./src"),
       },
     },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // Customize chunking strategy, for example:
+            vendor: ['react', 'react-dom'],
+          },
+        },
+      },
+      chunkSizeWarningLimit: 2000,  // Adjust the warning limit as needed
+    },
   };
 });
