@@ -15,7 +15,10 @@ jobs:
     - name: Use Node.js 18
       uses: actions/setup-node@v2
       with:
-        node-version: '18'  # Ensure to use Node.js 18
+        node-version: '18'  # Correct Node.js version
+
+    - name: Check Node.js Version
+      run: node -v
 
     - name: 🔨 Build Project
       run: |
@@ -29,5 +32,10 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./dist/
-        server-dir: /public_html/myapp/  # Ensure this input is correct
-        log-level: verbose
+        server-dir: /public_html/myapp/  # Correct input name
+        log-level: verbose  # Enable detailed logging for debugging
+
+    - name: Verify Deployment
+      run: echo "Deployment complete. Verify at: ${{ secrets.DEPLOY_URL }}"
+      env:
+        DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
