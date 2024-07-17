@@ -1,14 +1,11 @@
 name: Deploy React App via FTP
-
 on:
   push:
     branches:
       - main
-
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout Code
       uses: actions/checkout@v2
@@ -31,5 +28,5 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
-        local-dir: ./  
+        local-dir: ./build/
         server-dir: myapp/
