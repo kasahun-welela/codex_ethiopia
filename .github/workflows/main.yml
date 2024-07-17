@@ -31,5 +31,5 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
-        local-dir: ./  # Points to the root of your repository, adjust as necessary
-        server-dir: "/home/codexacy/public_html/myapp/"  # Ensure this is the correct path on your server
+        local-dir: ./  
+        server-dir: myapp/
