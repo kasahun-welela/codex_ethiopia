@@ -28,5 +28,6 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
-        local-dir: ./dist/  # Changed from ./build/ to ./dist/
-        server-dir: myapp/
+        local-dir: ./dist/  
+        server-dir: public_html/myapp/
+        log-level: verbose
