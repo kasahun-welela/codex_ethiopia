@@ -3,33 +3,35 @@ name: Deploy React App via FTP
 on:
   push:
     branches:
-      - main
+      - main  # Ensures deployment on push to the main branch
 
 jobs:
   ftp-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Specifies the runner
 
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v2  # Checks out your repository under $GITHUB_WORKSPACE
 
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18'
+        node-version: '18'  # Matches the Node.js version used in development
 
     - name: Install Dependencies
-      run: npm install
+      run: npm install  # Installs project dependencies
 
     - name: Build Application
-      run: npm run build
+      run: npm run build  # Builds your React application
 
     - name: Prepare Files for Deployment
       run: |
         mkdir -p deploy_folder/dist
+        mkdir -p deploy_folder/src
+        mkdir -p deploy_folder/public  # Ensure public directory is created if needed
         cp -r dist/* deploy_folder/dist/
-        cp -r public deploy_folder/
-        cp src/* deploy_folder/src/ # Adjust this if src is a directory
+        cp -r public/* deploy_folder/public/
+        cp -r src/* deploy_folder/src/
         cp .eslintrc.cjs deploy_folder/
         cp .gitignore deploy_folder/
         cp components.json deploy_folder/
@@ -44,11 +46,12 @@ jobs:
         cp vite.config.ts deploy_folder/
 
     - name: Upload to FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0  # Deploys the entire project via FTP
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
-        local-dir: deploy_folder/  # Change this to your prepared directory
-        server-dir: "public_html/myappp/"
+        local-dir: deploy_folder/  # Specifies the prepared directory for upload
+        server-dir: "public_html/myapp/"  # Specifies the relative path on the server
+
