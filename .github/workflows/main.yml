@@ -40,4 +40,4 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
         local-dir: ./  # Specifies the root directory of the project
-        server-dir: "myapp/"  # Specifies the relative path on the server
+        server-dir: "public_html/myapp/"  # Specifies the relative path on the server
