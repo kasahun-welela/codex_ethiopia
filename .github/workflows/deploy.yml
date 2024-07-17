@@ -1,8 +1,7 @@
-on:
+on: 
   push:
     branches:
       - main
-
 name: 🚀 Deploy website on push
 
 jobs:
@@ -16,10 +15,12 @@ jobs:
     - name: Use Node.js 18
       uses: actions/setup-node@v2
       with:
-        node-version: '18'
-
-    - name: 🔨 Install dependencies
-      run: npm install
+        node-version: '16'
+      
+    - name: 🔨 Build Project
+      run: |
+        npm install
+        npm run build
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -27,5 +28,4 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./
-        server-dir: /public_html/myapp/
+        local-dir: ./dist/
