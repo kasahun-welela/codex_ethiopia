@@ -21,16 +21,6 @@ jobs:
     - name: Build Application
       run: npm run build
 
-    - name: Cleanup Server Directory
-      run: |
-        ftp -inv ${{ secrets.FTP_SERVER }} <<EOF
-        user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}
-        cd public_html/myapp/
-        mdelete *
-        mdel -R *
-        bye
-        EOF
-
     - name: Upload to FTP
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
