@@ -30,4 +30,5 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
         local-dir: build/
-        server-dir: "/home/codexacy/codexafrica.com/codex"  # Corrected path to your deployment directory
+        server-dir: "/home/codexacy/codexafrica.com/codex/"  # Corrected path
+
