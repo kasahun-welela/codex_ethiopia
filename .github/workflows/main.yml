@@ -3,41 +3,52 @@ name: Deploy React App via FTP
 on:
   push:
     branches:
-      - main  # Triggers the workflow on push events to the main branch
+      - main
 
 jobs:
   ftp-deploy:
-    runs-on: ubuntu-latest  # Uses the latest Ubuntu runner
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v2  # Checks out the repository under $GITHUB_WORKSPACE
+      uses: actions/checkout@v2
 
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18'  # Sets up Node.js version 18
-
-    - name: Cache Node Modules
-      uses: actions/cache@v2  # Caches the node_modules folder to speed up subsequent runs
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
+        node-version: '18'
 
     - name: Install Dependencies
-      run: npm install  # Installs dependencies
+      run: npm install
 
     - name: Build Application
-      run: npm run build  # Builds the application
+      run: npm run build
+
+    - name: Prepare Files for Deployment
+      run: |
+        mkdir -p deploy_folder
+        cp -r .github deploy_folder/
+        cp -r public deploy_folder/
+        cp -r src deploy_folder/
+        cp .eslintrc.cjs deploy_folder/
+        cp .gitignore deploy_folder/
+        cp README.md deploy_folder/
+        cp components.json deploy_folder/
+        cp index.html deploy_folder/
+        cp package-lock.json deploy_folder/
+        cp package.json deploy_folder/
+        cp postcss.config.js deploy_folder/
+        cp tailwind.config.js deploy_folder/
+        cp tsconfig.json deploy_folder/
+        cp tsconfig.node.json deploy_folder/
+        cp vite.config.ts deploy_folder/
 
     - name: Upload to FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.3.2  # Uses FTP Deploy Action to upload files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
-        local-dir: ./  # Specifies to upload all files from the root directory of the repository
+        local-dir: deploy_folder/  # Specifies the directory to upload
         server-dir: "public_html/myapp/"  # Specifies the target directory on the server
