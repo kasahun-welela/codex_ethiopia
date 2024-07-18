@@ -37,5 +37,11 @@ jobs:
           local-dir: ./dist/
           log-level: 'verbose'  # Set log level to verbose for detailed output
 
-      - name: Debug FTP Sync Output
-        run: echo "FTP deployment completed successfully."
+      - name: Verify files on server
+        run: |
+          ftp -inv ${{ secrets.FTP_SERVER }} <<EOF
+          user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}
+          cd /public_html/myapp/
+          ls
+          bye
+          EOF
