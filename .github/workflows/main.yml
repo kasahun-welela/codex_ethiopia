@@ -35,9 +35,7 @@ jobs:
           server-dir: /public_html/myapp/
           dangerous-clean-slate: true
           local-dir: ./dist/
-          log-level: 'debug'  # Increase the log level for detailed output
+          log-level: 'verbose'  # Set log level to verbose for detailed output
 
       - name: Debug FTP Sync Output
         run: echo "FTP deployment completed successfully."
-        
-
