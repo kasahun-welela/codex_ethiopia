@@ -39,4 +39,5 @@ jobs:
 
       - name: Debug FTP Sync Output
         run: echo "FTP deployment completed successfully."
+        
 
