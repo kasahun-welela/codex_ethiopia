@@ -141,7 +141,7 @@ export default function CoreValue() {
             Our Core Values
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400 md:text-xl">
-            At the heart of Codex Ethiopia are the principles that guide our work and shape our impact.
+            At the heart of Codex Africa are the principles that guide our work and shape our impact.
           </p>
         </div>
         <div className="w-full max-w-full space-y-4 mx-auto">

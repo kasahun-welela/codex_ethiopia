@@ -15,6 +15,7 @@ import {
 import { FaChevronRight } from "react-icons/fa";
 import lightMode from "../assets/lightMode.png";
 import darkMode from "../assets/darkMode.png";
+import logo from "../../public/codexafrica3.png"
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "./DarkTheme";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -40,16 +41,15 @@ const developWebsiteSubMenu: SubMenuItem[] = [
   { href: "/payment-integration", title: "Payment Integration" },
   { href: "/project-management", title: "Project Management" },
   { href: "/admin-dashboard", title: "Admin Dashboard" },
-  { href: "/ecommerce", title: "Ecommerce" },
+  { href: "/coming_soon", title: "Ecommerce" },
   { href: "/blog", title: "Blog" },
-  { href: "/portfolio", title: "Portfolio" },
 ];
 
 const automationSubMenu: SubMenuItem[] = [
-  { href: "/appium", title: "Telegram Bot" },
-  { href: "/katalon-studio", title: "Zapier" },
-  { href: "/cucumber", title: "Google App Script" },
-  { href: "/selenium", title: "Make.com" },
+  { href: "/coming_soon", title: "Telegram Bot" },
+  { href: "/coming_soon", title: "Zapier" },
+  { href: "/coming_soon", title: "Google App Script" },
+  { href: "/coming_soon", title: "Make.com" },
 ]
 
 export default function Navbar() {
@@ -120,16 +120,16 @@ export default function Navbar() {
   return (
     <header className="flex h-20 w-full shrink-0 items-center justify-between px-4 md:px-6 container">
       <Link to="/" className="flex items-center gap-2 font-semibold">
-        {/* <span className="lg:hidden">Codex Ethiopia</span> */}
+        {/* <span className="lg:hidden">Codex Africa</span> */}
         <div className="mt-4">
           <img
-            src={theme === "light" ? lightMode : darkMode}
+            src={theme === "light" ? logo : logo}
             alt="Image Description"
             width={150}
             height={150}
           />
         </div>
-        {/* <span className="hidden lg:flex">CodeX Ethiopia</span> */}
+        {/* <span className="hidden lg:flex">CodeX Africa</span> */}
       </Link>
       <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
         <SheetTrigger asChild>
@@ -148,7 +148,7 @@ export default function Navbar() {
                   width={110}
                   height={110}
                 />
-                {/* <span className="ml-2">Codex Ethiopia</span> */}
+                {/* <span className="ml-2">Codex Africa</span> */}
               </div>
               <Button
                 variant="ghost"

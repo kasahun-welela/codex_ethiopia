@@ -305,7 +305,7 @@ export default function Contact() {
               </div>
               <div className="space-y-1 text-muted-foreground flex items-center gap-2">
                 <LuMapPin className="w-5 h-5" />
-                <p>Addis Ababa, Ethiopia</p>
+                <p>Addis Ababa, Africa</p>
               </div>
             </div>
             <div className="space-y-2">

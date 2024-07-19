@@ -28,7 +28,7 @@ import ProjectManagment from "./pages/ProjectManagment.tsx";
 import PaymetnIntegration from "./pages/PaymetnIntegration.tsx";
 import Portfolio from "./pages/Portfolio.tsx";
 import AdminDashboard from "./pages/AdminDashboard.tsx";
-
+import ComingSoon from "./pages/ComingSoon.tsx";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
     <GoogleOAuthProvider clientId="370357882485-ruiednd7plrsmn91kjp4vdcp53ivmuvc.apps.googleusercontent.com">
@@ -54,6 +54,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy_policy" element={<PrivacyPolicy />} />
               <Route path="/terms_conditions" element={<TermsConditions />} />
+              <Route path="/coming_soon" element={<ComingSoon />} />
+              
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

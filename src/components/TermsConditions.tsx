@@ -117,8 +117,8 @@ const TermsAndConditions = () => {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Governing Law & Jurisdiction</h2>
             <p className="mt-4 text-gray-600 dark:text-gray-400">
-              These Terms will be governed by and interpreted in accordance with the laws of Ethiopia, and you submit to
-              the non-exclusive jurisdiction of the state and federal courts located in Ethiopia for the resolution of
+              These Terms will be governed by and interpreted in accordance with the laws of Africa, and you submit to
+              the non-exclusive jurisdiction of the state and federal courts located in Africa for the resolution of
               any disputes.
             </p>
           </section>

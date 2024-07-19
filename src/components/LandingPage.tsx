@@ -306,7 +306,7 @@ export default function Landing() {
         </section>
 
         <section className="py-16 text-center">
-          <h2 className="text-3xl font-bold">We are CodeX Ethiopia</h2>
+          <h2 className="text-3xl font-bold">We are CodeX Africa</h2>
           <div className="flex flex-wrap my-10">
             <div className="w-full md:w-2/5">
               <div className="bg-white dark:bg-[var(--card)] shadow-md">
@@ -315,7 +315,7 @@ export default function Landing() {
                     What we do?
                   </p>
                   <p className="font-sans text-sm text-left px-4 text-gray-900 dark:text-[var(--card-foreground)]">
-                    At CodeX Ethiopia, our mission is to empower businesses by
+                    At CodeX Africa, our mission is to empower businesses by
                     providing innovative and reliable web solutions that
                     significantly enhance their online presence and drive
                     sustainable growth. We are dedicated to understanding the
@@ -327,7 +327,7 @@ export default function Landing() {
                   </p>
                   <p className="font-sans text-sm text-left px-4 text-gray-900 dark:text-[var(--card-foreground)] my-4">
                     To be the leading technology partner for businesses across
-                    Ethiopia and beyond, renowned for our excellence in web
+                    Africa and beyond, renowned for our excellence in web
                     services and products by 2030.
                   </p>
                 </div>
