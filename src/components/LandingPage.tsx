@@ -530,7 +530,7 @@ export default function Landing() {
           <h2 className="text-3xl font-bold">
             What People Think About Our Products
           </h2>
-          <Slider {...settings} className="mt-8">
+          {/* <Slider {...settings} className="mt-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="px-2">
                 <div className="bg-[var(--card)] text-[var(--card-foreground)] p-6 rounded-lg shadow-md w-full max-w-sm h-72 flex flex-col justify-between">
@@ -551,7 +551,27 @@ export default function Landing() {
                 </div>
               </div>
             ))}
-          </Slider>
+          </Slider> */}
+          <div className="w-full md:w-1/2">
+  <Slider {...heroImageSettings}>
+    <div className="aspect-w-16 aspect-h-9">
+      <img src={imgsrc} alt="Illustration 1" className="w-full object-cover"/>
+    </div>
+    <div className="aspect-w-16 aspect-h-9">
+      <img src={imgsrc2} alt="Illustration 2" className="w-full object-cover"/>
+    </div>
+    <div className="aspect-w-16 aspect-h-9">
+      <img src={imgsrc3} alt="Illustration 3" className="w-full object-cover"/>
+    </div>
+    <div className="aspect-w-16 aspect-h-9">
+      <img src={imgsrc5} alt="Illustration 4" className="w-full object-cover"/>
+    </div>
+    <div className="aspect-w-16 aspect-h-9">
+      <img src={imgsrc6} alt="Illustration 5" className="w-full object-cover"/>
+    </div>
+  </Slider>
+</div>
+
         </section>
       </main>
     </div>
