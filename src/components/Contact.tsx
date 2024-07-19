@@ -290,7 +290,7 @@ export default function Contact() {
               <h3 className="text-xl font-semibold">Email</h3>
               <div className="space-y-1 text-muted-foreground flex items-center gap-2">
                 <LuMail className="w-5 h-5" />
-                <p>codexethiopia@gmail.com</p>
+                <p>codexafrica@gmail.com</p>
               </div>
               <div className="space-y-1 text-muted-foreground flex items-center gap-2">
                 <LuMail className="w-5 h-5" />
