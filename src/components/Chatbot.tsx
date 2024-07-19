@@ -56,23 +56,15 @@ export default function Chatbot() {
                 <h2 className="text-lg font-bold">CodeX</h2>
               </div>
               <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                <button
-                  onClick={toggleChatbot}
-                  className="text-primary hover:text-dark focus:outline-none"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.54-9.54a.75.75 0 10-1.06 1.06L10 11.06l-2.47-2.54a.75.75 0 00-1.06 1.06L8.94 12l-2.54 2.47a.75.75 0 101.06 1.06L10 12.94l2.47 2.54a.75.75 0 001.06-1.06L11.06 12l2.54-2.47z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
+              // This is the button that toggles the Chatbot
+<button
+  onClick={toggleChatbot}
+  className="rounded-full p-3 bg-blue-600 text-white shadow-lg"
+  aria-label="Toggle Chatbot"  // Providing an accessible name
+>
+  <FaRobot className="w-6 h-6" />
+</button>
+
               </div>
             </header>
 
