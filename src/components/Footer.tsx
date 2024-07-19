@@ -118,10 +118,10 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/coming_soon"
+                to="/blog"
                 className="hover:text-primary hover:font-semibold"
               >
-                Event Website
+                Blog Website
               </Link>
             </li>
             <li>
