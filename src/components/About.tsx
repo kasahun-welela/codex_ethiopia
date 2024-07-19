@@ -143,41 +143,35 @@ export default function About() {
 
   return (
     <section className="w-full py-12 bg-white dark:bg-gray-950">
-      <div className="container px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold tracking-tight sm:text-5xl xl:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-700 dark:from-white dark:to-gray-300">
-            Meet the Team
-          </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400 md:text-xl">
-            Our talented team is dedicated to building innovative software
-            solutions.
-          </p>
-        </div>
-        <div className="w-full max-w-full space-y-4 mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center space-y-2 border border-gray-200 dark:border-gray-800 p-4 rounded-lg dark:shadow-md dark:shadow-gray-700 transition-transform hover:scale-105"
-              >
-                <div className="w-24 h-24 rounded-full overflow-hidden">
-                  <img src={member.img} alt={member.name} />
-                </div>
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-                  {member.name}
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {member.title}
-                </p>
-                <p className="text-gray-500 dark:text-gray-400 text-center">
-                  {member.description}
-                </p>
-                <Skills skills={member.skills} />
-              </div>
-            ))}
-          </div>
-        </div>
+    <div className="container px-4 md:px-6">
+      <div className="text-center mb-12">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-5xl xl:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-700 dark:from-white dark:to-gray-300">
+          Meet the Team
+        </h1>
+        <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-500 dark:text-gray-400 md:text-xl">
+          Our talented team is dedicated to building innovative software solutions.
+        </p>
       </div>
-    </section>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {teamMembers.map((member, index) => (
+          <li key={index} className="flex flex-col items-center space-y-2 border border-gray-200 dark:border-gray-800 p-4 rounded-lg dark:shadow-md dark:shadow-gray-700 transition-transform hover:scale-105">
+            <div className="w-24 h-24 rounded-full overflow-hidden">
+              <img src={member.img} alt={member.name} className="object-cover"/>
+            </div>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+              {member.name}
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400">
+              {member.title}
+            </p>
+            <p className="text-gray-500 dark:text-gray-400 text-center">
+              {member.description}
+            </p>
+            <Skills skills={member.skills} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
   );
 }
