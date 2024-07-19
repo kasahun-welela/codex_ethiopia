@@ -43,7 +43,6 @@ const developWebsiteSubMenu: SubMenuItem[] = [
   { href: "/admin-dashboard", title: "Admin Dashboard" },
   { href: "/coming_soon", title: "Ecommerce" },
   { href: "/blog", title: "Blog" },
-  { href: "/coming_soon", title: "Portfolio" },
 ];
 
 const automationSubMenu: SubMenuItem[] = [
