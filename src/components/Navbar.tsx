@@ -86,7 +86,7 @@ export default function Navbar() {
   const renderSubMenu = (items: SubMenuItem[]) => (
     <div className="flex-1 overflow-auto py-6">
       <Button
-      aria-label="Back"
+        aria-label="Back"
         className="mb-4 ml-4 mt-4 text-primary bg-gray-100 dark:bg-gray-900 hover:text-dark font-semibold"
         onClick={handleBackClick}
       >
@@ -95,15 +95,11 @@ export default function Navbar() {
       <ul className="space-y-2 p-4">
         {items.map((item, index) => (
           <li key={index}>
-            <Button
-            aria-label="handle click"
-              onClick={() => handleLinkClick(item.href)}
-              className={`flex justify-between items-center text-left w-full p-4 rounded-lg font-medium ${
+            <Link to={item.href} className={`flex justify-between items-center text-left w-full p-4 rounded-lg font-medium ${
                 location.pathname === item.href
                   ? "bg-primary text-white"
                   : "bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800"
-              }`}
-            >
+              }`}>
               {item.title}
               <FaChevronRight
                 className={`ml-2 h-5 w-5 ${
@@ -112,12 +108,13 @@ export default function Navbar() {
                     : "text-gray-500 dark:text-gray-400"
                 }`}
               />
-            </Button>
+            </Link>
           </li>
         ))}
       </ul>
     </div>
   );
+  
 
   return (
     <header className="flex h-20 w-full shrink-0 items-center justify-between px-4 md:px-6 container">
