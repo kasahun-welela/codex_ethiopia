@@ -86,34 +86,34 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/coming_soon"
+                to="https://walia-jobs.vercel.app/"
                 className="hover:text-primary hover:font-semibold"
               >
-                Automation
+                Jobs Portal
               </Link>
             </li>
             <li>
               <Link
-                to="/coming_soon"
+                to="/https://solomonmoalawoffice.com/"
                 className="hover:text-primary hover:font-semibold"
               >
-                Telegram Bot
+                Personal Website
               </Link>
             </li>
             <li>
               <Link
-                to="/coming_soon"
+                to="https://next-shadcn-dashboard-starter.vercel.app/"
                 className="hover:text-primary hover:font-semibold"
               >
-                Personal Blog
+                Admin Dashboard
               </Link>
             </li>
             <li>
               <Link
-                to="/coming_soon"
+                to="https://kanban-project-management-tools.vercel.app/"
                 className="hover:text-primary hover:font-semibold"
               >
-                Ecommerce Site
+                Project Management Tools
               </Link>
             </li>
             <li>
