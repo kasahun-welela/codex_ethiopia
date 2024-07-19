@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import Slider from "react-slick";
-import imgsrc from "../assets/Process/image2.png";
-import imgsrc2 from "../assets/Process/image4.png";
-import imgsrc3 from "../assets/Process/image5.png";
-import imgsrc5 from "../assets/Process/image4.png";
-import imgsrc6 from "../assets/Process/image5.png";
+import imgsrc1 from "../assets/Process/image1.webp";
+import imgsrc2 from "../assets/Process/image2.webp";
+import imgsrc3 from "../assets/Process/image3.webp";
+import imgsrc4 from "../assets/Process/image4.webp";
+import imgsrc5 from "../assets/Process/image5.webp";
 // import home images
 import Automation from "../assets/Home/Automation.webp";
 import Business from "../assets/Home/Business_Website.webp";
@@ -35,7 +35,7 @@ export default function Landing() {
     "E-Commerce": Ecommerce,
     Automation: Automation,
     "Payment Integration": Payment,
-    "Bot Development": imgsrc, // Placeholder image, replace with actual image if available
+    "Bot Development": imgsrc1, // Placeholder image, replace with actual image if available
     "UI/UX": imgsrc2,
     "Cloud Solutions": imgsrc3,
   };
@@ -233,7 +233,7 @@ export default function Landing() {
           <div className="w-full md:w-1/2">
   <Slider {...heroImageSettings}>
     <div className="aspect-w-16 aspect-h-9 w-full">
-      <img src={imgsrc} alt="Illustration 1" className="w-full h-full object-cover" />
+      <img src={imgsrc1} alt="Illustration 1" className="w-full h-full object-cover" />
     </div>
     <div className="aspect-w-16 aspect-h-9 w-full">
       <img src={imgsrc2} alt="Illustration 2" className="w-full h-full object-cover" />
@@ -242,10 +242,10 @@ export default function Landing() {
       <img src={imgsrc3} alt="Illustration 3" className="w-full h-full object-cover" />
     </div>
     <div className="aspect-w-16 aspect-h-9 w-full">
-      <img src={imgsrc5} alt="Illustration 4" className="w-full h-full object-cover" />
+      <img src={imgsrc4} alt="Illustration 4" className="w-full h-full object-cover" />
     </div>
     <div className="aspect-w-16 aspect-h-9 w-full">
-      <img src={imgsrc6} alt="Illustration 5" className="w-full h-full object-cover" />
+      <img src={imgsrc5} alt="Illustration 5" className="w-full h-full object-cover" />
     </div>
   </Slider>
 </div>
@@ -558,7 +558,7 @@ export default function Landing() {
           {/* Aspect ratio container added here */}
           <div className="aspect-w-1 aspect-h-1 w-16 h-16 rounded-full overflow-hidden">
             <img
-              src={imgsrc}  // Assuming each testimonial object has an 'imgsrc' property
+              src={imgsrc1}  // Assuming each testimonial object has an 'imgsrc' property
               alt={`Testimonial ${index + 1}`}
               className="object-cover w-full h-full"
             />
