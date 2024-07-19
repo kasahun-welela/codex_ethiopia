@@ -231,6 +231,26 @@ export default function Landing() {
             </div>
           </div>
           <div className="w-full md:w-1/2">
+  <Slider {...heroImageSettings}>
+    <div className="aspect-w-16 aspect-h-9 w-full">
+      <img src={imgsrc} alt="Illustration 1" className="w-full h-full object-cover" />
+    </div>
+    <div className="aspect-w-16 aspect-h-9 w-full">
+      <img src={imgsrc2} alt="Illustration 2" className="w-full h-full object-cover" />
+    </div>
+    <div className="aspect-w-16 aspect-h-9 w-full">
+      <img src={imgsrc3} alt="Illustration 3" className="w-full h-full object-cover" />
+    </div>
+    <div className="aspect-w-16 aspect-h-9 w-full">
+      <img src={imgsrc5} alt="Illustration 4" className="w-full h-full object-cover" />
+    </div>
+    <div className="aspect-w-16 aspect-h-9 w-full">
+      <img src={imgsrc6} alt="Illustration 5" className="w-full h-full object-cover" />
+    </div>
+  </Slider>
+</div>
+
+          {/* <div className="w-full md:w-1/2">
             <Slider {...heroImageSettings}>
               <div>
                 <img src={imgsrc} alt="Illustration 1" className="w-full" />
@@ -248,7 +268,7 @@ export default function Landing() {
                 <img src={imgsrc6} alt="Illustration 5" className="w-full" />
               </div>
             </Slider>
-          </div>
+          </div> */}
         </section>
         <section className="py-16 text-center">
           <h2 className="text-3xl font-bold">Our Solutions</h2>
@@ -530,6 +550,32 @@ export default function Landing() {
           <h2 className="text-3xl font-bold">
             What People Think About Our Products
           </h2>
+          <Slider {...settings} className="mt-8">
+  {testimonials.map((testimonial, index) => (
+    <div key={index} className="px-2">
+      <div className="bg-[var(--card)] text-[var(--card-foreground)] p-6 rounded-lg shadow-md w-full max-w-sm h-72 flex flex-col justify-between">
+        <div className="flex items-center space-x-4">
+          {/* Aspect ratio container added here */}
+          <div className="aspect-w-1 aspect-h-1 w-16 h-16 rounded-full overflow-hidden">
+            <img
+              src={imgsrc}  // Assuming each testimonial object has an 'imgsrc' property
+              alt={`Testimonial ${index + 1}`}
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold">
+              {testimonial.name}
+            </h3>
+            <p>{testimonial.position}</p>
+          </div>
+        </div>
+        <p className="mt-4 flex-grow">{testimonial.feedback}</p>
+      </div>
+    </div>
+  ))}
+</Slider>
+
           {/* <Slider {...settings} className="mt-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="px-2">
@@ -552,26 +598,6 @@ export default function Landing() {
               </div>
             ))}
           </Slider> */}
-          <div className="w-full md:w-1/2">
-  <Slider {...heroImageSettings}>
-    <div className="aspect-w-16 aspect-h-9">
-      <img src={imgsrc} alt="Illustration 1" className="w-full object-cover"/>
-    </div>
-    <div className="aspect-w-16 aspect-h-9">
-      <img src={imgsrc2} alt="Illustration 2" className="w-full object-cover"/>
-    </div>
-    <div className="aspect-w-16 aspect-h-9">
-      <img src={imgsrc3} alt="Illustration 3" className="w-full object-cover"/>
-    </div>
-    <div className="aspect-w-16 aspect-h-9">
-      <img src={imgsrc5} alt="Illustration 4" className="w-full object-cover"/>
-    </div>
-    <div className="aspect-w-16 aspect-h-9">
-      <img src={imgsrc6} alt="Illustration 5" className="w-full object-cover"/>
-    </div>
-  </Slider>
-</div>
-
         </section>
       </main>
     </div>
