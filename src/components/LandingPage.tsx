@@ -6,15 +6,15 @@ import imgsrc3 from "../assets/Process/image5.png";
 import imgsrc5 from "../assets/Process/image4.png";
 import imgsrc6 from "../assets/Process/image5.png";
 // import home images
-import Automation from "../assets/Home/Automation.png";
-import Business from "../assets/Home/Business_Website.png";
-import Custom from "../assets/Home/Custome_Website.png";
-import Ecommerce from "../assets/Home/Ecommerce.png";
-import Job from "../assets/Home/Job_Portal.png";
-import Mobile from "../assets/Home/Mobile_App.png";
-import Payment from "../assets/Home/Payment_Integration.png";
-import Personal from "../assets/Home/Personal_Website.png";
-import Project from "../assets/Home/Project_Management.png";
+import Automation from "../assets/Home/Automation.webp";
+import Business from "../assets/Home/Business_Website.webp";
+import Custom from "../assets/Home/Custome_Website.webp";
+import Ecommerce from "../assets/Home/Ecommerce.webp";
+import Job from "../assets/Home/Job_Portal.webp";
+import Mobile from "../assets/Home/Mobile_App.webp";
+import Payment from "../assets/Home/Payment_Integration.webp";
+import Personal from "../assets/Home/Personal_Website.webp";
+import Project from "../assets/Home/Project_Management.webp";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./slick-custom.css"; // Import custom slick styles
