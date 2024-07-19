@@ -17,7 +17,7 @@ export default function Login() {
           <Label htmlFor="email">Email</Label>
           <Input id="email" type="email" placeholder="m@example.com" required />
         </div>
-        <Button type="submit" className="w-full">
+        <Button type="submit" aria-label="Reset Password" className="w-full">
           Reset Password
         </Button>
       </form>

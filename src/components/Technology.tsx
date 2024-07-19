@@ -33,6 +33,7 @@ import rstudioLogo from "../assets/technology/Rstudio.png";
 import springLogo from "../assets/technology/Spring.png";
 import sqlServerLogo from "../assets/technology/Sql server.png";
 import vueLogo from "../assets/technology/Vue.png";
+import { Button } from "./ui/button";
 
 const technologies = {
   All: [
@@ -174,7 +175,8 @@ const TechnologyComponent = () => {
 >
   <div className="flex items-center">
     {/* Previous Button */}
-    <button
+    <Button
+    aria-label="Previous"
       onClick={() => {
         const allKeys = Object.keys(technologies);
         const currentIndex = allKeys.indexOf(activeTab);
@@ -188,7 +190,7 @@ const TechnologyComponent = () => {
       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
       </svg>
-    </button>
+    </Button>
 
     {/* Tabs List */}
     <div className="flex overflow-x-auto w-full">
@@ -210,7 +212,8 @@ const TechnologyComponent = () => {
     </div>
 
     {/* Next Button */}
-    <button
+    <Button
+    aria-label="Next Button"
       onClick={() => {
         const allKeys = Object.keys(technologies);
         const currentIndex = allKeys.indexOf(activeTab);
@@ -224,7 +227,7 @@ const TechnologyComponent = () => {
       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
       </svg>
-    </button>
+    </Button>
   </div>
 
   {Object.entries(technologies).map(([category, techList]) => (

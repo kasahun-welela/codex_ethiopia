@@ -85,16 +85,18 @@ export default function Navbar() {
 
   const renderSubMenu = (items: SubMenuItem[]) => (
     <div className="flex-1 overflow-auto py-6">
-      <button
+      <Button
+      aria-label="Back"
         className="mb-4 ml-4 mt-4 text-primary bg-gray-100 dark:bg-gray-900 hover:text-dark font-semibold"
         onClick={handleBackClick}
       >
         ← Back
-      </button>
+      </Button>
       <ul className="space-y-2 p-4">
         {items.map((item, index) => (
           <li key={index}>
-            <button
+            <Button
+            aria-label="handle click"
               onClick={() => handleLinkClick(item.href)}
               className={`flex justify-between items-center text-left w-full p-4 rounded-lg font-medium ${
                 location.pathname === item.href
@@ -110,7 +112,7 @@ export default function Navbar() {
                     : "text-gray-500 dark:text-gray-400"
                 }`}
               />
-            </button>
+            </Button>
           </li>
         ))}
       </ul>
@@ -164,7 +166,7 @@ export default function Navbar() {
             ) : (
               <nav className="flex-1 overflow-auto py-6">
                 <div className="grid gap-4 px-6">
-                  <button
+                  <Button   aria-label="Sub menu"
                     className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
                       location.pathname.startsWith("/ecommerce") ||
                       location.pathname.startsWith("/business-website") ||
@@ -185,8 +187,10 @@ export default function Navbar() {
                     <HomeIcon className="h-5 w-5" />
                     Website Service
                     <FaChevronRight className="ml-auto h-5 w-5 text-gray-500 dark:text-gray-400" />
-                  </button>
-                  <button
+                  </Button>
+                  <Button
+                  aria-label="Sub menu"
+                  
                     className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
                       location.pathname.startsWith("/appium") ||
                       location.pathname.startsWith("/katalon-studio") ||
@@ -207,9 +211,10 @@ export default function Navbar() {
                     <UserIcon className="h-5 w-5" />
                     Automation
                     <FaChevronRight className="ml-auto h-5 w-5 text-gray-500 dark:text-gray-400" />
-                  </button>
+                  </Button>
 
-                  <button
+                  <Button
+                     aria-label="Sub menu"
                     className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
                       location.pathname === "/technology"
                         ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
@@ -219,8 +224,9 @@ export default function Navbar() {
                   >
                     <MailIcon className="h-5 w-5" />
                     Technology
-                  </button>
-                  <button
+                  </Button>
+                  <Button
+                     aria-label="Sub menu"
                     className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
                       location.pathname === "/pricing"
                         ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
@@ -230,8 +236,9 @@ export default function Navbar() {
                   >
                     <PriceIcon className="h-5 w-5" />
                     Pricing
-                  </button>
-                  <button
+                  </Button>
+                  <Button
+                     aria-label="Sub menu"
                     className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
                       location.pathname === "/about"
                         ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
@@ -241,8 +248,9 @@ export default function Navbar() {
                   >
                     <AboutIcon className="h-5 w-5" />
                     About Us
-                  </button>
-                  <button
+                  </Button>
+                  <Button
+                     aria-label="Sub menu"
                     className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
                       location.pathname === "/contact"
                         ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
@@ -252,8 +260,9 @@ export default function Navbar() {
                   >
                     <ContactUsIcon className="h-5 w-5" />
                     Contact Us
-                  </button>
-                  <button
+                  </Button>
+                  <Button
+                     aria-label="Sub menu"
                     className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
                       location.pathname === "/blog"
                         ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
@@ -263,7 +272,7 @@ export default function Navbar() {
                   >
                     <ContactUsIcon className="h-5 w-5" />
                     Blog
-                  </button>
+                  </Button>
                   {picture ? (
                     <NavigationMenuItem>
                       <DropdownMenu>
@@ -287,7 +296,8 @@ export default function Navbar() {
                     </NavigationMenuItem>
                   ) : (
                     <NavigationMenuItem>
-                      <button
+                      <Button
+                         aria-label="Sub menu"
                         className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
                           location.pathname === "/login"
                             ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
@@ -297,7 +307,7 @@ export default function Navbar() {
                       >
                         <SignInIcon className="h-5 w-5" />
                         Signin
-                      </button>
+                      </Button>
                     </NavigationMenuItem>
                   )}
 

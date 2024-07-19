@@ -89,10 +89,11 @@ export default function Component() {
                 className="w-full"
               />
             </div>
-            <Button type="submit" className="w-full">
+            <Button type="submit" aria-label="Login" className="w-full">
               Login
             </Button>
             <Button
+            aria-label="Login with Google"
               variant="outline"
               className="w-full"
               onClick={() => loginWithGoogle()}
@@ -117,12 +118,12 @@ export default function Component() {
                 console.log(error);
               }}
             >
-              <Button variant="outline" className="w-full">
+              <Button  aria-label=" Login with Facebook" variant="outline" className="w-full">
                 Login with Facebook
               </Button>
             </LoginSocialFacebook>
 
-            <Button variant="outline" className="w-full">
+            <Button aria-label=" Login with Google Plus" variant="outline" className="w-full">
               Login with Google Plus
             </Button>
           </div>
