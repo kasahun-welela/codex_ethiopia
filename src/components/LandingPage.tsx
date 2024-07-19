@@ -224,12 +224,23 @@ export default function Landing() {
               updated with the latest trends and insights.
             </p>
             <div className="flex space-x-4">
-              <FaLinkedin className="h-6 w-6 text-primary" href="#" />
-              <FaTelegram className="h-6 w-6 text-primary " href="#" />
-              <FaTwitter className="h-6 w-6 text-primary " href="#" />
-              <FaFacebook className="h-6 w-6 text-primary " href="#" />
-              <FaGlobe className="h-6 w-6 text-primary " href="#" />
-            </div>
+  <a href="https://linkedin.com" aria-label="Visit LinkedIn page" className="h-6 w-6 text-primary">
+    <FaLinkedin />
+  </a>
+  <a href="https://telegram.org" aria-label="Visit Telegram page" className="h-6 w-6 text-primary">
+    <FaTelegram />
+  </a>
+  <a href="https://twitter.com" aria-label="Visit Twitter page" className="h-6 w-6 text-primary">
+    <FaTwitter />
+  </a>
+  <a href="https://facebook.com" aria-label="Visit Facebook page" className="h-6 w-6 text-primary">
+    <FaFacebook />
+  </a>
+  <a href="codexafrica.com" aria-label="Visit our website" className="h-6 w-6 text-primary">
+    <FaGlobe />
+  </a>
+</div>
+
           </div>
           <div className="w-full md:w-1/2">
   <Slider {...heroImageSettings}>
