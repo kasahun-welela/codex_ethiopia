@@ -14,8 +14,7 @@ export default function ProjectManagmentComponet() {
 
   return (
     <div className="w-full">
-    
-    <header className="bg-gradient-to-r from-red-500 to-orange-400  py-12 md:py-16 lg:py-20 text-white">
+      <header className="bg-gradient-to-r from-red-500 to-orange-400  py-12 md:py-16 lg:py-20 text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Kanban Project Management Tools
@@ -47,9 +46,13 @@ export default function ProjectManagmentComponet() {
             </div>
             <div>
               <label className="text-sm font-medium">Url</label>
-              <p className="text-muted-foreground">
+              <a
+                href="https://kanban-project-management-tools.vercel.app/"
+                target="_blank"
+                className="text-muted-foreground"
+              >
                 https://kanban-project-management-tools.vercel.app/
-              </p>
+              </a>
             </div>
           </div>
           <div>

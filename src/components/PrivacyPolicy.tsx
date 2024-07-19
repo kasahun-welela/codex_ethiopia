@@ -110,7 +110,7 @@ export default function Privacy() {
                 <li>
                   <span className="font-medium">Email:</span>{" "}
                   <a href="#" className="underline">
-                  codexethiopia@gmail.com
+                  codexafrica@gmail.com
                   </a>
                 </li>
                 <li>

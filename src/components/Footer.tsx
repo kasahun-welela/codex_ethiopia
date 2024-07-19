@@ -33,7 +33,7 @@ function Footer() {
 
               <div>
                 <p className=" font-semibold">Email</p>
-                <p>codexethiopia@gmail.com</p>
+                <p>codexafrica@gmail.com</p>
               </div>
             </div>
           </div>
