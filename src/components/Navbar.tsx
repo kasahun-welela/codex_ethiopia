@@ -15,6 +15,7 @@ import {
 import { FaChevronRight } from "react-icons/fa";
 import lightMode from "../assets/lightMode.png";
 import darkMode from "../assets/darkMode.png";
+import logo from "../../public/codexafrica3.png"
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "./DarkTheme";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -40,16 +41,16 @@ const developWebsiteSubMenu: SubMenuItem[] = [
   { href: "/payment-integration", title: "Payment Integration" },
   { href: "/project-management", title: "Project Management" },
   { href: "/admin-dashboard", title: "Admin Dashboard" },
-  { href: "/ecommerce", title: "Ecommerce" },
+  { href: "/coming_soon", title: "Ecommerce" },
   { href: "/blog", title: "Blog" },
-  { href: "/portfolio", title: "Portfolio" },
+  { href: "/coming_soon", title: "Portfolio" },
 ];
 
 const automationSubMenu: SubMenuItem[] = [
-  { href: "/appium", title: "Telegram Bot" },
-  { href: "/katalon-studio", title: "Zapier" },
-  { href: "/cucumber", title: "Google App Script" },
-  { href: "/selenium", title: "Make.com" },
+  { href: "/coming_soon", title: "Telegram Bot" },
+  { href: "/coming_soon", title: "Zapier" },
+  { href: "/coming_soon", title: "Google App Script" },
+  { href: "/coming_soon", title: "Make.com" },
 ]
 
 export default function Navbar() {
@@ -123,7 +124,7 @@ export default function Navbar() {
         {/* <span className="lg:hidden">Codex Africa</span> */}
         <div className="mt-4">
           <img
-            src={theme === "light" ? lightMode : darkMode}
+            src={theme === "light" ? logo : logo}
             alt="Image Description"
             width={150}
             height={150}
