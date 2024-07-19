@@ -18,7 +18,7 @@ export default function AdminDashboard() {
       <header className="bg-[url('/placeholder.svg')] bg-cover bg-center py-12 md:py-16 lg:py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Admin Dashboard 
+            Admin Dashboard
           </h1>
           <p className="mx-auto mt-4 max-w-3xl text-muted-foreground sm:text-lg md:text-xl">
             Next.js 14 Admin Dashboard Template With Shadcn
@@ -43,9 +43,13 @@ export default function AdminDashboard() {
             </div>
             <div>
               <label className="text-sm font-medium">Url</label>
-              <p className="text-muted-foreground">
+              <a
+                href="https://next-shadcn-dashboard-starter.vercel.app/"
+                target="_blank"
+                className="text-muted-foreground"
+              >
                 https://next-shadcn-dashboard-starter.vercel.app/
-              </p>
+              </a>
             </div>
           </div>
           <div>

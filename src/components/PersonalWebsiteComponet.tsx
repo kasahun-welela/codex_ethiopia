@@ -51,9 +51,13 @@ export default function BusinessWebsiteComponet() {
             </div>
             <div>
               <label className="text-sm font-medium">Url</label>
-              <p className="text-muted-foreground">
+              <a
+                href="https://solomonmoalawoffice.com/"
+                target="_blank"
+                className="text-muted-foreground"
+              >
                 https://solomonmoalawoffice.com/
-              </p>
+              </a>
             </div>
           </div>
           <div>

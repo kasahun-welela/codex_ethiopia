@@ -17,7 +17,6 @@ export default function BusinessWebsiteComponet() {
     <div className="w-full">
       {/* <header className="bg-[url('/placeholder.svg')] bg-cover bg-center py-12 md:py-16 lg:py-20"> */}
       <header className="bg-gradient-to-r from-red-500 to-orange-400  py-12 md:py-16 lg:py-20 text-white">
-
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             WaliaJobs
@@ -49,9 +48,13 @@ export default function BusinessWebsiteComponet() {
             </div>
             <div>
               <label className="text-sm font-medium">Url</label>
-              <p className="text-muted-foreground">
+              <a
+                href="https://walia-jobs.vercel.app/"
+                target="_blank"
+                className="text-muted-foreground"
+              >
                 https://walia-jobs.vercel.app/
-              </p>
+              </a>
             </div>
           </div>
           <div>
