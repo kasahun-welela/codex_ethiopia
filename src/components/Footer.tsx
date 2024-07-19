@@ -86,7 +86,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/automation"
+                to="/coming_soon"
                 className="hover:text-primary hover:font-semibold"
               >
                 Automation
@@ -94,7 +94,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/telegram_bot"
+                to="/coming_soon"
                 className="hover:text-primary hover:font-semibold"
               >
                 Telegram Bot
@@ -102,7 +102,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/personal_blog"
+                to="/coming_soon"
                 className="hover:text-primary hover:font-semibold"
               >
                 Personal Blog
@@ -110,7 +110,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/ecommerce_site"
+                to="/coming_soon"
                 className="hover:text-primary hover:font-semibold"
               >
                 Ecommerce Site
@@ -118,7 +118,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/event_website"
+                to="/coming_soon"
                 className="hover:text-primary hover:font-semibold"
               >
                 Event Website
@@ -126,7 +126,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/community_website"
+                to="/coming_soon"
                 className="hover:text-primary hover:font-semibold"
               >
                 Community Website
@@ -134,7 +134,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/consulting_website"
+                to="/coming_soon"
                 className="hover:text-primary hover:font-semibold"
               >
                 Consulting Website
@@ -142,7 +142,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/booking_website"
+                to="/coming_soon"
                 className="hover:text-primary hover:font-semibold"
               >
                 Booking Site
@@ -150,7 +150,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/school_website"
+                to="/coming_soon"
                 className="hover:text-primary hover:font-semibold"
               >
                 School Website
@@ -158,7 +158,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/entertainment_website"
+                to="/coming_soon"
                 className="hover:text-primary hover:font-semibold"
               >
                 Entertainment website
@@ -166,7 +166,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/news_megazine"
+                to="/coming_soon"
                 className="hover:text-primary hover:font-semibold"
               >
                 News and Magazine
@@ -174,7 +174,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/subscription_website"
+                to="/coming_soon"
                 className="hover:text-primary hover:font-semibold"
               >
                 Subscription website
