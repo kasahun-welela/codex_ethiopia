@@ -26,6 +26,7 @@ import {
   FaFacebook,
 } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "./ui/button";
 
 export default function Landing() {
   // Mapping of titles to images
@@ -320,9 +321,9 @@ export default function Landing() {
               </motion.div>
             ))}
           </div>
-          <button className="px-6 py-2 mt-8 text-white bg-[var(--primary)] rounded-md">
+          <Button aria-label="View All Product" className="px-6 py-2 mt-8 text-white bg-[var(--primary)] rounded-md">
             View All Products
-          </button>
+          </Button>
         </section>
 
         <section className="py-16 text-center">

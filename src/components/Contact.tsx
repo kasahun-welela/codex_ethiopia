@@ -267,7 +267,8 @@ export default function Contact() {
                   </FormItem>
                 )}
               />
-              <Button type="submit">Submit</Button>
+             <Button type="submit" aria-label="Submit email">Submit</Button>
+
               {result && (
                 <p className="text-green-500">Email successfully sent!</p>
               )}

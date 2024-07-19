@@ -125,7 +125,7 @@ export default function Component() {
               </ul>
             </div>
             <div className="px-6 py-4 bg-gray-50 dark:bg-gray-900">
-            <Button className="w-full">
+            <Button className="w-full" aria-label="Get Started">
                 <Link to="/contact">Get started</Link>
                 </Button>
             </div>
@@ -234,7 +234,7 @@ export default function Component() {
               </ul>
             </div>
             <div className="px-6 py-4 bg-gray-50 dark:bg-gray-900">
-            <Button className="w-full">
+            <Button className="w-full" aria-label="Get Started">
                 <Link to="/contact">Get started</Link>
                 </Button>
             </div>
@@ -363,7 +363,7 @@ export default function Component() {
               </ul>
             </div>
             <div className="px-6 py-4 bg-gray-50 dark:bg-gray-900">
-              <Button className="w-full">
+              <Button className="w-full" aria-label="Get Started">
                 <Link to="/contact">Get started</Link>
                 </Button>
             </div>
