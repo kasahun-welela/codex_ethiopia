@@ -456,7 +456,7 @@ export default function Navbar() {
             </NavigationMenuItem>
           ) : (
             <NavigationMenuItem>
-              <Button className="ml-10 text-center w-full">
+              <Button className="ml-10 text-center w-full" aria-label="Login">
                 <Link to="/login">
                   <NavigationMenuLink>Login</NavigationMenuLink>
                 </Link>
