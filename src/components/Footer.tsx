@@ -8,7 +8,7 @@ function Footer() {
         <div className="">
           <h1 className="text-xl font-semibold text-gray-300">Location</h1>
           <p className="max-w-xs">
-          Addis Ababa, Ethiopia, Ras Desta Damtew Road , OBS Tv Building 3rd Floor, Office #305
+          Addis Ababa, Africa, Ras Desta Damtew Road , OBS Tv Building 3rd Floor, Office #305
           </p>
           <div className="my-1">
             <div className="flex items-center gap-3 my-3">
@@ -273,7 +273,7 @@ function Footer() {
         </Link>
       </div>
       <p className="text-center font-bold text-gray-200">
-        <i className="ri-copyright-line"></i>Copyright CodeX Ethiopia {year}
+        <i className="ri-copyright-line"></i>Copyright CodeX Africa {year}
       </p>
     </div>
   );

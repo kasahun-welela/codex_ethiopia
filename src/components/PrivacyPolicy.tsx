@@ -114,7 +114,7 @@ export default function Privacy() {
                   </a>
                 </li>
                 <li>
-                  <span className="font-medium">Address:</span> Addis Ababa, Ethiopia
+                  <span className="font-medium">Address:</span> Addis Ababa, Africa
                 </li>
               </ul>
             </div>

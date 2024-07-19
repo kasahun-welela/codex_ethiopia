@@ -120,7 +120,7 @@ export default function Navbar() {
   return (
     <header className="flex h-20 w-full shrink-0 items-center justify-between px-4 md:px-6 container">
       <Link to="/" className="flex items-center gap-2 font-semibold">
-        {/* <span className="lg:hidden">Codex Ethiopia</span> */}
+        {/* <span className="lg:hidden">Codex Africa</span> */}
         <div className="mt-4">
           <img
             src={theme === "light" ? lightMode : darkMode}
@@ -129,7 +129,7 @@ export default function Navbar() {
             height={150}
           />
         </div>
-        {/* <span className="hidden lg:flex">CodeX Ethiopia</span> */}
+        {/* <span className="hidden lg:flex">CodeX Africa</span> */}
       </Link>
       <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
         <SheetTrigger asChild>
@@ -148,7 +148,7 @@ export default function Navbar() {
                   width={110}
                   height={110}
                 />
-                {/* <span className="ml-2">Codex Ethiopia</span> */}
+                {/* <span className="ml-2">Codex Africa</span> */}
               </div>
               <Button
                 variant="ghost"
