@@ -294,14 +294,14 @@ export default function Landing() {
             {solutions.map((solution, index) => (
               <motion.div
                 key={index}
-                className="flex flex-col items-center space-y-2 border border-gray-200 dark:border-gray-800 p-4 rounded-lg dark:shadow-md dark:shadow-gray-700 transition-transform hover:scale-105"
+                className="flex flex-col items-center space-y-2 border border-gray-200 dark:border-gray-800 p-4 rounded-lg dark:shadow-md dark:shadow-gray-700 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
                 variants={variants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="w-24 h-24 rounded-full overflow-hidden">
+                <div className="w-24 h-24 rounded-full overflow-hidden ">
                   <img
                     src={solution.image}
                     alt={solution.title}
@@ -327,9 +327,9 @@ export default function Landing() {
                     ))}
                   </div>
                 </div>
-                <a href="#" className="mt-4 text-[var(--primary)]">
+                {/* <a href="#" className="mt-4 text-[var(--primary)]">
                   Learn More →
-                </a>
+                </a> */}
               </motion.div>
             ))}
           </div>
