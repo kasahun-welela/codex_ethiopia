@@ -262,48 +262,50 @@ export default function Landing() {
             </div>
           </div>
           <div className="w-full md:w-1/2">
-            <Slider {...heroImageSettings}>
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <img
-                  src={imgsrc1}
-                  alt="Illustration 1"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <img
-                  src={imgsrc2}
-                  alt="Illustration 2"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
+          <Slider {...heroImageSettings}>
+  <div className="aspect-w-16 aspect-h-9 w-full">
+    {/* <!-- First image preloaded for immediate visibility --> */}
+    <img
+      src={imgsrc1}
+      alt="Illustration 1"
+      className="w-full h-full object-cover"
+    />
+  </div>
+  <div className="aspect-w-16 aspect-h-9 w-full">
+    {/* <!-- Subsequent images lazy-loaded --> */}
+    <img
+      src={imgsrc2}
+      alt="Illustration 2"
+      className="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
+  <div className="aspect-w-16 aspect-h-9 w-full">
+    <img
+      src={imgsrc3}
+      alt="Illustration 3"
+      className="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
+  <div className="aspect-w-16 aspect-h-9 w-full">
+    <img
+      src={imgsrc4}
+      alt="Illustration 4"
+      className="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
+  <div className="aspect-w-16 aspect-h-9 w-full">
+    <img
+      src={imgsrc5}
+      alt="Illustration 5"
+      className="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
+</Slider>
 
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <img
-                  src={imgsrc3}
-                  alt="Illustration 3"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <img
-                  src={imgsrc4}
-                  alt="Illustration 4"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <img
-                  src={imgsrc5}
-                  alt="Illustration 5"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </Slider>
           </div>
 
           {/* <div className="w-full md:w-1/2">
