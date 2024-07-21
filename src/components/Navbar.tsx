@@ -293,19 +293,19 @@ export default function Navbar() {
                     </NavigationMenuItem>
                   ) : (
                     <NavigationMenuItem>
-                      <Button
-                         aria-label="Sub menu"
-                        className={`flex items-center gap-3 rounded-lg px-3 py-2 transition-all whitespace-nowrap ${
-                          location.pathname === "/login"
-                            ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
-                            : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50"
-                        }`}
-                        onClick={() => handleLinkClick("/login")}
-                      >
-                        <SignInIcon className="h-5 w-5" />
-                        Signin
-                      </Button>
-                    </NavigationMenuItem>
+                    <Button
+                      aria-label="Login"
+                      className={`flex items-center justify-center gap-3 rounded-lg p-3 m-2 min-w-12 min-h-12 transition-all ${
+                        location.pathname === "/login"
+                          ? "text-primary bg-gray-100 dark:bg-gray-900 font-bold"
+                          : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50"
+                      }`}
+                      onClick={() => handleLinkClick("/login")}
+                    >
+                      <SignInIcon className="h-5 w-5" />
+                      Signin
+                    </Button>
+                  </NavigationMenuItem>
                   )}
 
                   <Button
@@ -456,12 +456,12 @@ export default function Navbar() {
             </NavigationMenuItem>
           ) : (
             <NavigationMenuItem>
-              <Button className="ml-10 text-center w-full" aria-label="Login">
-                <Link to="/login">
-                  <NavigationMenuLink>Login</NavigationMenuLink>
-                </Link>
-              </Button>
-            </NavigationMenuItem>
+            <Button className="ml-2 text-center w-full p-3 min-w-12 min-h-12" aria-label="Login">
+              <Link to="/login" className="text-white no-underline">
+                Login
+              </Link>
+            </Button>
+          </NavigationMenuItem>
           )}
           <NavigationMenuItem>
             <Button
