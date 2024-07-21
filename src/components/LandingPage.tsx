@@ -224,44 +224,87 @@ export default function Landing() {
               updated with the latest trends and insights.
             </p>
             <div className="flex space-x-4">
-  <a href="https://linkedin.com" aria-label="Visit LinkedIn page" className="h-6 w-6 text-primary">
-    <FaLinkedin />
-  </a>
-  <a href="https://telegram.org" aria-label="Visit Telegram page" className="h-6 w-6 text-primary">
-    <FaTelegram />
-  </a>
-  <a href="https://twitter.com" aria-label="Visit Twitter page" className="h-6 w-6 text-primary">
-    <FaTwitter />
-  </a>
-  <a href="https://facebook.com" aria-label="Visit Facebook page" className="h-6 w-6 text-primary">
-    <FaFacebook />
-  </a>
-  <a href="codexafrica.com" aria-label="Visit our website" className="h-6 w-6 text-primary">
-    <FaGlobe />
-  </a>
-</div>
-
+              <a
+                href="https://linkedin.com"
+                aria-label="Visit LinkedIn page"
+                className="h-6 w-6 text-primary"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="https://telegram.org"
+                aria-label="Visit Telegram page"
+                className="h-6 w-6 text-primary"
+              >
+                <FaTelegram />
+              </a>
+              <a
+                href="https://twitter.com"
+                aria-label="Visit Twitter page"
+                className="h-6 w-6 text-primary"
+              >
+                <FaTwitter />
+              </a>
+              <a
+                href="https://facebook.com"
+                aria-label="Visit Facebook page"
+                className="h-6 w-6 text-primary"
+              >
+                <FaFacebook />
+              </a>
+              <a
+                href="codexafrica.com"
+                aria-label="Visit our website"
+                className="h-6 w-6 text-primary"
+              >
+                <FaGlobe />
+              </a>
+            </div>
           </div>
           <div className="w-full md:w-1/2">
-  <Slider {...heroImageSettings}>
-    <div className="aspect-w-16 aspect-h-9 w-full">
-      <img src={imgsrc1} alt="Illustration 1" className="w-full h-full object-cover" loading="lazy" />
-    </div>
-    <div className="aspect-w-16 aspect-h-9 w-full">
-      <img src={imgsrc2} alt="Illustration 2" className="w-full h-full object-cover" loading="lazy" />
-    </div>
-    <div className="aspect-w-16 aspect-h-9 w-full">
-      <img src={imgsrc3} alt="Illustration 3" className="w-full h-full object-cover" loading="lazy" />
-    </div>
-    <div className="aspect-w-16 aspect-h-9 w-full">
-      <img src={imgsrc4} alt="Illustration 4" className="w-full h-full object-cover" loading="lazy" />
-    </div>
-    <div className="aspect-w-16 aspect-h-9 w-full">
-      <img src={imgsrc5} alt="Illustration 5" className="w-full h-full object-cover" loading="lazy" />
-    </div>
-  </Slider>
-</div>
+            <Slider {...heroImageSettings}>
+              <div className="aspect-w-16 aspect-h-9 w-full">
+                <img
+                  src={imgsrc1}
+                  alt="Illustration 1"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-w-16 aspect-h-9 w-full">
+                <img
+                  src={imgsrc2}
+                  alt="Illustration 2"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
 
+              <div className="aspect-w-16 aspect-h-9 w-full">
+                <img
+                  src={imgsrc3}
+                  alt="Illustration 3"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="aspect-w-16 aspect-h-9 w-full">
+                <img
+                  src={imgsrc4}
+                  alt="Illustration 4"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="aspect-w-16 aspect-h-9 w-full">
+                <img
+                  src={imgsrc5}
+                  alt="Illustration 5"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </Slider>
+          </div>
 
           {/* <div className="w-full md:w-1/2">
             <Slider {...heroImageSettings}>
@@ -333,7 +376,10 @@ export default function Landing() {
               </motion.div>
             ))}
           </div>
-          <Button aria-label="View All Product" className="px-6 py-2 mt-8 text-white bg-[var(--primary)] rounded-md">
+          <Button
+            aria-label="View All Product"
+            className="px-6 py-2 mt-8 text-white bg-[var(--primary)] rounded-md"
+          >
             View All Products
           </Button>
         </section>
@@ -564,30 +610,30 @@ export default function Landing() {
             What People Think About Our Products
           </h2>
           <Slider {...settings} className="mt-8">
-  {testimonials.map((testimonial, index) => (
-    <div key={index} className="px-2">
-      <div className="bg-[var(--card)] text-[var(--card-foreground)] p-6 rounded-lg shadow-md w-full max-w-sm h-72 flex flex-col justify-between">
-        <div className="flex items-center space-x-4">
-          {/* Aspect ratio container added here */}
-          <div className="aspect-w-1 aspect-h-1 w-16 h-16 rounded-full overflow-hidden">
-            <img
-              src={imgsrc1}  // Assuming each testimonial object has an 'imgsrc' property
-              alt={`Testimonial ${index + 1}`}
-              className="object-cover w-full h-full"
-            />
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold">
-              {testimonial.name}
-            </h3>
-            <p>{testimonial.position}</p>
-          </div>
-        </div>
-        <p className="mt-4 flex-grow">{testimonial.feedback}</p>
-      </div>
-    </div>
-  ))}
-</Slider>
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="px-2">
+                <div className="bg-[var(--card)] text-[var(--card-foreground)] p-6 rounded-lg shadow-md w-full max-w-sm h-72 flex flex-col justify-between">
+                  <div className="flex items-center space-x-4">
+                    {/* Aspect ratio container added here */}
+                    <div className="aspect-w-1 aspect-h-1 w-16 h-16 rounded-full overflow-hidden">
+                      <img
+                        src={imgsrc1} // Assuming each testimonial object has an 'imgsrc' property
+                        alt={`Testimonial ${index + 1}`}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold">
+                        {testimonial.name}
+                      </h3>
+                      <p>{testimonial.position}</p>
+                    </div>
+                  </div>
+                  <p className="mt-4 flex-grow">{testimonial.feedback}</p>
+                </div>
+              </div>
+            ))}
+          </Slider>
 
           {/* <Slider {...settings} className="mt-8">
             {testimonials.map((testimonial, index) => (
