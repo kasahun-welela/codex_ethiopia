@@ -13,7 +13,7 @@ export default function About() {
       img: abenezer,
       title: "Founder, Fullstack Developer, Scrum master",
       description:
-        "Abenezer has over 3 years of experience in the tech industry, with a background in computer science.",
+        "Abenezer is experienced full stack developer, with a background in computer science.",
       skills: [
         "HTML",
         "React",
@@ -121,7 +121,7 @@ export default function About() {
     {
       name: "Shimelis Techane",
       img: Shimelis,
-      title: "Software Engineer",
+      title: "MuleSoft Developer",
       description:"Shimelis is a full-stack developer with a strong grasp of modern web technologies, backend systems, mobile development, and API integration.",
       skills: [
         "HTML",
