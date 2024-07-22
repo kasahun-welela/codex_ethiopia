@@ -607,7 +607,7 @@ export default function Landing() {
         </section>
 {/* empowering business section */}
 <div className="w-full">
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      <section className="w-full md:py-8 lg:py-8">
         <div className="container px-4 md:px-6 space-y-6">
           <div className="text-center space-y-4">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
