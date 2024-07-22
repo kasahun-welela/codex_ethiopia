@@ -17,7 +17,7 @@ import Personal from "../assets/Home/Personal_Website.webp";
 import Project from "../assets/Home/Project_Management.webp";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaRocket, FaBuilding, FaIndustry, FaBriefcase } from 'react-icons/fa';
+import { FaRocket, FaBuilding, FaIndustry, FaBriefcase } from "react-icons/fa";
 import "./slick-custom.css"; // Import custom slick styles
 import {
   FaLinkedin,
@@ -28,6 +28,7 @@ import {
 } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
   // Mapping of titles to images
@@ -135,16 +136,18 @@ export default function Landing() {
 
   const testimonials = [
     {
-      name: "Jane Doe",
-      position: "UI/UX Designer",
+      name: "Walia Jobs",
+      position: "CEO of Walia Jobs",
       feedback:
-        "I'm a creative UI/UX designer with a passion for crafting intuitive and visually appealing digital experiences.",
+        "The new Walia Jobs portal is fantastic! The intuitive design and seamless functionality have significantly enhanced our user experience.",
+      website: "https://walia-jobs.vercel.app/blogs",
     },
     {
       name: "Michael Johnson",
       position: "Product Manager",
       feedback:
         "As a product manager, I'm passionate about bridging the gap between user needs and technical capabilities.",
+      website: "https://walia-jobs.vercel.app/blogs",
     },
     {
       name: "Emily Davis",
@@ -153,10 +156,11 @@ export default function Landing() {
         "As a digital marketer, I'm passionate about leveraging data-driven strategies to help businesses reach their target audience.",
     },
     {
-      name: "David Lee",
-      position: "Data Analyst",
+      name: "Solomon Mulugeta",
+      position: "Lawyer",
       feedback:
-        "As a data analyst, I'm passionate about uncovering insights that drive business decisions.",
+        "I am thoroughly impressed with the website design! The professional look and user-friendly interface exceeded my expectations.",
+      website: "http://solomonmoalawoffice.com/",
     },
   ];
 
@@ -605,67 +609,76 @@ export default function Landing() {
             </div>
           </div>
         </section>
-{/* empowering business section */}
-<div className="w-full">
-      <section className="w-full md:py-8 lg:py-8">
-        <div className="container px-4 md:px-6 space-y-6">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Empowering Businesses of All Sizes
-            </h2>
-            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
-              Our team of experts can help you build, scale, and optimize your digital presence, no matter the size of your business.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="card p-6 space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary rounded-md p-3 flex items-center justify-center">
-                  <FaRocket className="text-primary-foreground w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-semibold">Startups </h3>
+        {/* empowering business section */}
+        <div className="w-full">
+          <section className="w-full md:py-8 lg:py-8">
+            <div className="container px-4 md:px-6 space-y-6">
+              <div className="text-center space-y-4">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  Empowering Businesses of All Sizes
+                </h2>
+                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
+                  Our team of experts can help you build, scale, and optimize
+                  your digital presence, no matter the size of your business.
+                </p>
               </div>
-              <p className="text-muted-foreground">
-                Have a strict budget and minimum resources? Don't worry, our professionals can give much-needed tech support to turn your dream idea into a reality.
-              </p>
-            </div>
-            <div className="card p-6 space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary rounded-md p-3 flex items-center justify-center">
-                  <FaBuilding className="text-primary-foreground w-6 h-6" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="card p-6 space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-primary rounded-md p-3 flex items-center justify-center">
+                      <FaRocket className="text-primary-foreground w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold">Startups </h3>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Have a strict budget and minimum resources? Don't worry, our
+                    professionals can give much-needed tech support to turn your
+                    dream idea into a reality.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold">Small Business </h3>
-              </div>
-              <p className="text-muted-foreground">
-                Our proficients can help you build your brand identity blending their development experience well with your development requirements.
-              </p>
-            </div>
-            <div className="card p-6 space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary rounded-md p-3 flex items-center justify-center">
-                  <FaIndustry className="text-primary-foreground w-6 h-6" />
+                <div className="card p-6 space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-primary rounded-md p-3 flex items-center justify-center">
+                      <FaBuilding className="text-primary-foreground w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold">Small Business </h3>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Our proficients can help you build your brand identity
+                    blending their development experience well with your
+                    development requirements.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold">Enterprise Business </h3>
-              </div>
-              <p className="text-muted-foreground">
-                We help enterprise-level businesses enhance their business reach and streamline processes with innovative technology.
-              </p>
-            </div>
-            <div className="card p-6 space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary rounded-md p-3 flex items-center justify-center">
-                  <FaBriefcase className="text-primary-foreground w-6 h-6" />
+                <div className="card p-6 space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-primary rounded-md p-3 flex items-center justify-center">
+                      <FaIndustry className="text-primary-foreground w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold">
+                      Enterprise Business{" "}
+                    </h3>
+                  </div>
+                  <p className="text-muted-foreground">
+                    We help enterprise-level businesses enhance their business
+                    reach and streamline processes with innovative technology.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold">Agency Business +</h3>
+                <div className="card p-6 space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="bg-primary rounded-md p-3 flex items-center justify-center">
+                      <FaBriefcase className="text-primary-foreground w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-semibold">Agency Business +</h3>
+                  </div>
+                  <p className="text-muted-foreground">
+                    Enhance the offering of your Agency business by leveraging
+                    our development expertise and trending.
+                  </p>
+                </div>
               </div>
-              <p className="text-muted-foreground">
-                Enhance the offering of your Agency business by leveraging our development expertise and trending.
-              </p>
             </div>
-          </div>
+          </section>
         </div>
-      </section>
-    </div>
 
         <section className="py-16 text-center bg-[var(--muted)] dark:bg-[var(--muted)]">
           <h2 className="text-3xl font-bold">
@@ -690,7 +703,10 @@ export default function Landing() {
                       </h3>
                       <p>{testimonial.position}</p>
                     </div>
-                  </div>
+                  </div>{" "}
+                  <Link to="http://solomonmoalawoffice.com/">
+                    Website :{testimonial.website}
+                  </Link>
                   <p className="mt-4 flex-grow">{testimonial.feedback}</p>
                 </div>
               </div>
