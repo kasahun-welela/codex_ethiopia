@@ -17,6 +17,7 @@ import Personal from "../assets/Home/Personal_Website.webp";
 import Project from "../assets/Home/Project_Management.webp";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FaRocket, FaBuilding, FaIndustry, FaBriefcase } from 'react-icons/fa';
 import "./slick-custom.css"; // Import custom slick styles
 import {
   FaLinkedin,
@@ -604,6 +605,67 @@ export default function Landing() {
             </div>
           </div>
         </section>
+{/* empowering business section */}
+<div className="w-full">
+      <section className="w-full md:py-8 lg:py-8">
+        <div className="container px-4 md:px-6 space-y-6">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Empowering Businesses of All Sizes
+            </h2>
+            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
+              Our team of experts can help you build, scale, and optimize your digital presence, no matter the size of your business.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="card p-6 space-y-4">
+              <div className="flex items-center gap-4">
+                <div className="bg-primary rounded-md p-3 flex items-center justify-center">
+                  <FaRocket className="text-primary-foreground w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-semibold">Startups </h3>
+              </div>
+              <p className="text-muted-foreground">
+                Have a strict budget and minimum resources? Don't worry, our professionals can give much-needed tech support to turn your dream idea into a reality.
+              </p>
+            </div>
+            <div className="card p-6 space-y-4">
+              <div className="flex items-center gap-4">
+                <div className="bg-primary rounded-md p-3 flex items-center justify-center">
+                  <FaBuilding className="text-primary-foreground w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-semibold">Small Business </h3>
+              </div>
+              <p className="text-muted-foreground">
+                Our proficients can help you build your brand identity blending their development experience well with your development requirements.
+              </p>
+            </div>
+            <div className="card p-6 space-y-4">
+              <div className="flex items-center gap-4">
+                <div className="bg-primary rounded-md p-3 flex items-center justify-center">
+                  <FaIndustry className="text-primary-foreground w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-semibold">Enterprise Business </h3>
+              </div>
+              <p className="text-muted-foreground">
+                We help enterprise-level businesses enhance their business reach and streamline processes with innovative technology.
+              </p>
+            </div>
+            <div className="card p-6 space-y-4">
+              <div className="flex items-center gap-4">
+                <div className="bg-primary rounded-md p-3 flex items-center justify-center">
+                  <FaBriefcase className="text-primary-foreground w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-semibold">Agency Business +</h3>
+              </div>
+              <p className="text-muted-foreground">
+                Enhance the offering of your Agency business by leveraging our development expertise and trending.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
         <section className="py-16 text-center bg-[var(--muted)] dark:bg-[var(--muted)]">
           <h2 className="text-3xl font-bold">
