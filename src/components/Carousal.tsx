@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 interface CarouselItem {
   id: number;
   title: string;
-  subtitle: string;
   description: string;
   quote: string;
   background: string;
@@ -12,34 +13,30 @@ interface CarouselItem {
 const carouselItems: CarouselItem[] = [
   {
     id: 1,
-    title: 'ICELAND',
-    subtitle: 'EUROPE',
-    description: '“As I flew north to begin my third circuit of Iceland in four years, I was slightly anxious. The number of visitors to Iceland has doubled in that period, and I feared this might mean a little less magic to go around. At the end of this trip, 6000km later, I\'m thrilled to report that the magic levels remain high. It\'s found in glorious football victories and Viking chants, kayaking among icebergs, sitting with puffins under the midnight sun and crunching across brand-new lava fields.”',
-    quote: '– CAROLYN BAIN',
+    title: 'Custom Website',
+    description: 'Delivering unique and innovative website solutions tailored to your needs. Our team excels in creating websites that are not only visually appealing but also highly functional and user-friendly. Whether it’s a startup, business, or personal site, we ensure it reflects your brand and engages your audience effectively.',
+    quote: 'At CodeX Africa, our mission is to empower businesses by providing innovative and reliable web solutions that significantly enhance their online presence and drive sustainable growth. We are dedicated to understanding the unique challenges and opportunities faced by our clients in a rapidly evolving digital landscape. By leveraging cutting-edge technologies and industry best practices, we deliver tailored solutions that not only meet but exceed our clients\' expectations.',
     background: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/iceland.jpg',
   },
   {
     id: 2,
-    title: 'CHINA',
-    subtitle: 'ASIA',
-    description: '“Its modern face is dazzling, but China is no one-trick pony. The world\'s oldest continuous civilisation isn\'t all smoked glass and brushed aluminium and while you won\'t be tripping over artefacts – three decades of round-the-clock development and rash town-planning have taken their toll – rich seams of antiquity await.”',
-    quote: '– DAMIAN HARPER',
+    title: 'Custom Product',
+    description: 'Creating user-friendly mobile applications to expand your business reach. Our custom products are designed to streamline operations, improve user experience, and drive business growth. From project management tools to mobile apps, our solutions are crafted to meet your specific needs.',
+    quote: 'To be the leading technology partner for businesses across Africa and beyond, renowned for our excellence in web services and products by 2030.',
     background: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/china.jpg',
   },
   {
     id: 3,
-    title: 'USA',
-    subtitle: 'NORTH AMERICA',
-    description: '“When it comes to travel, America has always floored me with its staggering range of possibilities. Not many other countries have so much natural beauty – mountains, beaches, rainforest, deserts, canyons, glaciers – coupled with fascinating cities to explore, an unrivaled music scene and all the things that make travel so rewarding (friendly locals, great restaurants and farmers markets, and plenty of quirky surprises).”',
-    quote: '– REGIS ST LOUIS',
+    title: 'Website Customization',
+    description: 'If you buy a website from us, we will customize it for you to meet your exact specifications. Our customization services ensure that your website stands out and functions perfectly, tailored to your unique requirements and goals.',
+    quote: 'We make sure your website is customized to fit your specific needs and requirements, ensuring a unique and effective online presence.',
     background: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/usa.jpg',
   },
   {
     id: 4,
-    title: 'PERU',
-    subtitle: 'SOUTH AMERICA',
-    description: '“For me, Peru is the molten core of South America, a distillation of the oldest traditions and the finest building, weaving and art made by the most sophisticated cultures on the continent. In Peru the wildest landscapes – from frozen Andean peaks to the deep Amazon – help us re-forge our connection to the natural world. It is also a cultural stew, where diverse peoples live side by side, negotiating modern life with humor and aplomb. Beyond that, the cuisine alone makes it worth the trip. Every return is rich and surprising.”',
-    quote: '– CAROLYN MCCARTHY',
+    title: 'Automation',
+    description: 'Automation solutions to boost productivity and efficiency. We provide automated systems such as Telegram bots, integrations with third-party services like Zapier and Make.com, and custom Google Sheets scripts to streamline your workflows.',
+    quote: 'We offer automation like telegram bot and using third party like Zapier, Make.com, and Google Sheets app script.',
     background: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/peru.jpg',
   },
 ];
@@ -71,7 +68,7 @@ const Carousel: React.FC = () => {
   }, []);
 
   return (
-    <div className="carousel relative h-screen overflow-hidden ">
+    <div className="carousel relative h-screen overflow-hidden bg-black">
       <div className="carousel__stage relative h-4/5">
         {carouselItems.map((item, index) => (
           <div
@@ -81,22 +78,78 @@ const Carousel: React.FC = () => {
             }`}
             style={{ backgroundImage: `url(${item.background})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
           >
-            <div className="content w-3/10 flex flex-col justify-center items-center bg-opacity-50 bg-gray-800 p-10 text-white">
-              <h1 className="text-4xl font-bold mb-4">
+            <div className="overlay absolute inset-0 bg-black opacity-50"></div>
+            <div className="content relative w-full md:w-3/5 flex flex-col justify-center items-start p-10 text-white">
+              <motion.h1 
+                className="text-2xl md:text-8xl font-extrabold mb-6"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+              >
                 {item.title}
-                <br />
-                <span className="text-2xl font-light">{item.subtitle}</span>
-              </h1>
-              <div className="content__main text-center">
-                <p className="text-lg mb-4">{item.description}</p>
-                <p className="text-sm">{item.quote}</p>
+              </motion.h1>
+              <motion.div 
+                className="content__main text-left"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.3 }}
+              >
+                <p className="text-xl md:text-2xl mb-6 font-light leading-snug">{item.description}</p>
+                <p className="text-lg md:text-xl mb-8 font-medium">{item.quote}</p>
+              </motion.div>
+              <div className="flex space-x-2 mt-4 mb-8">
+                {carouselItems.map((_, dotIndex) => (
+                  <motion.div
+                    key={dotIndex}
+                    className={`w-3 h-3 rounded-full ${
+                      dotIndex === activeIndex ? 'bg-cyan-600' : 'bg-gray-400'
+                    }`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: dotIndex * 0.2 }}
+                  />
+                ))}
               </div>
-              <h3 className="content__index absolute bottom-4 right-4 text-8xl font-bold opacity-10">
-                {String(index + 1).padStart(2, '0')}
-              </h3>
+              <motion.div 
+                className="flex justify-start space-x-3"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.6 }}
+              >
+                <Link
+                  className="border rounded-full border-cyan-600 px-8 py-3 text-lg md:text-xl font-semibold hover:bg-white hover:text-black transition-colors duration-300"
+                  to="/contactUs"
+                >
+                  Contact us
+                </Link>
+                <Link
+                  className="border rounded-full border-cyan-600 px-8 py-3 text-lg md:text-xl font-semibold hover:bg-white hover:text-black transition-colors duration-300"
+                  to="/practiceArea"
+                >
+                  Practice area
+                </Link>
+              </motion.div>
             </div>
           </div>
         ))}
+      </div>
+      <div className="relative w-full bottom-0 left-0 right-0 flex flex-col items-center">
+        <div className="w-11/12 mx-auto md:w-3/5 -mt-20">
+          <div className="shadow-2xl bg-gray-100 dark:bg-gray-900 rounded-3xl flex flex-col items-center gap-6 py-3 font-medium md:flex-row justify-around md:p-10">
+            <h2 className="underline underline-offset-8 decoration-2 decoration-orange-500 text-nowrap text-xl md:text-2xl hover:bg-cyan-400 rounded-full px-3">
+              Website Development
+            </h2>
+            <h2 className="underline underline-offset-8 decoration-2 decoration-orange-500 text-nowrap text-xl md:text-2xl hover:bg-cyan-400 rounded-full px-3">
+              Custom Product
+            </h2>
+            <h2 className="underline underline-offset-8 decoration-2 decoration-orange-500 text-xl md:text-2xl hover:bg-cyan-400 rounded-full px-3 text-nowrap">
+              Website Customization
+            </h2>
+            <h2 className="underline underline-offset-8 decoration-2 decoration-orange-500 text-xl md:text-2xl hover:bg-cyan-400 rounded-full px-3">
+              Automation
+            </h2>
+          </div>
+        </div>
       </div>
     </div>
   );
