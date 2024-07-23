@@ -3,8 +3,6 @@ import Slider from "react-slick";
 import imgsrc1 from "../assets/Process/image1.webp";
 import imgsrc2 from "../assets/Process/image2.webp";
 import imgsrc3 from "../assets/Process/image3.webp";
-import imgsrc4 from "../assets/Process/image4.webp";
-import imgsrc5 from "../assets/Process/image5.webp";
 // import home images
 import Automation from "../assets/Home/Automation.webp";
 import Business from "../assets/Home/Business_Website.webp";
