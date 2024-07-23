@@ -245,12 +245,6 @@ export default function Landing() {
               </motion.div>
             ))}
           </div>
-          <Button
-            aria-label="View All Product"
-            className="px-6 py-2 mt-8 text-white bg-[var(--primary)] rounded-md"
-          >
-            View All Products
-          </Button>
         </section>
 
         <section className="py-16 text-center">
