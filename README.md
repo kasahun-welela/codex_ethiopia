@@ -1,2 +1,2 @@
 CodeX_Africa
-Software company based in Africa, Africa To the World
+Software company based in Ethiopia, Africa, Africa To the World
