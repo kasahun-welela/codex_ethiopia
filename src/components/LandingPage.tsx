@@ -18,7 +18,6 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaRocket, FaBuilding, FaIndustry, FaBriefcase } from "react-icons/fa";
 import "./slick-custom.css"; // Import custom slick styles
 import { Badge } from "@/components/ui/badge";
-import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import Carousel from "./Carousal";
 
