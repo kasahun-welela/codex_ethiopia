@@ -10,36 +10,37 @@ interface CarouselItem {
   background: string;
 }
 
-const carouselItems: CarouselItem[] = [
-  {
-    id: 1,
-    title: 'Custom Website',
-    description: 'Delivering unique and innovative website solutions tailored to your needs. Our team excels in creating websites that are not only visually appealing but also highly functional and user-friendly. Whether it’s a startup, business, or personal site.',
-    quote: 'At CodeX Africa, our mission is to empower businesses by providing innovative and reliable web solutions that significantly enhance their online presence and drive sustainable growth.',
-    background: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/iceland.jpg',
-  },
-  {
-    id: 2,
-    title: 'Custom Product',
-    description: 'Creating user-friendly mobile applications to expand your business reach. Our custom products are designed to streamline operations, improve user experience, and drive business growth. From project management tools to mobile apps, our solutions are crafted to meet your specific needs.',
-    quote: 'To be the leading technology partner for businesses across Africa and beyond, renowned for our excellence in web services and products by 2030.',
-    background: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/china.jpg',
-  },
-  {
-    id: 3,
-    title: 'Website Customization',
-    description: 'If you buy a website from us, we will customize it for you to meet your exact specifications. Our customization services ensure that your website stands out and functions perfectly, tailored to your unique requirements and goals.',
-    quote: 'We make sure your website is customized to fit your specific needs and requirements, ensuring a unique and effective online presence.',
-    background: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/usa.jpg',
-  },
-  {
-    id: 4,
-    title: 'Automation',
-    description: 'Automation solutions to boost productivity and efficiency. We provide automated systems such as Telegram bots, integrations with third-party services like Zapier and Make.com, and custom Google Sheets scripts to streamline your workflows.',
-    quote: 'We offer automation like telegram bot and using third party like Zapier, Make.com, and Google Sheets app script.',
-    background: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/peru.jpg',
-  },
-];
+const carouselItems = [
+    {
+      id: 1,
+      title: 'Custom Website',
+      description: 'Delivering unique and innovative website solutions tailored to your needs. Our team excels in creating websites that are visually appealing, functional, and user-friendly.',
+      quote: 'Our mission is to empower businesses by providing innovative and reliable web solutions that enhance online presence and drive growth.',
+      background: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/iceland.jpg',
+    },
+    {
+      id: 2,
+      title: 'Custom Product',
+      description: 'Creating user-friendly mobile applications to expand your business reach. Our solutions streamline operations, improve user experience, and drive growth.',
+      quote: 'We aim to be the leading technology partner for businesses, renowned for excellence in web services and products by 2030.',
+      background: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/china.jpg',
+    },
+    {
+      id: 3,
+      title: 'Website Customization',
+      description: 'If you buy a website from us, we will customize it for you to meet your exact specifications. Our customization services ensure that your website stands out and functions perfectly, tailored to your unique requirements and goals.',
+      quote: 'We make sure your website is customized to fit your specific needs and requirements, ensuring a unique and effective online presence.',
+      background: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/usa.jpg',
+    },
+    {
+      id: 4,
+      title: 'Automation',
+      description: 'Automation solutions to boost productivity and efficiency. We provide automated systems such as Telegram bots, third-party integrations, and custom Google Sheets scripts.',
+      quote: 'We offer automation solutions with Telegram bots, Zapier, Make.com, and Google Sheets scripts to streamline your workflows.',
+      background: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/peru.jpg',
+    },
+  ];
+  
 
 const Carousel: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
