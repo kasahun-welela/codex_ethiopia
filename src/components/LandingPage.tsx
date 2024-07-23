@@ -190,21 +190,11 @@ export default function Landing() {
     ],
   };
 
-  // const heroImageSettings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 1000,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   autoplay: true,
-  //   autoplaySpeed: 1500,
-  //   arrows: false,
-  // };
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
       <Carousel />
-      <main className="container">
+      <main className="container -mt-12">
         <section className="text-center">
           <h2 className="text-3xl font-bold">Our Solutions</h2>
           <p className="mt-4 text-lg">
