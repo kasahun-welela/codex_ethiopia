@@ -14,8 +14,8 @@ const carouselItems: CarouselItem[] = [
   {
     id: 1,
     title: 'Custom Website',
-    description: 'Delivering unique and innovative website solutions tailored to your needs. Our team excels in creating websites that are not only visually appealing but also highly functional and user-friendly. Whether it’s a startup, business, or personal site, we ensure it reflects your brand and engages your audience effectively.',
-    quote: 'At CodeX Africa, our mission is to empower businesses by providing innovative and reliable web solutions that significantly enhance their online presence and drive sustainable growth. We are dedicated to understanding the unique challenges and opportunities faced by our clients in a rapidly evolving digital landscape. By leveraging cutting-edge technologies and industry best practices, we deliver tailored solutions that not only meet but exceed our clients\' expectations.',
+    description: 'Delivering unique and innovative website solutions tailored to your needs. Our team excels in creating websites that are not only visually appealing but also highly functional and user-friendly. Whether it’s a startup, business, or personal site.',
+    quote: 'At CodeX Africa, our mission is to empower businesses by providing innovative and reliable web solutions that significantly enhance their online presence and drive sustainable growth.',
     background: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/215059/iceland.jpg',
   },
   {
@@ -136,16 +136,16 @@ const Carousel: React.FC = () => {
       <div className="relative w-full bottom-0 left-0 right-0 flex flex-col items-center">
         <div className="w-11/12 mx-auto md:w-3/5 -mt-20">
           <div className="shadow-2xl bg-gray-100 dark:bg-gray-900 rounded-3xl flex flex-col items-center gap-6 py-3 font-medium md:flex-row justify-around md:p-10">
-            <h2 className="underline underline-offset-8 decoration-2 decoration-orange-500 text-nowrap text-xl md:text-2xl hover:bg-cyan-400 rounded-full px-3">
+            <h2 className="underline underline-offset-8 decoration-2 decoration-orange-500 text-nowrap text-xl md:text-2xl rounded-full px-3">
               Website Development
             </h2>
-            <h2 className="underline underline-offset-8 decoration-2 decoration-orange-500 text-nowrap text-xl md:text-2xl hover:bg-cyan-400 rounded-full px-3">
+            <h2 className="underline underline-offset-8 decoration-2 decoration-orange-500 text-nowrap text-xl md:text-2xl rounded-full px-3">
               Custom Product
             </h2>
-            <h2 className="underline underline-offset-8 decoration-2 decoration-orange-500 text-xl md:text-2xl hover:bg-cyan-400 rounded-full px-3 text-nowrap">
+            <h2 className="underline underline-offset-8 decoration-2 decoration-orange-500 text-xl md:text-2xl rounded-full px-3 text-nowrap">
               Website Customization
             </h2>
-            <h2 className="underline underline-offset-8 decoration-2 decoration-orange-500 text-xl md:text-2xl hover:bg-cyan-400 rounded-full px-3">
+            <h2 className="underline underline-offset-8 decoration-2 decoration-orange-500 text-xl md:text-2xl rounded-full px-3">
               Automation
             </h2>
           </div>
