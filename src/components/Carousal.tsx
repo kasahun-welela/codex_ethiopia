@@ -68,8 +68,8 @@ const Carousel: React.FC = () => {
   }, []);
 
   return (
-    <div className="carousel relative h-screen overflow-hidden bg-black">
-      <div className="carousel__stage relative h-4/5">
+    <div className="h-screen">
+      <div className="relative h-4/5">
         {carouselItems.map((item, index) => (
           <div
             key={item.id}
