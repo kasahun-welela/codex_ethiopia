@@ -29,6 +29,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+import Carousel from "./Carousal";
 
 export default function Landing() {
   // Mapping of titles to images
@@ -211,127 +212,9 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      <main className="container mx-auto px-4 py-16">
-        <section className="flex flex-col-reverse items-center justify-between space-y-8 md:flex-row md:space-y-0">
-          <div className="space-y-4 md:w-1/2">
-            <h1 className="text-4xl font-bold leading-tight">
-              One Software Solution at a Time. Empowering Your Business with
-              Tailored Technology Solutions
-            </h1>
-            <p className="text-lg">
-              We provide full software support, E-commerce support, UI/UX
-              design, and custom plugin development for your business.
-            </p>
-            <p className="text-sm">
-              Join our community of forward-thinking businesses leveraging
-              innovation to drive growth and success. Connect with us on
-              LinkedIn, Telegram, Facebook, Twitter and our website to stay
-              updated with the latest trends and insights.
-            </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://linkedin.com"
-                aria-label="Visit LinkedIn page"
-                className="h-6 w-6 text-primary"
-              >
-                <FaLinkedin />
-              </a>
-              <a
-                href="https://telegram.org"
-                aria-label="Visit Telegram page"
-                className="h-6 w-6 text-primary"
-              >
-                <FaTelegram />
-              </a>
-              <a
-                href="https://twitter.com"
-                aria-label="Visit Twitter page"
-                className="h-6 w-6 text-primary"
-              >
-                <FaTwitter />
-              </a>
-              <a
-                href="https://facebook.com"
-                aria-label="Visit Facebook page"
-                className="h-6 w-6 text-primary"
-              >
-                <FaFacebook />
-              </a>
-              <a
-                href="codexafrica.com"
-                aria-label="Visit our website"
-                className="h-6 w-6 text-primary"
-              >
-                <FaGlobe />
-              </a>
-            </div>
-          </div>
-          <div className="w-full md:w-1/2">
-            <Slider {...heroImageSettings}>
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <img
-                  src={imgsrc1}
-                  alt="Illustration 1"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <img
-                  src={imgsrc2}
-                  alt="Illustration 2"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <img
-                  src={imgsrc3}
-                  alt="Illustration 3"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <img
-                  src={imgsrc4}
-                  alt="Illustration 4"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <img
-                  src={imgsrc5}
-                  alt="Illustration 5"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </Slider>
-          </div>
-
-          {/* <div className="w-full md:w-1/2">
-            <Slider {...heroImageSettings}>
-              <div>
-                <img src={imgsrc} alt="Illustration 1" className="w-full" />
-              </div>
-              <div>
-                <img src={imgsrc2} alt="Illustration 2" className="w-full" />
-              </div>
-              <div>
-                <img src={imgsrc3} alt="Illustration 3" className="w-full" />
-              </div>
-              <div>
-                <img src={imgsrc5} alt="Illustration 4" className="w-full" />
-              </div>
-              <div>
-                <img src={imgsrc6} alt="Illustration 5" className="w-full" />
-              </div>
-            </Slider>
-          </div> */}
-        </section>
-        <section className="py-16 text-center">
+      <Carousel />
+      <main >
+        <section className="text-center">
           <h2 className="text-3xl font-bold">Our Solutions</h2>
           <p className="mt-4 text-lg">
             With our innovative tools and solutions tailored to empower your
