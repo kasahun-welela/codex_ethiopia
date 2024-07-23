@@ -124,9 +124,9 @@ const Carousel: React.FC = () => {
                 </Link>
                 <Link
                   className="border rounded-full border-cyan-600 px-8 py-3 text-lg md:text-xl font-semibold hover:bg-white hover:text-black transition-colors duration-300"
-                  to="/practiceArea"
+                  to="/about"
                 >
-                  Practice area
+                About Us
                 </Link>
               </motion.div>
             </div>
