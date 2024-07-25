@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Sheet, SheetTrigger, SheetContent, SheetClose } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetClose,
+} from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -14,7 +19,8 @@ import {
 } from "@/components/ui/navigation-menu";
 import { FaChevronRight } from "react-icons/fa";
 import { useTheme } from "./DarkTheme";
-import logo from "../../public/codexafrica3.png";
+// import logo from "../../public/codexafrica3.png";
+import video from "/codex.mp4";
 import { Moon, Sun } from "lucide-react";
 
 interface SubMenuItem {
@@ -28,7 +34,7 @@ const developWebsiteSubMenu: SubMenuItem[] = [
   { href: "/payment-integration", title: "Payment Integration" },
   { href: "/project-management", title: "Project Management" },
   { href: "/admin-dashboard", title: "Admin Dashboard" },
-  { href: "/ecommerce", title: "Ecommerce" },
+  { href: "/ComingSoon", title: "Ecommerce" },
   { href: "/blog", title: "Blog" },
 ];
 
@@ -39,27 +45,20 @@ const automationSubMenu: SubMenuItem[] = [
   { href: "/make.com", title: "Make.com" },
 ];
 
-const technologySubMenu: SubMenuItem[] = [
-  { href: "/ai", title: "Artificial Intelligence" },
-  { href: "/blockchain", title: "Blockchain" },
-  { href: "/cloud-computing", title: "Cloud Computing" },
-  { href: "/cyber-security", title: "Cyber Security" },
-  { href: "/iot", title: "Internet of Things" },
-  { href: "/machine-learning", title: "Machine Learning" },
-];
 
 const Navbar: React.FC = () => {
   const location = useLocation();
   // const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSubMenu, setActiveSubMenu] = useState<SubMenuItem[] | null>(null);
+  const [activeSubMenu, setActiveSubMenu] = useState<SubMenuItem[] | null>(
+    null
+  );
   const { setTheme } = useTheme();
   const theme = localStorage.getItem("vite-ui-theme");
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
-
 
   const renderSubMenu = (items: SubMenuItem[]) => (
     <div className="flex-1 overflow-auto py-6">
@@ -73,7 +72,10 @@ const Navbar: React.FC = () => {
       <ul className="space-y-2 p-4">
         {items.map((item, index) => (
           <li key={index}>
-            <Link to={item.href} className="flex justify-between items-center text-left w-full p-4 bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg font-medium">
+            <Link
+              to={item.href}
+              className="flex justify-between items-center text-left w-full p-4 bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg font-medium"
+            >
               {item.title}
               <FaChevronRight className="ml-2 h-5 w-5 text-gray-500 dark:text-gray-400" />
             </Link>
@@ -86,13 +88,26 @@ const Navbar: React.FC = () => {
   const getButtonClassNames = (href: string) =>
     cn(
       "flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50",
-      location.pathname === href ? "bg-gray-100 dark:bg-gray-900 text-primary" : ""
+      location.pathname === href
+        ? "bg-gray-100 dark:bg-gray-900 text-primary"
+        : ""
     );
 
   return (
     <header className="flex h-20 w-full shrink-0 items-center justify-between px-4 md:px-6 container">
       <Link to="/" className="flex items-center gap-2 font-semibold">
-        <img src={logo} alt="CodeX Africa" width={150} height={150} />
+        {/* <img src={logo} alt="CodeX Africa" width={150} height={150} /> */}
+        <video
+          autoPlay
+          loop
+          muted
+          src={video}
+          width="100"  // Adjusted width to better fit within the navbar
+          height="100"  // Adjusted height to better fit within the navbar
+          style={{ alignSelf: 'center', maxHeight: '80%' }}  // Ensure it aligns centrally and doesn't exceed navbar height
+        >
+          Your browser does not support the video tag.
+        </video>
       </Link>
       <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
         <SheetTrigger asChild>
@@ -103,8 +118,12 @@ const Navbar: React.FC = () => {
         </SheetTrigger>
         <SheetContent side="left" className="bg-white dark:bg-gray-950">
           <div className="flex h-full max-h-screen flex-col">
-            <div className="flex items-center justify-between border-b px-6">
-              <img src={logo} alt="CodeX Africa" width={110} height={110} />
+          <div className="flex items-center justify-between border-b px-6">
+            <video autoPlay loop muted src={video} width="100" height="100" style={{ alignSelf: 'center', maxHeight: '80%' }}>
+                Your browser does not support the video tag.
+            </video>
+      
+
               <SheetClose asChild>
                 <Button variant="outline" size="icon">
                   <ExitIcon className="h-6 w-6" />
@@ -138,7 +157,7 @@ const Navbar: React.FC = () => {
                   <Button
                     aria-label="Technology"
                     className={getButtonClassNames("/technology")}
-                    onClick={() => setActiveSubMenu(technologySubMenu)}
+                    onClick={() => setActiveSubMenu(automationSubMenu)}
                   >
                     <PackageIcon className="h-5 w-5" />
                     Technology
@@ -151,10 +170,7 @@ const Navbar: React.FC = () => {
                     <PriceIcon className="h-5 w-5" />
                     Pricing
                   </Link>
-                  <Link
-                    to="/about"
-                    className={getButtonClassNames("/about")}
-                  >
+                  <Link to="/about" className={getButtonClassNames("/about")}>
                     <AboutIcon className="h-5 w-5" />
                     About Us
                   </Link>
@@ -165,10 +181,7 @@ const Navbar: React.FC = () => {
                     <MailIcon className="h-5 w-5" />
                     Contact Us
                   </Link>
-                  <Link
-                    to="/blog"
-                    className={getButtonClassNames("/blog")}
-                  >
+                  <Link to="/blog" className={getButtonClassNames("/blog")}>
                     <UserIcon className="h-5 w-5" />
                     Blog
                   </Link>
@@ -226,45 +239,71 @@ const Navbar: React.FC = () => {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Technology</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                {technologySubMenu.map((item) => (
-                  <ListItem
-                    key={item.title}
-                    title={item.title}
-                    href={item.href}
-                  >
-                    {item.title}
-                  </ListItem>
-                ))}
-              </ul>
-            </NavigationMenuContent>
+            <Link to="/pricing">
+              <NavigationMenuLink
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  location.pathname === "/technology"
+                    ? "bg-gray-100 dark:bg-gray-900 text-primary"
+                    : ""
+                )}
+              >
+                Technology
+              </NavigationMenuLink>
+            </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link to="/pricing">
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), location.pathname === "/pricing" ? "bg-gray-100 dark:bg-gray-900 text-primary" : "")}>
+            <Link to="/technology">
+              <NavigationMenuLink
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  location.pathname === "/pricing"
+                    ? "bg-gray-100 dark:bg-gray-900 text-primary"
+                    : ""
+                )}
+              >
                 Pricing
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link to="/about">
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), location.pathname === "/about" ? "bg-gray-100 dark:bg-gray-900 text-primary" : "")}>
+              <NavigationMenuLink
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  location.pathname === "/about"
+                    ? "bg-gray-100 dark:bg-gray-900 text-primary"
+                    : ""
+                )}
+              >
                 About Us
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link to="/contact">
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), location.pathname === "/contact" ? "bg-gray-100 dark:bg-gray-900 text-primary" : "")}>
+              <NavigationMenuLink
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  location.pathname === "/contact"
+                    ? "bg-gray-100 dark:bg-gray-900 text-primary"
+                    : ""
+                )}
+              >
                 Contact Us
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link to="/blog">
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), location.pathname === "/blog" ? "bg-gray-100 dark:bg-gray-900 text-primary" : "")}>
+              <NavigationMenuLink
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  location.pathname === "/blog"
+                    ? "bg-gray-100 dark:bg-gray-900 text-primary"
+                    : ""
+                )}
+              >
                 Blog
               </NavigationMenuLink>
             </Link>
@@ -288,7 +327,7 @@ const Navbar: React.FC = () => {
       </NavigationMenu>
     </header>
   );
-}
+};
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -303,7 +342,9 @@ const ListItem = React.forwardRef<
           to={href} // Ensure href is always a string
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            location.pathname === href ? "bg-gray-100 dark:bg-gray-900 text-primary" : "",
+            location.pathname === href
+              ? "bg-gray-100 dark:bg-gray-900 text-primary"
+              : "",
             className
           )}
           {...props}
