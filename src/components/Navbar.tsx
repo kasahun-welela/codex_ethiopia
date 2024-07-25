@@ -20,7 +20,8 @@ import {
 import { FaChevronRight } from "react-icons/fa";
 import { useTheme } from "./DarkTheme";
 // import logo from "../../public/codexafrica3.png";
-import video from "/logo.mp4";
+import lightMode from "/logo2.mp4";
+import darkMode from "/logo3.mp4";
 import { Moon, Sun } from "lucide-react";
 
 interface SubMenuItem {
@@ -48,13 +49,17 @@ const automationSubMenu: SubMenuItem[] = [
 const Navbar: React.FC = () => {
   const location = useLocation();
   // const navigate = useNavigate();
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState<SubMenuItem[] | null>(
     null
   );
   const { setTheme } = useTheme();
-  const theme = localStorage.getItem("vite-ui-theme");
+ // Get the theme from localStorage and ensure it never returns null
+ const theme = localStorage.getItem("vite-ui-theme") || "light"; // Defaults to "light" if null
 
+ // Determine which video source to use based on the theme
+ const videoSrc = theme === "light" ? darkMode : lightMode;
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
@@ -100,10 +105,10 @@ const Navbar: React.FC = () => {
           autoPlay
           loop
           muted
-          src={video}
-          width="100" // Adjusted width to better fit within the navbar
-          height="100" // Adjusted height to better fit within the navbar
-          style={{ alignSelf: "center", maxHeight: "80%" }} // Ensure it aligns centrally and doesn't exceed navbar height
+          src={videoSrc}
+          width="100"
+          height="100"
+          style={{ alignSelf: "center", maxHeight: "80%" }}
         >
           Your browser does not support the video tag.
         </video>
@@ -118,17 +123,17 @@ const Navbar: React.FC = () => {
         <SheetContent side="left" className="bg-white dark:bg-gray-950">
           <div className="flex h-full max-h-screen flex-col">
             <div className="flex items-center justify-between border-b px-6">
-              <video
-                autoPlay
-                loop
-                muted
-                src={video}
-                width="100"
-                height="100"
-                style={{ alignSelf: "center", maxHeight: "80%" }}
-              >
-                Your browser does not support the video tag.
-              </video>
+            <video
+          autoPlay
+          loop
+          muted
+          src={videoSrc}
+          width="100"
+          height="100"
+          style={{ alignSelf: "center", maxHeight: "80%" }}
+        >
+          Your browser does not support the video tag.
+        </video>
 
               <SheetClose asChild>
                 <Button variant="outline" size="icon">
