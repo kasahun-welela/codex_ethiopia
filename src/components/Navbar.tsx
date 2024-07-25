@@ -20,7 +20,7 @@ import {
 import { FaChevronRight } from "react-icons/fa";
 import { useTheme } from "./DarkTheme";
 // import logo from "../../public/codexafrica3.png";
-import video from "/codex.mp4";
+import video from "/logo.mp4";
 import { Moon, Sun } from "lucide-react";
 
 interface SubMenuItem {
@@ -34,17 +34,16 @@ const developWebsiteSubMenu: SubMenuItem[] = [
   { href: "/payment-integration", title: "Payment Integration" },
   { href: "/project-management", title: "Project Management" },
   { href: "/admin-dashboard", title: "Admin Dashboard" },
-  { href: "/ComingSoon", title: "Ecommerce" },
-  { href: "/blog", title: "Blog" },
+  { href: "/coming_soon", title: "Ecommerce" },
+  { href: "/coming_soon", title: "Blog" },
 ];
 
 const automationSubMenu: SubMenuItem[] = [
-  { href: "/telegram-bot", title: "Telegram Bot" },
-  { href: "/zapier", title: "Zapier" },
-  { href: "/google-app-script", title: "Google App Script" },
-  { href: "/make.com", title: "Make.com" },
+  { href: "/coming_soon", title: "Telegram Bot" },
+  { href: "/coming_soon", title: "Zapier" },
+  { href: "/coming_soon", title: "Google App Script" },
+  { href: "/coming_soon", title: "Make.com" },
 ];
-
 
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -102,9 +101,9 @@ const Navbar: React.FC = () => {
           loop
           muted
           src={video}
-          width="100"  // Adjusted width to better fit within the navbar
-          height="100"  // Adjusted height to better fit within the navbar
-          style={{ alignSelf: 'center', maxHeight: '80%' }}  // Ensure it aligns centrally and doesn't exceed navbar height
+          width="100" // Adjusted width to better fit within the navbar
+          height="100" // Adjusted height to better fit within the navbar
+          style={{ alignSelf: "center", maxHeight: "80%" }} // Ensure it aligns centrally and doesn't exceed navbar height
         >
           Your browser does not support the video tag.
         </video>
@@ -118,11 +117,18 @@ const Navbar: React.FC = () => {
         </SheetTrigger>
         <SheetContent side="left" className="bg-white dark:bg-gray-950">
           <div className="flex h-full max-h-screen flex-col">
-          <div className="flex items-center justify-between border-b px-6">
-            <video autoPlay loop muted src={video} width="100" height="100" style={{ alignSelf: 'center', maxHeight: '80%' }}>
+            <div className="flex items-center justify-between border-b px-6">
+              <video
+                autoPlay
+                loop
+                muted
+                src={video}
+                width="100"
+                height="100"
+                style={{ alignSelf: "center", maxHeight: "80%" }}
+              >
                 Your browser does not support the video tag.
-            </video>
-      
+              </video>
 
               <SheetClose asChild>
                 <Button variant="outline" size="icon">
@@ -164,8 +170,8 @@ const Navbar: React.FC = () => {
                     <FaChevronRight className="ml-auto h-5 w-5 text-gray-500 dark:text-gray-400" />
                   </Button>
                   <Link
-                    to="/pricing"
-                    className={getButtonClassNames("/pricing")}
+                    to="/technology"
+                    className={getButtonClassNames("/technology")}
                   >
                     <PriceIcon className="h-5 w-5" />
                     Pricing
@@ -239,7 +245,7 @@ const Navbar: React.FC = () => {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link to="/pricing">
+            <Link to="/technology">
               <NavigationMenuLink
                 className={cn(
                   navigationMenuTriggerStyle(),
@@ -253,7 +259,7 @@ const Navbar: React.FC = () => {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link to="/technology">
+            <Link to="/pricing">
               <NavigationMenuLink
                 className={cn(
                   navigationMenuTriggerStyle(),
