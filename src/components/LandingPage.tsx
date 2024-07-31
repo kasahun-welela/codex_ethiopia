@@ -195,7 +195,7 @@ export default function Landing() {
       <Carousel />
       <main className="container -mt-12">
         <section className="text-center">
-          <h2 className="text-3xl font-bold">Our Solutions</h2>
+          <h2 className="text-3xl font-bold mt-12">Our Solutions</h2>
           <p className="mt-4 text-lg">
             With our innovative tools and solutions tailored to empower your
             business, you just need to sit back and see your problems solved and
